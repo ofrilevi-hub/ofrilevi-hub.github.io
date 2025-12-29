@@ -1,56 +1,90 @@
 <!doctype html>
-<html lang="he">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Levi Lab | Research</title>
-  <meta name="description" content="Research areas: antifungal resistance, CRISPRi screens, plant-derived antifungals, multi-omics." />
+  <meta name="description" content="Research at the Levi Lab: antifungal resistance, CRISPRi screens, plant-derived antifungal compounds, and multi-omics." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
+  <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <a href="index.html">Levi Lab</a>
-        <small>Tel-Hai | MIGAL</small>
+        <img src="assets/telhai-logo.jpg" alt="Tel-Hai College logo" />
+        <div class="brand-title">
+          <strong>Levi Lab</strong>
+          <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
+        </div>
       </div>
+
       <nav class="nav" aria-label="Primary">
-        <a href="index.html">בית</a>
-        <a href="research.html">מחקר</a>
-        <a href="publications.html">פרסומים</a>
-        <a href="people.html">אנשים</a>
-        <a href="values.html">ערכים</a>
-        <a href="opportunities.html">הזדמנויות</a>
-        <a href="contact.html">יצירת קשר</a>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="values.html">Values</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
     <div class="container">
-      <h1 class="h1">מחקר</h1>
-      <p class="subtitle">תחומי המחקר המרכזיים והגישות המתודולוגיות של המעבדה.</p>
+      <div class="badge">Research</div>
+      <h1 style="margin:12px 0 10px; font-size:34px; line-height:1.15;">Research themes</h1>
+      <p style="margin:0 0 18px; color:rgba(33,32,33,0.85); max-width:78ch;">
+        We study how pathogenic fungi adapt to antifungal stress at the genetic, regulatory, and systems levels.
+        Our work integrates functional genomics (CRISPRi), mechanistic microbiology, and multi-omics to identify
+        pathways that govern resistance and tolerance, and to enable antifungal discovery, including plant-derived molecules.
+      </p>
 
-      <h2 class="section-title">1. מנגנוני עמידות וסבילות לאנטיפטרייתיים</h2>
-      <ul class="list">
-        <li>זיהוי מסלולים גנטיים המקדמים עמידות באמצעות מסכי CRISPRi.</li>
-        <li>אפיון רשתות סטרס, ממברנה, מטבוליזם, וחמצון-חיזור בהקשר של סבילות.</li>
-        <li>פיתוח אסטרטגיות שילוב תרופות והערכת סינרגיה ב-in vitro.</li>
-      </ul>
+      <div class="grid">
+        <section class="card">
+          <h2>1) Antifungal resistance and tolerance mechanisms</h2>
+          <ul style="margin:0; padding-left:18px;">
+            <li>Genetic pathways that buffer antifungal stress and enable survival.</li>
+            <li>Membrane biology, stress signaling, and metabolic rewiring under drug pressure.</li>
+            <li>Quantitative phenotyping and synergy testing to map actionable combinations.</li>
+          </ul>
+        </section>
 
-      <h2 class="section-title">2. תרכובות אנטיפטרייתיות ממקור צמחי</h2>
-      <ul class="list">
-        <li>סקר תמציות ופרקציונציה מונחית פעילות לזיהוי המולקולה הפעילה.</li>
-        <li>אימות פעילות ב-MIC, קינטיקה, ומבחני מנגנון ממוקדים.</li>
-        <li>חיבור נתוני פעילות לנתוני אומיקס לזיהוי מטרות ותהליכים מושפעים.</li>
-      </ul>
+        <section class="card">
+          <h2>2) Genome-scale CRISPRi screens</h2>
+          <ul style="margin:0; padding-left:18px;">
+            <li>Genome-wide CRISPRi perturbation to identify determinants of sensitivity and resistance.</li>
+            <li>Secondary validation, genetic interaction logic, and pathway-level interpretation.</li>
+            <li>Cross-model translation from yeast to pathogenic fungi when applicable.</li>
+          </ul>
+        </section>
 
-      <h2 class="section-title">3. רב-אומיקס ורציונל אינטגרטיבי</h2>
-      <ul class="list">
-        <li>טרנסקריפטומיקה ופרוטאומיקה להשוואת תגובת רגישות מול עמידות.</li>
-        <li>אנליזה חישובית לזיהוי תמות חוזרות והפקת השערות ניתנות לבדיקה.</li>
-        <li>ולידציה פונקציונלית באמצעות עריכות גנטיות ומבחני פנוטיפ.</li>
-      </ul>
+        <section class="card">
+          <h2>3) Plant-derived antifungal compounds</h2>
+          <ul style="margin:0; padding-left:18px;">
+            <li>Extract libraries and bioactivity-guided fractionation to pinpoint active molecules.</li>
+            <li>Mechanism-of-action discovery using genetics and multi-omics readouts.</li>
+            <li>Optimization of dosing, combinations, and functional validation in relevant models.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>4) Integrative multi-omics</h2>
+          <ul style="margin:0; padding-left:18px;">
+            <li>Transcriptomics and proteomics to characterize antifungal stress programs.</li>
+            <li>Network and enrichment analyses to connect genes, pathways, and phenotypes.</li>
+            <li>Hypothesis-driven validation using targeted genetics and mechanistic assays.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div style="margin-top:22px;" class="card">
+        <h2>Official institutional profile</h2>
+        <p style="margin:0;">
+          For the official MIGAL profile page and downloadable CV, see:
+          <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Dr. Ofri Levi (MIGAL)</a>.
+        </p>
+      </div>
     </div>
   </main>
 
