@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Levi Lab | People</title>
+  <meta name="description" content="People at the Levi Lab (Tel-Hai University, Kiryat Shmona)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo" />
+        <div class="brand-title">
+          <strong>Levi Lab</strong>
+          <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="values.html">Values</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="badge">People</div>
+      <h1 style="margin:12px 0 10px; font-size:34px; line-height:1.15;">Team</h1>
+      <p style="margin:0 0 18px; color:rgba(33,32,33,0.85); max-width:90ch;">
+        The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). This page lists current lab members and collaborators.
+      </p>
+
+      <div class="grid">
+        <!-- PI -->
+        <section class="card" style="grid-column: span 12;">
+          <div style="display:grid; grid-template-columns: 180px 1fr; gap:18px; align-items:start;">
+            <img
+              src="assets/ofri.jpg.jpg"
+              alt="Dr. Ofri Levi"
+              style="width:180px; height:180px; object-fit:cover; border-radius:14px; border:1px solid var(--line);"
+            />
+            <div>
+              <h2 style="margin:0 0 6px;">Dr. Ofri Levi</h2>
+              <p style="margin:0; color:rgba(33,32,33,0.85);">
+                Principal Investigator<br/>
+                Tel-Hai University (Kiryat Shmona) and MIGAL
+              </p>
+              <p style="margin:10px 0 0; color:rgba(33,32,33,0.85);">
+                Research focus: antifungal resistance mechanisms, genome-scale CRISPRi screens, plant-derived antifungal compounds, and integrative multi-omics.
+              </p>
+              <p style="margin:10px 0 0;">
+                <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Official MIGAL profile</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Team members -->
+        <section class="card">
+          <img src="assets/hazem.jpg" alt="Hazem" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
+          <h2 style="margin:0 0 6px; font-size:18px;">Hazem Khamaisi</h2>
+          <p style="margin:0; color:rgba(33,32,33,0.85);">Lab Manager</p>
+        </section>
+
+        <section class="card">
+          <img src="assets/rina.jpg" alt="Rina" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
+          <h2 style="margin:0 0 6px; font-size:18px;">Rina Zuchman</h2>
+          <p style="margin:0; color:rgba(33,32,33,0.85);">Researcher</p>
+        </section>
+
+        <section class="card">
+          <img src="assets/nour.jpg" alt="Nour" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
+          <h2 style="margin:0 0 6px; font-size:18px;">Nour Sleman</h2>
+          <p style="margin:0; color:rgba(33,32,33,0.85);">Graduate Researcher</p>
+        </section>
+
+        <section class="card">
+          <img src="assets/tom.jpg" alt="Tom" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
+          <h2 style="margin:0 0 6px; font-size:18px;">Tom Shlomovitz</h2>
+          <p style="margin:0; color:rgba(33,32,33,0.85);">Graduate Researcher</p>
+        </section>
+
+        <!-- Join -->
+        <section class="card" style="grid-column: span 12;">
+          <h2 style="margin:0 0 8px;">Join the lab</h2>
+          <p style="margin:0; color:rgba(33,32,33,0.85); max-width:95ch;">
+            We welcome motivated students and researchers. See the Opportunities page for open positions and how to apply.
+          </p>
+          <p style="margin:12px 0 0;">
+            <a class="btn primary" href="opportunities.html">Opportunities</a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Levi Lab. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
