@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Levi Lab</title>
+  <meta name="description" content="Contact the Levi Lab (Tel-Hai University, Kiryat Shmona)." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="site.js"></script>
+
+  <style>
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px;}
+    .kicker{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.12);background:rgba(0,0,0,0.02);margin-bottom:10px;}
+    h1{font-size:42px;line-height:1.1;margin:6px 0 10px;}
+    .lead{margin:0 0 18px;color:rgba(0,0,0,0.72);max-width:90ch;line-height:1.6;}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start;}
+    .card{border:1px solid rgba(0,0,0,0.10);border-radius:16px;padding:18px;background:#fff;}
+    .card h2{margin:0 0 10px;font-size:18px;}
+    .row{margin:10px 0 0;line-height:1.6;color:rgba(0,0,0,0.82);}
+    .row .label{display:inline-block;min-width:92px;color:rgba(0,0,0,0.62);font-size:13px;}
+    a{color:inherit;}
+    .btn{display:inline-block;margin-top:14px;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.14);text-decoration:none;color:inherit;}
+    .btn:hover{opacity:.85;}
+    .muted{color:rgba(0,0,0,0.68);font-size:13px;margin-top:10px;}
+    .mini{font-size:13px;color:rgba(0,0,0,0.78);line-height:1.6;}
+    @media(max-width:860px){.grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Levi Lab home">
+        <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
+        <div class="brand-text">
+          <div class="brand-title">Levi Lab</div>
+          <div class="brand-subtitle">Tel-Hai University (Kiryat Shmona) | MIGAL</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <span class="kicker">Contact</span>
+    <h1>Contact</h1>
+    <p class="lead">
+      For research collaborations, student positions, or general inquiries, please contact the PI or the lab office.
+    </p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Primary contact</h2>
+
+        <div class="row"><span class="label">PI</span> Dr. Ofri Levi</div>
+        <div class="row"><span class="label">Email</span> <a href="mailto:ofri.le@migal.org.il">ofri.le@migal.org.il</a></div>
+        <div class="row"><span class="label">Phone</span> <a href="tel:+972526264128">+972-52-626-4128</a></div>
+        <div class="row"><span class="label">Profile</span> <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener">MIGAL profile</a></div>
+
+        <a class="btn" href="mailto:ofri.le@migal.org.il?subject=Levi%20Lab%20inquiry">Email the PI</a>
+
+        <p class="muted">
+          If you are applying for a position, include a short CV (PDF) and 3-8 sentences describing your interests.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Location</h2>
+
+        <div class="mini">
+          <strong>Tel-Hai University (Kiryat Shmona)</strong><br/>
+          Eastern campus, Kiryat Shmona, Israel
+        </div>
+
+        <p class="muted" style="margin-top:12px;">
+          For meetings, please email in advance to coordinate access and directions.
+        </p>
+
+        <h2 style="margin-top:18px;">Lab office</h2>
+        <div class="row"><span class="label">Lab manager</span> Hazem Khamaisi</div>
+        <div class="row"><span class="label">Email</span> <a href="mailto:hazemkh@migal.org.il">hazemkh@migal.org.il</a></div>
+
+        <a class="btn" href="mailto:hazemkh@migal.org.il?subject=Levi%20Lab%20administrative%20inquiry">Email the lab office</a>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:16px;">
+      <h2>Quick links</h2>
+      <div class="mini">
+        <a href="opportunities.html">Open positions</a><br/>
+        <a href="publications.html">Publications</a><br/>
+        <a href="research.html">Research</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
