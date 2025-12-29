@@ -6,7 +6,45 @@
   <title>Levi Lab | People</title>
   <meta name="description" content="People at the Levi Lab (Tel-Hai University, Kiryat Shmona)." />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .people-wrap { max-width: 980px; }
+    .people-hero { margin: 12px 0 18px; }
+    .people-hero h1 { margin: 10px 0 0; font-size: 34px; line-height: 1.15; }
+    .people-hero p { margin: 10px 0 0; color: rgba(33,32,33,0.85); max-width: 95ch; }
+
+    .people-section-title { margin: 22px 0 12px; font-size: 16px; letter-spacing: 0.02em; }
+
+    .person-row {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+    .person-row:first-of-type { border-top: 0; padding-top: 0; }
+
+    .person-photo {
+      width: 260px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #f6f6f6;
+    }
+
+    .person-name { margin: 0; font-size: 16px; }
+    .person-role { margin: 4px 0 0; color: rgba(33,32,33,0.75); font-size: 13px; }
+    .person-text { margin: 10px 0 0; color: rgba(33,32,33,0.88); line-height: 1.65; max-width: 95ch; font-size: 14px; }
+    .person-links { margin: 10px 0 0; font-size: 13px; }
+    .person-links a { text-decoration: none; border-bottom: 1px solid rgba(33,32,33,0.25); }
+    .person-links a:hover { border-bottom-color: rgba(33,32,33,0.6); }
+
+    .subtle-divider { margin: 18px 0 0; border-top: 1px solid var(--line); }
+  </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -31,129 +69,101 @@
   </header>
 
   <main class="main">
-    <div class="container">
+    <div class="container people-wrap">
       <div class="badge">People</div>
-      <h1 style="margin:12px 0 10px; font-size:34px; line-height:1.15;">People</h1>
 
-      <div style="display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start;">
-        <!-- LEFT: main content -->
-        <div>
-          <section class="card" style="margin-bottom:18px;">
-            <h2 style="margin:0 0 8px;">Lab members</h2>
-            <p style="margin:0; color:rgba(33,32,33,0.85); max-width:95ch;">
-              The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). Below are current lab members and contact details.
+      <section class="people-hero">
+        <h1>People</h1>
+        <p>
+          The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). Below are current lab members and former group members.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="people-section-title">Lab members</h2>
+
+        <!-- Ofri first -->
+        <div class="person-row">
+          <img class="person-photo" src="assets/ofri.jpg.jpg" alt="Dr. Ofri Levi" />
+          <div>
+            <h3 class="person-name">Dr. Ofri Levi</h3>
+            <div class="person-role">Principal Investigator - Tel-Hai University (Kiryat Shmona) and MIGAL</div>
+
+            <p class="person-text">
+              We study how pathogenic fungi adapt to antifungal stress at genetic, regulatory, and systems levels.
+              Our work integrates genome-scale CRISPRi screening, mechanistic microbiology, and multi-omics to identify
+              pathways that govern resistance and tolerance, and to enable antifungal discovery including plant-derived molecules.
             </p>
-          </section>
 
-          <div class="grid">
-            <section class="card">
-              <img src="assets/hazem.jpg" alt="Hazem Khamaisi" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
-              <h3 style="margin:0 0 6px; font-size:18px;">Hazem Khamaisi</h3>
-              <p style="margin:0; color:rgba(33,32,33,0.85);">Lab Manager</p>
-              <p style="margin:10px 0 0; font-size:14px;">
-                ✉ <a href="mailto:hazemkh@migal.org.il">hazemkh@migal.org.il</a>
-              </p>
-            </section>
-
-            <section class="card">
-              <img src="assets/tom.jpg" alt="Tom Shlomovitz" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
-              <h3 style="margin:0 0 6px; font-size:18px;">Tom Shlomovitz</h3>
-              <p style="margin:0; color:rgba(33,32,33,0.85);">PhD Student</p>
-              <p style="margin:10px 0 0; font-size:14px;">
-                ✉ <a href="mailto:toms@migal.org.il">toms@migal.org.il</a>
-              </p>
-            </section>
-
-            <section class="card">
-              <img src="assets/nour.jpg" alt="Nour Sleman" style="width:100%; height:240px; object-fit:cover; border-radius:14px; border:1px solid var(--line); margin-bottom:12px;" />
-              <h3 style="margin:0 0 6px; font-size:18px;">Nour Sleman</h3>
-              <p style="margin:0; color:rgba(33,32,33,0.85);">MSc Student</p>
-              <p style="margin:10px 0 0; font-size:14px;">
-                ✉ <a href="mailto:noursleman94@gmail.com">noursleman94@gmail.com</a>
-              </p>
-            </section>
+            <div class="person-links">
+              ✉ <a href="mailto:ofri.le@migal.org.il">ofri.le@migal.org.il</a><br/>
+              ☎ <a href="tel:+972526264128">+972-52-626-4128</a><br/>
+              Profile: <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Official MIGAL profile</a>
+            </div>
           </div>
-
-          <section class="card" style="margin-top:18px;">
-            <h2 style="margin:0 0 12px;">Principal Researcher</h2>
-
-            <div style="display:grid; grid-template-columns: 150px 1fr; gap:16px; align-items:start;">
-              <img
-                src="assets/ofri.jpg.jpg"
-                alt="Dr. Ofri Levi"
-                style="width:150px; height:150px; object-fit:cover; border-radius:14px; border:1px solid var(--line);"
-              />
-              <div>
-                <h3 style="margin:0 0 6px;">Dr. Ofri Levi</h3>
-                <p style="margin:0; color:rgba(33,32,33,0.85);">
-                  Principal Investigator<br/>
-                  Tel-Hai University (Kiryat Shmona) and MIGAL
-                </p>
-
-                <p style="margin:10px 0 0; font-size:14px;">
-                  ✉ <a href="mailto:ofri.le@migal.org.il">ofri.le@migal.org.il</a><br/>
-                  ☎ <a href="tel:+972526264128">+972-52-626-4128</a>
-                </p>
-
-                <p style="margin:10px 0 0; color:rgba(33,32,33,0.85); max-width:95ch;">
-                  Our research addresses fungal resistance and tolerance, integrating CRISPRi screening and multi-omics to enable antifungal discovery.
-                </p>
-
-                <p style="margin:12px 0 0;">
-                  <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Official MIGAL profile</a>
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section class="card" style="margin-top:18px;">
-            <h2 style="margin:0 0 12px;">Former group members</h2>
-
-            <div style="display:grid; grid-template-columns: 120px 1fr; gap:14px; align-items:start;">
-              <img
-                src="assets/rina.jpg"
-                alt="Dr. Rina Zuchman"
-                style="width:120px; height:120px; object-fit:cover; border-radius:14px; border:1px solid var(--line);"
-              />
-              <div>
-                <h3 style="margin:0 0 6px;">Dr. Rina Zuchman</h3>
-                <p style="margin:0; color:rgba(33,32,33,0.85);">Postdoctoral Fellow</p>
-                <p style="margin:10px 0 0; font-size:14px;">
-                  ✉ <a href="mailto:rinaz@campus.technion.ac.il">rinaz@campus.technion.ac.il</a>
-                </p>
-              </div>
-            </div>
-          </section>
         </div>
 
-        <!-- RIGHT: sidebar -->
-        <aside>
-          <section class="card">
-            <h3 style="margin:0 0 10px;">Publications</h3>
-            <p style="margin:0 0 12px; color:rgba(33,32,33,0.85);">
-              See the full list of peer-reviewed publications.
+        <div class="person-row">
+          <img class="person-photo" src="assets/hazem.jpg" alt="Hazem Khamaisi" />
+          <div>
+            <h3 class="person-name">Hazem Khamaisi</h3>
+            <div class="person-role">Lab Manager</div>
+            <p class="person-text">
+              Laboratory operations, procurement, safety compliance, and support for high-throughput workflows.
             </p>
-            <a class="btn" href="publications.html">More publications</a>
-          </section>
+            <div class="person-links">
+              ✉ <a href="mailto:hazemkh@migal.org.il">hazemkh@migal.org.il</a>
+            </div>
+          </div>
+        </div>
 
-          <section class="card" style="margin-top:18px;">
-            <h3 style="margin:0 0 10px;">Positions</h3>
-            <p style="margin:0; color:rgba(33,32,33,0.85);">
-              MSc and PhD positions: genome-scale CRISPRi screens, antifungal discovery, and multi-omics.
+        <div class="person-row">
+          <img class="person-photo" src="assets/tom.jpg" alt="Tom Shlomovitz" />
+          <div>
+            <h3 class="person-name">Tom Shlomovitz</h3>
+            <div class="person-role">PhD Student</div>
+            <p class="person-text">
+              Genome-scale genetic perturbation and functional validation to map determinants of antifungal response and tolerance.
             </p>
-            <p style="margin:12px 0 0;">
-              <a class="btn primary" href="opportunities.html">Apply</a>
-            </p>
-          </section>
+            <div class="person-links">
+              ✉ <a href="mailto:toms@migal.org.il">toms@migal.org.il</a>
+            </div>
+          </div>
+        </div>
 
-          <section class="card" style="margin-top:18px;">
-            <h3 style="margin:0 0 10px;">Lab news</h3>
-            <p style="margin:0; color:rgba(33,32,33,0.85);">
-              Updates on papers, talks, grants, and openings will appear here.
+        <div class="person-row">
+          <img class="person-photo" src="assets/nour.jpg" alt="Nour Sleman" />
+          <div>
+            <h3 class="person-name">Nour Sleman</h3>
+            <div class="person-role">MSc Student</div>
+            <p class="person-text">
+              Plant-extract screening, bioactivity-guided fractionation, and quantitative antifungal phenotyping.
             </p>
-          </section>
-        </aside>
-      </div>
+            <div class="person-links">
+              ✉ <a href="mailto:noursleman94@gmail.com">noursleman94@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="subtle-divider"></div>
+
+        <h2 class="people-section-title" style="margin-top:18px;">Former group members</h2>
+
+        <div class="person-row">
+          <img class="person-photo" src="assets/rina.jpg" alt="Dr. Rina Zuchman" />
+          <div>
+            <h3 class="person-name">Dr. Rina Zuchman</h3>
+            <div class="person-role">Postdoctoral Fellow</div>
+            <p class="person-text">
+              Former group member. Contributions included fungal stress response projects and proteomics-supported work.
+            </p>
+            <div class="person-links">
+              ✉ <a href="mailto:rinaz@campus.technion.ac.il">rinaz@campus.technion.ac.il</a>
+            </div>
+          </div>
+        </div>
+
+      </section>
     </div>
   </main>
 
