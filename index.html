@@ -7,19 +7,22 @@
   <meta name="description" content="Levi Lab at Tel-Hai University (Kiryat Shmona): fungal resistance mechanisms, CRISPRi screens, plant-derived antifungal compounds, and multi-omics." />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+
+<body class="page-home">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo" />
+      <a class="brand" href="index.html" aria-label="Levi Lab home">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" class="brand-logo" />
         <div class="brand-title">
           <strong>Levi Lab</strong>
           <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
         </div>
-      </div>
+      </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
@@ -29,69 +32,121 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <div class="badge">Pathogenic fungi | Antifungal resistance | CRISPRi | Multi-omics</div>
-        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
-        <p>
-          The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). We study how pathogenic fungi adapt to
-          antifungal stress using functional genomics and multi-omics, with an emphasis on CRISPRi screens and plant-derived
-          antifungal compounds.
-        </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="research.html">Explore research</a>
-          <a class="btn" href="opportunities.html">Join the lab</a>
+  <main id="main" class="main">
+    <section class="home-hero">
+      <div class="container home-hero-inner">
+        <div class="home-hero-copy">
+          <h1>Welcome to the Levi Lab at Tel-Hai University</h1>
+          <p class="lead">
+            The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). We study how pathogenic fungi adapt to
+            antifungal stress using functional genomics and multi-omics, with an emphasis on CRISPRi screens and
+            plant-derived antifungal compounds.
+          </p>
+          <p class="lead">
+            We integrate genetics, genomics, cell biology, chemical biology, and computational analysis to connect genes,
+            pathways, and phenotypes that shape resistance, tolerance, and host-pathogen interactions.
+          </p>
+
+          <div class="home-cta">
+            <a class="btn primary" href="research.html">Explore research</a>
+            <a class="btn" href="opportunities.html">Join the lab</a>
+          </div>
         </div>
+
+        <aside class="home-hero-aside" aria-label="Quick links">
+          <h2>Quick links</h2>
+          <p class="muted">
+            Official MIGAL profile (current):
+          </p>
+          <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener noreferrer">
+            MIGAL profile page
+          </a>
+
+          <div class="divider" role="presentation"></div>
+
+          <p class="muted">
+            This site hosts lab research, publications, team information, and opportunities at Tel-Hai University.
+          </p>
+        </aside>
       </div>
+    </section>
 
-      <aside class="hero-card">
-        <h2 style="margin:0 0 10px;">Quick links</h2>
-        <p style="margin:0 0 12px; color:rgba(33,32,33,0.85);">
-          Official MIGAL profile (current):
-        </p>
-        <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">MIGAL profile page</a>
-        <div style="height:12px;"></div>
-        <p style="margin:0; color:rgba(33,32,33,0.75); font-size:13px;">
-          This site will host lab updates, publications, team information, and opportunities.
-        </p>
-      </aside>
-    </div>
-  </section>
+    <section class="home-feature">
+      <div class="container">
+        <figure class="feature-figure">
+          <!-- Replace src with a local image you already have on your computer -->
+          <img
+            src="assets/home-feature.jpg"
+            alt="Representative fungal microscopy or lab image"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="feature-caption">
+            Image credit: add credit text here (optional).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-  <main class="main">
-    <div class="container">
-      <div class="grid">
-        <section class="card">
-          <h2>CRISPRi screens</h2>
-          <p>Genome-scale perturbation screens, resistance mapping, and functional validation.</p>
+    <section class="home-section">
+      <div class="container home-two-col">
+        <section class="home-block" aria-labelledby="latest-news">
+          <h2 id="latest-news">Latest News</h2>
+
+          <article class="news-item">
+            <div class="news-date">2025</div>
+            <div class="news-text">
+              Add your first news item here (paper accepted, grant, talk, lab opening, student milestone).
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2025</div>
+            <div class="news-text">
+              Add another item here. Keep each entry short and scannable.
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2024</div>
+            <div class="news-text">
+              Optional: link to a paper or announcement.
+            </div>
+          </article>
         </section>
 
-        <section class="card">
-          <h2>Plant-derived antifungals</h2>
-          <p>Extract libraries, bioactivity-guided fractionation, and mode-of-action discovery.</p>
-        </section>
+        <section class="home-block" aria-labelledby="funding">
+          <h2 id="funding">Funding</h2>
 
-        <section class="card">
-          <h2>Multi-omics</h2>
-          <p>Transcriptomics, proteomics, and high-throughput phenotyping for integrative models.</p>
-        </section>
+          <div class="funding-logos" aria-label="Funding logos">
+            <!-- Replace these filenames with the exact files you have in assets/ -->
+            <img src="assets/logo-isf.jpg" alt="Israel Science Foundation" loading="lazy" decoding="async" />
+            <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University" loading="lazy" decoding="async" />
+            <!-- Add more logos as you like -->
+            <!-- <img src="assets/logo-erc.jpg" alt="European Research Council" loading="lazy" decoding="async" /> -->
+          </div>
 
-        <section class="card">
-          <h2>Host-pathogen regulation</h2>
-          <p>Regulatory programs that shape virulence, stress adaptation, and antifungal responses.</p>
+          <p class="muted" style="margin-top:12px;">
+            Additional funders can be added here as the lab grows.
+          </p>
         </section>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Levi Lab. All rights reserved.
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.telhai.ac.il" target="_blank" rel="noopener noreferrer">Tel-Hai University</a>
+      </div>
     </div>
   </footer>
 
-  <script src="site.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
