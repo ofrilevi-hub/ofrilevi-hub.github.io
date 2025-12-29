@@ -4,237 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Levi Lab | Tel-Hai University</title>
-
-  <meta
-    name="description"
-    content="Levi Lab at Tel-Hai University (Kiryat Shmona): fungal resistance mechanisms, CRISPRi screens, plant-derived antifungal compounds, and multi-omics."
-  />
-
+  <meta name="description" content="Levi Lab at Tel-Hai University (Kiryat Shmona): fungal resistance mechanisms, CRISPRi screens, plant-derived antifungal compounds, and multi-omics." />
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    :root {
-      --telhai-green: #3a7f3b;
-      --telhai-green-light: #eaf3ea;
-      --text-main: #1f2933;
-      --text-muted: #5f6b76;
-      --border-soft: #e5e7eb;
-      --bg-soft: #f8faf9;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text-main);
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header */
-    .site-header {
-      border-bottom: 1px solid var(--border-soft);
-      background: #ffffff;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand img {
-      height: 42px;
-    }
-
-    .brand-title {
-      display: flex;
-      flex-direction: column;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .brand-title strong {
-      color: var(--text-main);
-      font-size: 16px;
-    }
-
-    .nav a {
-      margin-left: 18px;
-      text-decoration: none;
-      font-size: 14px;
-      color: var(--text-main);
-    }
-
-    .nav a:hover {
-      color: var(--telhai-green);
-    }
-
-    /* Hero */
-    .hero {
-      background: var(--bg-soft);
-      padding: 64px 0;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--telhai-green-light);
-      color: var(--telhai-green);
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      line-height: 1.2;
-      margin: 0 0 16px;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      max-width: 720px;
-    }
-
-    .hero-actions {
-      margin-top: 24px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 10px 18px;
-      border-radius: 6px;
-      border: 1px solid var(--border-soft);
-      background: #ffffff;
-      color: var(--text-main);
-      font-size: 14px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn.primary {
-      background: var(--telhai-green);
-      color: #ffffff;
-      border-color: var(--telhai-green);
-    }
-
-    .btn.primary:hover {
-      opacity: 0.9;
-    }
-
-    .hero-card {
-      background: #ffffff;
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      padding: 24px;
-    }
-
-    .hero-card h2 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-
-    .hero-card ul {
-      padding-left: 18px;
-      margin: 0 0 16px;
-    }
-
-    /* Main sections */
-    .main {
-      padding: 72px 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      padding: 24px;
-      background: #ffffff;
-    }
-
-    .card h2 {
-      margin-top: 0;
-      font-size: 20px;
-    }
-
-    /* Funding */
-    .funding-logos {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .funding-logos img {
-      height: 80px;
-      max-width: 220px;
-      object-fit: contain;
-    }
-
-    /* Footer */
-    .footer {
-      border-top: 1px solid var(--border-soft);
-      padding: 24px 0;
-      font-size: 13px;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-    }
-  </style>
 </head>
 
-<body>
-  <!-- Header -->
+<body class="page-home">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
+      <a class="brand" href="index.html" aria-label="Levi Lab home">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" class="brand-logo" />
         <div class="brand-title">
           <strong>Levi Lab</strong>
           <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
         </div>
-      </div>
+      </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
@@ -244,113 +32,136 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <main id="main" class="main">
   <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <div class="badge">
-          Pathogenic fungi · Antifungal resistance · CRISPRi · Multi-omics
-        </div>
-
-        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
-
-        <p>
-          The Levi Lab is being established at Tel-Hai University (Kiryat Shmona).
-          We investigate how pathogenic fungi adapt to antifungal stress at the
-          genetic, regulatory, and systems levels.
-        </p>
-
-        <p>
-          Our work integrates genome-scale CRISPRi screening, mechanistic
-          microbiology, plant-derived antifungal discovery, and multi-omics
-          approaches to identify pathways governing resistance and tolerance,
-          and to enable new antifungal strategies.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="research.html">Explore research</a>
-          <a class="btn" href="opportunities.html">Join the lab</a>
-        </div>
+  <div class="container hero-inner">
+    <div>
+      <div class="badge">
+        Pathogenic fungi · Antifungal resistance · CRISPRi · Multi-omics
       </div>
 
-      <aside class="hero-card">
-        <h2>Affiliations</h2>
-        <ul>
-          <li>Tel-Hai University, Kiryat Shmona</li>
-          <li>MIGAL – Galilee Research Institute</li>
-        </ul>
+      <h1>
+        Fungal resistance mechanisms and antifungal discovery
+      </h1>
 
-        <p style="font-size:14px;">
-          Official institutional profile:
-        </p>
+      <p>
+        The Levi Lab is being established at Tel-Hai University (Kiryat Shmona).
+        Our research focuses on understanding how pathogenic fungi adapt to
+        antifungal stress at the genetic, regulatory, and systems levels.
+      </p>
 
-        <a
-          class="btn"
-          href="https://www.migal.org.il/en/dr-ofri-levi"
-          target="_blank"
-          rel="noopener"
-        >
-          MIGAL profile page
-        </a>
-      </aside>
+      <p>
+        We integrate genome-scale CRISPRi screening, mechanistic microbiology,
+        plant-derived antifungal discovery, and multi-omics approaches to
+        identify pathways governing resistance and tolerance, and to enable
+        the development of new antifungal strategies.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="research.html">Explore research</a>
+        <a class="btn" href="opportunities.html">Join the lab</a>
+      </div>
     </div>
-  </section>
 
-  <!-- Main -->
-  <main class="main">
-    <div class="container grid">
-      <section class="card">
-        <h2>CRISPRi screens</h2>
-        <p>
-          Genome-scale perturbation screens to identify genetic determinants
-          of antifungal resistance and tolerance.
-        </p>
-      </section>
+    <aside class="hero-card">
+      <h2>Affiliations</h2>
 
-      <section class="card">
-        <h2>Plant-derived antifungals</h2>
-        <p>
-          Bioactivity-guided fractionation and mechanism-of-action discovery
-          of antifungal compounds from plant sources.
-        </p>
-      </section>
+      <ul class="clean-list">
+        <li>Tel-Hai University, Kiryat Shmona</li>
+        <li>MIGAL – Galilee Research Institute</li>
+      </ul>
 
-      <section class="card">
-        <h2>Multi-omics</h2>
-        <p>
-          Transcriptomics, proteomics, and quantitative phenotyping to build
-          integrative models of fungal stress responses.
-        </p>
-      </section>
+      <hr />
 
-      <section class="card">
-        <h2>Funding</h2>
-        <p>
-          Research in the Levi Lab is supported by institutional and competitive
-          funding sources.
-        </p>
+      <p class="small">
+        Official institutional profile:
+      </p>
 
-        <div class="funding-logos">
+      <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener">
+        MIGAL profile page
+      </a>
+    </aside>
+  </div>
+</section>   
+
+    <section class="home-feature">
+      <div class="container">
+        <figure class="feature-figure">
+          <!-- Replace src with a local image you already have on your computer -->
           <img
-            src="assets/Helmsley_Trust_logo_2021.svg.png"
-            alt="Helmsley Charitable Trust logo"
+            src="assets/home-feature.jpg"
+            alt="Representative fungal microscopy or lab image"
+            loading="lazy"
+            decoding="async"
           />
-          <img
-            src="assets/telhai-logo.jpg.png"
-            alt="Tel-Hai University logo"
-          />
-        </div>
-      </section>
-    </div>
+          <figcaption class="feature-caption">
+            Image credit: add credit text here (optional).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="container home-two-col">
+        <section class="home-block" aria-labelledby="latest-news">
+          <h2 id="latest-news">Latest News</h2>
+
+         <section class="card">
+  <h2>Latest news</h2>
+
+  <ul class="news-list">
+    <li>
+      <strong>2025</strong> – Israeli researchers discover plant-based compound that kills harmful fungi.
+      <a href="https://www.ynetnews.com/environment/article/ryzjwsnlbl" target="_blank" rel="noopener">
+        Read on Ynet
+      </a>
+    </li>
+
+    <li>
+      <strong>2025</strong> – Genome-wide CRISPRi screen and proteomic profiling identify key genes related to ferulic acid antifungal activity (mBio).
+    </li>
+
+    <li>
+      <strong>2025</strong> – Cytoplasmic sequestering of a fungal stress-activated MAPK in response to a host plant phenolic acid (PLOS Pathogens).
+    </li>
+
+    <li>
+      <strong>2024</strong> – Establishment of the Levi Lab at Tel-Hai University.
+    </li>
+  </ul>
+</section>
+
+        <section class="home-block" aria-labelledby="funding">
+          <h2 id="funding">Funding</h2>
+
+          <div class="funding-logos" aria-label="Funding logos">
+            <!-- Replace these filenames with the exact files you have in assets/ -->
+            <img src="assets/logo-isf.jpg" alt="Israel Science Foundation" loading="lazy" decoding="async" />
+            <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University" loading="lazy" decoding="async" />
+            <!-- Add more logos as you like -->
+            <!-- <img src="assets/logo-erc.jpg" alt="European Research Council" loading="lazy" decoding="async" /> -->
+          </div>
+
+          <p class="muted" style="margin-top:12px;">
+          </p>
+        </section>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    © <span id="year"></span> Levi Lab. All rights reserved.
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.telhai.ac.il" target="_blank" rel="noopener noreferrer">Tel-Hai University</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
