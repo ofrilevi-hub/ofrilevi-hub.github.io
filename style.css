@@ -320,9 +320,8 @@ a:hover{color:var(--telhai-green);}
   align-items:center;
 }
 .funding-logos img{
-  height: 34px;
+  height: 120px;
   width: auto;
-  filter: grayscale(100%);
   opacity: .9;
 }
 .funding-logos img:hover{ filter:none; opacity: 1; }
