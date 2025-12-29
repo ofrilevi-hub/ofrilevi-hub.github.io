@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Levi Lab | Home</title>
-  <meta name="description" content="Levi Lab: antifungal resistance, CRISPRi screens, plant-derived antifungal compounds." />
+  <title>Levi Lab | Tel-Hai University</title>
+  <meta name="description" content="Levi Lab at Tel-Hai University (Kiryat Shmona): fungal resistance mechanisms, CRISPRi screens, plant-derived antifungal compounds, and multi-omics." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
+  <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <a href="index.html">Levi Lab</a>
-        <small>Tel-Hai | MIGAL</small>
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo" />
+        <div class="brand-title">
+          <strong>Levi Lab</strong>
+          <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
+        </div>
       </div>
+
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
@@ -26,55 +30,58 @@
     </div>
   </header>
 
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge">Pathogenic fungi | Antifungal resistance | CRISPRi | Multi-omics</div>
+        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
+        <p>
+          The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). We study how pathogenic fungi adapt to
+          antifungal stress using functional genomics and multi-omics, with an emphasis on CRISPRi screens and plant-derived
+          antifungal compounds.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="research.html">Explore research</a>
+          <a class="btn" href="opportunities.html">Join the lab</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2 style="margin:0 0 10px;">Quick links</h2>
+        <p style="margin:0 0 12px; color:rgba(33,32,33,0.85);">
+          Official MIGAL profile (current):
+        </p>
+        <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">MIGAL profile page</a>
+        <div style="height:12px;"></div>
+        <p style="margin:0; color:rgba(33,32,33,0.75); font-size:13px;">
+          This site will host lab updates, publications, team information, and opportunities.
+        </p>
+      </aside>
+    </div>
+  </section>
+
   <main class="main">
     <div class="container">
-      <section class="hero">
-        <div class="badge">Pathogenic fungi | Antifungal resistance | CRISPRi | Multi-omics</div>
-        <h1 class="h1">Fungal resistance mechanisms and antifungal discovery</h1>
-        <p class="subtitle">
-          Our lab investigates how pathogenic fungi adapt to antifungal stress using functional genomics and multi-omics,
-          with an emphasis on CRISPRi screens and plant-derived antifungal compounds.
-        </p>
-        <a class="btn" href="research.html">Explore research</a>
-        <a class="btn" href="opportunities.html">Join the lab</a>
-      </section>
-
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>CRISPRi screens</h3>
+      <div class="grid">
+        <section class="card">
+          <h2>CRISPRi screens</h2>
           <p>Genome-scale perturbation screens, resistance mapping, and functional validation.</p>
-        </div>
-        <div class="card">
-          <h3>Plant-derived antifungals</h3>
+        </section>
+
+        <section class="card">
+          <h2>Plant-derived antifungals</h2>
           <p>Extract libraries, bioactivity-guided fractionation, and mode-of-action discovery.</p>
-        </div>
-        <div class="card">
-          <h3>Multi-omics</h3>
+        </section>
+
+        <section class="card">
+          <h2>Multi-omics</h2>
           <p>Transcriptomics, proteomics, and high-throughput phenotyping for integrative models.</p>
-        </div>
-      </div>
+        </section>
 
-      <h2 class="section-title">News</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <div class="kicker">2025-12-XX</div>
-          <h3>New paper</h3>
-          <p>Add the paper title, journal, DOI, and link.</p>
-        </div>
-        <div class="card">
-          <div class="kicker">2025-11-XX</div>
-          <h3>Talk / conference</h3>
-          <p>Add talks, conferences, grants, or openings.</p>
-        </div>
-      </div>
-
-      <hr class="hr" />
-
-      <div class="card">
-        <h3>Official profile</h3>
-        <p>
-          <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Dr. Ofri Levi (MIGAL)</a>
-        </p>
+        <section class="card">
+          <h2>Host-pathogen regulation</h2>
+          <p>Regulatory programs that shape virulence, stress adaptation, and antifungal responses.</p>
+        </section>
       </div>
     </div>
   </main>
