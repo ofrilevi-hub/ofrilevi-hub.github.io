@@ -1,192 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research | Levi Lab</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="site.js"></script>
-</head>
-
-<body>
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Levi Lab home">
-        <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
-        <div class="brand-text">
-          <div class="brand-title">Levi Lab</div>
-          <div class="brand-subtitle">Tel-Hai University (Kiryat Shmona) | MIGAL</div>
-        </div>
-      </a>
-
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a class="active" href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-        <a href="values.html">Values</a>
-        <a href="opportunities.html">Opportunities</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Page hero -->
-  <main class="site-main">
-    <section class="page-hero">
-      <div class="container">
-        <div class="pill">Research</div>
-        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
-
-        <p class="lead">
-          Our lab studies fungal resistance and tolerance, with an emphasis on how gene-expression regulation
-          shapes antifungal stress responses in both clinically and agriculturally relevant contexts.
-          In parallel, we investigate plant-derived antifungal molecules and leverage genome-scale CRISPRi
-          screening to connect genes, pathways, and phenotypes.
-        </p>
-
-        <p class="lead">
-          By dissecting genetic and molecular programs that enable resistance and persistence, we aim to support
-          the development of innovative, sustainable antifungal strategies.
-        </p>
+<!-- research.html -->
+<header>... (same header as above, with "Research" nav item marked current) ...</header>
+<main>
+  <h1>Research</h1>
+  <section class="research-areas">
+    <article class="area">
+      <img src="assets/antifungal.jpg" alt="Microscopic view of fungal cells" class="area-image">
+      <div class="area-content">
+        <h2>Antifungal Drug Resistance</h2>
+        <p>We investigate how pathogenic fungi evolve and acquire resistance to antifungal therapies, identifying genetic mutations and pathways that enable survival against treatments.</p>
       </div>
-    </section>
-
-    <!-- Research areas -->
-    <section class="section">
-      <div class="container">
-        <h2>Research areas</h2>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>Antifungal resistance mechanisms</h3>
-            <ul>
-              <li>Genetic determinants and pathway logic that enable resistance and tolerance.</li>
-              <li>Stress signaling, membrane biology, and metabolic rewiring under drug pressure.</li>
-              <li>Actionable insights for antifungal strategies in agriculture and human health.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>CRISPRi-based genomic screening</h3>
-            <ul>
-              <li>Unbiased, high-throughput CRISPRi screens to map sensitivity and resistance.</li>
-              <li>Secondary validation and mechanistic follow-up for top hits.</li>
-              <li>Pathway-level interpretation using integrative analysis.</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Plant-derived antifungal compounds</h3>
-            <ul>
-              <li>Plant-extract libraries and bioactivity-guided fractionation to identify active molecules.</li>
-              <li>Mode-of-action discovery using genetics and multi-omics readouts.</li>
-              <li>Optimization of dosing and combinations, including synergy testing when relevant.</li>
-            </ul>
-          </article>
-        </div>
+    </article>
+    <article class="area">
+      <img src="assets/stress-response.jpg" alt="Illustration of fungal stress response" class="area-image">
+      <div class="area-content">
+        <h2>Stress Response Pathways</h2>
+        <p>Our lab studies how fungal cells respond to stress (such as oxidative or osmotic stress), uncovering how these organisms adapt to hostile environments and host defenses.</p>
       </div>
-    </section>
-
-    <!-- Methods / approach -->
-    <section class="section">
-      <div class="container">
-        <h2>How we work</h2>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Functional genomics</h3>
-            <p>
-              Genome-scale perturbation (CRISPRi), targeted validation, and quantitative phenotyping
-              to connect genotypes with antifungal-response phenotypes.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Integrative multi-omics</h3>
-            <p>
-              Transcriptomics and proteomics to characterize stress programs, supported by enrichment and
-              network analyses to connect genes, pathways, and mechanisms.
-            </p>
-          </article>
-        </div>
+    </article>
+    <article class="area">
+      <img src="assets/crispr.jpg" alt="CRISPR gene editing illustration" class="area-image">
+      <div class="area-content">
+        <h2>Functional Genomics Screens</h2>
+        <p>Using CRISPR/Cas9 and CRISPRi techniques, we perform genome-wide screens to identify genes involved in fungal drug resistance and pathogenicity, paving the way for novel antifungal targets.</p>
       </div>
-    </section>
-
-    <!-- Highlights pulled from the MIGAL page (kept short, linked to your site pages) -->
-    <section class="section">
-      <div class="container">
-        <h2>Highlights</h2>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Funding</h3>
-            <div class="logos">
-              <img src="assets/logo-isf.jpg" alt="Israel Science Foundation logo" />
-              <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
-            </div>
-            <p class="muted">
-              Additional funders can be added here as you finalize the Tel-Hai lab website.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Latest publications</h3>
-            <ul class="pub-mini">
-              <li>
-                <strong>Genome-wide CRISPRi screen and proteomic profiling identify key genes related to ferulic acid’s antifungal activity</strong>
-                <span class="muted">mBio (2025)</span>
-                <span class="links"><a href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank" rel="noopener">Read online</a></span>
-              </li>
-              <li>
-                <strong>Design, synthesis, and screening of an RNA optimized fluorinated fragment library</strong>
-                <span class="muted">SLAS Discovery (2025)</span>
-                <span class="links"><a href="https://www.sciencedirect.com/science/article/pii/S2472555225000199" target="_blank" rel="noopener">Read online</a></span>
-              </li>
-              <li>
-                <strong>Plant-fungal reciprocity of gene expression patterns in the maize-Cochliobolus heterostrophus interaction</strong>
-                <span class="muted">Under preparation (2024)</span>
-              </li>
-              <li>
-                <strong>Genome-Wide CRISPRi Screen Reveals Molecular Mechanisms of Ferulic Acid's Antifungal Action and Its Synergistic Potential with Fluconazole</strong>
-                <span class="muted">Under preparation (2024)</span>
-              </li>
-            </ul>
-            <p class="muted" style="margin-top:12px;">
-              Full list: <a href="publications.html">Publications</a>
-            </p>
-          </article>
-        </div>
-
-        <div class="grid-2" style="margin-top:16px;">
-          <article class="card">
-            <h3>Open positions</h3>
-            <p>MSc and PhD positions: genome-scale CRISPRi screens, antifungal discovery, and multi-omics.</p>
-            <p><a class="btn" href="opportunities.html">Apply</a></p>
-          </article>
-
-          <article class="card">
-            <h3>Lab news</h3>
-            <p class="muted">
-              Updates on papers, talks, grants, and openings will appear here.
-            </p>
-            <p>
-              <a href="https://www.ynetnews.com/environment/article/ryzjwsnlbl" target="_blank" rel="noopener">
-                Related news link
-              </a>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>© 2025 Levi Lab. All rights reserved.</div>
-      </div>
-    </footer>
-  </main>
-</body>
-</html>
+    </article>
+  </section>
+</main>
+<footer>... (same footer as Home) ...</footer>
