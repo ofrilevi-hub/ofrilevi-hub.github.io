@@ -1,42 +1,44 @@
-<!doctype html>
+<!-- publications.html (replace the entire file with this) -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Levi Lab | Publications</title>
-  <meta name="description" content="Publications from the Levi Lab." />
+  <title>Publications | Levi Lab</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="site.js"></script>
 
-  <!-- Page-specific styling (kept inside this file so you edit only one file in this step) -->
+  <!-- Page-specific styling to match the simple Shapiro-style list -->
   <style>
-    .pub-wrap { max-width: 980px; }
-    .pub-intro { margin: 10px 0 18px; color: rgba(33,32,33,0.85); max-width: 95ch; }
-    .pub-year { margin: 22px 0 10px; font-size: 18px; letter-spacing: 0.02em; }
-    .pub-list { margin: 0; padding-left: 18px; }
-    .pub-list li { margin: 10px 0; line-height: 1.55; }
-    .pub-authors { color: rgba(33,32,33,0.92); }
-    .pub-title { font-style: italic; }
-    .pub-meta { color: rgba(33,32,33,0.75); }
-    .pub-note { margin-top: 14px; font-size: 13px; color: rgba(33,32,33,0.75); }
-    .mail { font-weight: 700; }
+    .pubs-wrap{max-width:980px;margin:0 auto;padding:32px 18px;}
+    .pubs-title{font-size:42px;line-height:1.1;margin:8px 0 18px;}
+    .pub-year{font-size:18px;margin:22px 0 8px;}
+    .pub-list{margin:0 0 10px 22px;padding:0;}
+    .pub-list li{margin:10px 0;line-height:1.45;}
+    .pub-title a{color:inherit;text-decoration:underline;text-underline-offset:2px;}
+    .pub-title a:hover{opacity:.85;}
+    .me{font-weight:800;}
+    .ca{font-size:.95em;margin-left:4px;vertical-align:baseline;}
+    .pub-note{margin-top:14px;font-size:13px;opacity:.8;}
   </style>
 </head>
 
 <body>
+  <!-- Keep your existing header/nav structure if you already have one in other pages -->
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo" />
-        <div class="brand-title">
-          <strong>Levi Lab</strong>
-          <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" class="brand-logo" />
+        <div class="brand-text">
+          <div class="brand-title">Levi Lab</div>
+          <div class="brand-subtitle">Tel-Hai University (Kiryat Shmona) | MIGAL</div>
         </div>
-      </div>
+      </a>
 
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
+        <a class="active" href="publications.html">Publications</a>
         <a href="people.html">People</a>
         <a href="values.html">Values</a>
         <a href="opportunities.html">Opportunities</a>
@@ -45,119 +47,145 @@
     </div>
   </header>
 
-  <main class="page">
-  <section class="page-hero">
-    <h1>Publications</h1>
-  </section>
+  <main class="pubs-wrap">
+    <h1 class="pubs-title">Publications</h1>
 
-  <section class="pubs">
+    <h2 class="pub-year">2025</h2>
     <ol class="pub-list">
       <li>
         Zuchman R, Koren R, Ziv T, Lupu-Haber Y, Dahan N,
-        <strong>Levi O</strong><span class="ca" title="Corresponding author"> ✉</span>,
-        Horwitz BA<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1371/journal.ppat.1013620" target="_blank" rel="noopener">
-          <em>Cytoplasmic sequestering of a fungal stress-activated MAPK in response to a host plant phenolic acid</em>
-        </a>.
+        <span class="me">Levi O</span><span class="ca" title="Corresponding author">✉</span>,
+        Horwitz BA<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://doi.org/10.1371/journal.ppat.1013620" target="_blank" rel="noopener">
+            <em>Cytoplasmic sequestering of a fungal stress-activated MAPK in response to a host plant phenolic acid</em>
+          </a>
+        </span>.
         PLOS Pathogens.
       </li>
 
       <li>
-        <strong>Levi O</strong><span class="ca" title="Corresponding author"> ✉</span>,
+        <span class="me">Levi O</span><span class="ca" title="Corresponding author">✉</span>,
         Zuchman R, Sleman N, Koren R, Khamaisi H,
-        Horwitz BA<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1128/mbio.01909-25" target="_blank" rel="noopener">
-          <em>Genome-Wide CRISPRi Screen and Proteomic Profiling Identify Key Genes Related to Ferulic Acid&#39;s Antifungal Activity</em>
-        </a>.
-        mBio (2025).
+        Horwitz BA<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://journals.asm.org/doi/abs/10.1128/mbio.01909-25" target="_blank" rel="noopener">
+            <em>Genome-Wide CRISPRi Screen and Proteomic Profiling Identify Key Genes Related to Ferulic Acid's Antifungal Activity</em>
+          </a>
+        </span>.
+        mBio.
       </li>
 
       <li>
         Lundquist KP, Hudson ES, Gram ML, Pestalozzi M, Puglielli RB,
-        <strong>Levi O</strong>, Arava YS, Vilensky A, Baasov T, Gotfredsen CH,
-        Clausen MH<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1016/j.slasd.2025.100215" target="_blank" rel="noopener">
-          <em>Design, Synthesis, and Screening of an RNA Optimized Fluorinated Fragment Library</em>
-        </a>.
-        SLAS Discovery (2025).
-      </li>
-
-      <li>
-        <strong>Levi O</strong>, Mallik M, Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.3390/genes14020462" target="_blank" rel="noopener">
-          <em>ThrRS-mediated translation regulation of the RNA polymerase III subunit RPC10 occurs through an ASL-like structure and affects tRNA levels</em>
-        </a>.
-        Genes (2023).
-      </li>
-
-      <li>
-        Garin S, <strong>Levi O</strong>, Forrest ME, Antonellis A,
-        Arava YS<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1080/15476286.2021.1935116" target="_blank" rel="noopener">
-          <em>Comprehensive characterization of mRNAs associated with yeast cytosolic aminoacyl-tRNA synthetases</em>
-        </a>.
-        RNA Biology (2021).
-      </li>
-
-      <li>
-        <strong>Levi O</strong>, Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1007/s00294-021-01168-1" target="_blank" rel="noopener">
-          <em>RNA modifications as a common denominator between tRNA and mRNA</em>
-        </a>.
-        Current Genetics (2021).
-      </li>
-
-      <li>
-        <strong>Levi O</strong>, Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1093/nar/gkaa1178" target="_blank" rel="noopener">
-          <em>Pseudouridine-mediated translation control of mRNA by methionine aminoacyl tRNA synthetase</em>
-        </a>.
-        Nucleic Acids Research (2021).
-      </li>
-
-      <li>
-        Garin S, <strong>Levi O</strong>, Cohen B, Golani A,
-        Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.3390/genes11101185" target="_blank" rel="noopener">
-          <em>Localization and RNA Binding of Mitochondrial Aminoacyl tRNA synthetases</em>
-        </a>.
-        Genes (2020).
-      </li>
-
-      <li>
-        <strong>Levi O</strong>, Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1007/s00284-019-01851-0" target="_blank" rel="noopener">
-          <em>Expanding the CRISPR/Cas9 toolbox for gene engineering in S. cerevisiae</em>
-        </a>.
-        Current Microbiology (2020).
-      </li>
-
-      <li>
-        <strong>Levi O</strong>, Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1371/journal.pbio.3000274" target="_blank" rel="noopener">
-          <em>mRNA association by aminoacyl tRNA synthetase occurs at an anticodon mimic and autoregulates translation in response to tRNA levels</em>
-        </a>.
-        PLOS Biology (2019).
-      </li>
-
-      <li>
-        <strong>Levi O</strong>, Garin S, Arava Y<span class="ca" title="Corresponding author"> ✉</span>.
-        <a href="https://doi.org/10.1002/wrna.1564" target="_blank" rel="noopener">
-          <em>RNA mimicry in post-transcriptional regulation by aminoacyl tRNA synthetases</em>
-        </a>.
-        WIREs RNA (2019).
+        <span class="me">Levi O</span>, Arava YS, Vilensky A, Baasov T, Gotfredsen CH,
+        Clausen MH<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://www.sciencedirect.com/science/article/pii/S2472555225000438" target="_blank" rel="noopener">
+            <em>Design, Synthesis, and Screening of an RNA Optimized Fluorinated Fragment Library</em>
+          </a>
+        </span>.
+        SLAS Discovery.
       </li>
     </ol>
-  </section>
-</main>
 
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Levi Lab. All rights reserved.
-    </div>
+    <h2 class="pub-year">2023</h2>
+    <ol class="pub-list">
+      <li>
+        <span class="me">Levi O</span>, Mallik M, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://www.mdpi.com/2073-4425/15/4/545" target="_blank" rel="noopener">
+            <em>ThrRS-mediated translation regulation of the RNA polymerase III subunit RPC10 occurs through an ASL-like structure and affects tRNA levels</em>
+          </a>
+        </span>.
+        Genes.
+      </li>
+    </ol>
+
+    <h2 class="pub-year">2021</h2>
+    <ol class="pub-list">
+      <li>
+        Garin S, <span class="me">Levi O</span>, Forrest ME, Antonellis A, Arava YS<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://www.tandfonline.com/doi/abs/10.1080/15476286.2021.1884318" target="_blank" rel="noopener">
+            <em>Comprehensive characterization of mRNAs associated with yeast cytosolic aminoacyl-tRNA synthetases</em>
+          </a>
+        </span>.
+        RNA Biology.
+      </li>
+
+      <li>
+        <span class="me">Levi O</span>, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://doi.org/10.1007/s00294-021-01168-1" target="_blank" rel="noopener">
+            <em>RNA modifications as a common denominator between tRNA and mRNA</em>
+          </a>
+        </span>.
+        Current Genetics.
+      </li>
+
+      <li>
+        <span class="me">Levi O</span>, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://doi.org/10.1093/nar/gkab775" target="_blank" rel="noopener">
+            <em>Pseudouridine-mediated translation control by methionine aminoacyl tRNA synthetase</em>
+          </a>
+        </span>.
+        Nucleic Acids Research.
+      </li>
+    </ol>
+
+    <h2 class="pub-year">2020</h2>
+    <ol class="pub-list">
+      <li>
+        Garin S, <span class="me">Levi O</span>, Cohen B, Golani A, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://www.mdpi.com/2073-4425/11/7/754" target="_blank" rel="noopener">
+            <em>Localization and RNA binding of mitochondrial aminoacyl tRNA synthetases</em>
+          </a>
+        </span>.
+        Genes.
+      </li>
+
+      <li>
+        <span class="me">Levi O</span>, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://doi.org/10.1007/s00284-020-02160-9" target="_blank" rel="noopener">
+            <em>Expanding the CRISPR/Cas9 toolbox for gene engineering in S. cerevisiae</em>
+          </a>
+        </span>.
+        Current Microbiology.
+      </li>
+    </ol>
+
+    <h2 class="pub-year">2019</h2>
+    <ol class="pub-list">
+      <li>
+        <span class="me">Levi O</span>, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://doi.org/10.1371/journal.pbio.3000270" target="_blank" rel="noopener">
+            <em>mRNA association by aminoacyl tRNA synthetase occurs at an anticodon mimic and autoregulates translation in response to tRNA levels</em>
+          </a>
+        </span>.
+        PLOS Biology.
+      </li>
+
+      <li>
+        <span class="me">Levi O</span>, Garin S, Arava Y<span class="ca" title="Corresponding author">✉</span>.
+        <span class="pub-title">
+          <a href="https://onlinelibrary.wiley.com/doi/10.1002/wrna.1552" target="_blank" rel="noopener">
+            <em>RNA mimicry in post-transcriptional regulation by aminoacyl tRNA synthetases</em>
+          </a>
+        </span>.
+        WIREs RNA.
+      </li>
+    </ol>
+
+    <div class="pub-note">✉ denotes corresponding author.</div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">© 2025 Levi Lab. All rights reserved.</div>
   </footer>
-
-  <script src="site.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
