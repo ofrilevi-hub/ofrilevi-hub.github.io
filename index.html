@@ -1,97 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Levi Lab | Tel-Hai University</title>
-  <meta name="description" content="Levi Lab at Tel-Hai University (Kiryat Shmona): fungal resistance mechanisms, CRISPRi screens, plant-derived antifungal compounds, and multi-omics." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fungal Resistance Mechanisms Lab – Home</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for typography (e.g., Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo" />
-        <div class="brand-title">
-          <strong>Levi Lab</strong>
-          <span>Tel-Hai University (Kiryat Shmona) | MIGAL</span>
-        </div>
-      </div>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-        <a href="opportunities.html">Opportunities</a>
-        <a href="contact.html">Contact</a>
+  <header>
+    <div class="header-container">
+      <!-- Tel-Hai logo and site name -->
+      <a href="index.html" class="logo-link">
+        <img src="assets/telhai-logo.png" alt="Tel-Hai College Logo" class="logo">
+        <span class="site-name">Fungal Resistance Mechanisms Lab</span>
+      </a>
+      <!-- Hamburger menu button for mobile nav -->
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+        ☰
+      </button>
+      <!-- Navigation menu -->
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="people.html">People</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <div class="badge">Pathogenic fungi | Antifungal resistance | CRISPRi | Multi-omics</div>
-        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
-        <p>
-          The Levi Lab is being established at Tel-Hai University (Kiryat Shmona). We study how pathogenic fungi adapt to
-          antifungal stress using functional genomics and multi-omics, with an emphasis on CRISPRi screens and plant-derived
-          antifungal compounds.
-        </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="research.html">Explore research</a>
-          <a class="btn" href="opportunities.html">Join the lab</a>
-        </div>
-      </div>
+  <main>
+    <!-- Hero section with lab title & tagline -->
+    <section class="hero">
+      <h1>Fungal Resistance Mechanisms Lab</h1>
+      <p>Exploring how fungi resist treatments, with innovative biotechnology at Tel-Hai College.</p>
+    </section>
 
-      <aside class="hero-card">
-        <h2 style="margin:0 0 10px;">Quick links</h2>
-        <p style="margin:0 0 12px; color:rgba(33,32,33,0.85);">
-          Official MIGAL profile (current):
-        </p>
-        <a class="btn" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">MIGAL profile page</a>
-        <div style="height:12px;"></div>
-        <p style="margin:0; color:rgba(33,32,33,0.75); font-size:13px;">
-          This site will host lab updates, publications, team information, and opportunities.
-        </p>
-      </aside>
-    </div>
-  </section>
-
-  <main class="main">
-    <div class="container">
-      <div class="grid">
-        <section class="card">
-          <h2>CRISPRi screens</h2>
-          <p>Genome-scale perturbation screens, resistance mapping, and functional validation.</p>
-        </section>
-
-        <section class="card">
-          <h2>Plant-derived antifungals</h2>
-          <p>Extract libraries, bioactivity-guided fractionation, and mode-of-action discovery.</p>
-        </section>
-
-        <section class="card">
-          <h2>Multi-omics</h2>
-          <p>Transcriptomics, proteomics, and high-throughput phenotyping for integrative models.</p>
-        </section>
-
-        <section class="card">
-          <h2>Host-pathogen regulation</h2>
-          <p>Regulatory programs that shape virulence, stress adaptation, and antifungal responses.</p>
-        </section>
-      </div>
-    </div>
+    <!-- About/Overview section -->
+    <section aria-labelledby="overview" class="content-section">
+      <h2 id="overview">About Our Research</h2>
+      <p>Our lab focuses on understanding the mechanisms of fungal resistance to antifungal compounds and developing new strategies to overcome these challenges. We integrate molecular biology, genomics, and bioinformatics to explore how fungi adapt and how we can counteract their defense mechanisms.</p>
+      <p>Based at Tel-Hai Academic College in the Upper Galilee, we are committed to advancing science and training the next generation of researchers in our region.</p>
+      <p><a href="research.html">Learn more about our research areas <span aria-hidden="true">&raquo;</span></a></p>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Levi Lab. All rights reserved.
-    </div>
+  <footer>
+    <p>&copy; 2025 Fungal Resistance Mechanisms Lab – Affiliated with <a href="https://www.telhai.ac.il" target="_blank" rel="noopener" aria-label="Tel-Hai College (opens in new tab)">Tel-Hai Academic College</a>.</p>
   </footer>
 
-  <script src="site.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- Mobile menu toggle script (for hamburger icon) -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav   = document.getElementById('main-nav');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      mainNav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
