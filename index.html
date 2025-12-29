@@ -3,10 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Levi Lab</title>
+  <title>Levi Lab | Home</title>
+  <meta name="description" content="Levi Lab: antifungal resistance, CRISPRi screens, plant-derived antifungal compounds." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="font-family: Arial, sans-serif; direction: rtl; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.6;">
-  <h1>Levi Lab</h1>
-  <p>האתר בבנייה. בקרוב.</p>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html">Levi Lab</a>
+        <small>Tel-Hai | MIGAL</small>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">בית</a>
+        <a href="research.html">מחקר</a>
+        <a href="publications.html">פרסומים</a>
+        <a href="people.html">אנשים</a>
+        <a href="values.html">ערכים</a>
+        <a href="opportunities.html">הזדמנויות</a>
+        <a href="contact.html">יצירת קשר</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="hero">
+        <div class="badge">פטריות פתוגניות | עמידות לאנטיפטרייתיים | CRISPRi | רב-אומיקס</div>
+        <h1 class="h1">מעבדה למנגנוני עמידות וסבילות בפטריות</h1>
+        <p class="subtitle">
+          האתר בבנייה. כאן יהיה תקציר קצר של המעבדה, תחומי מחקר מרכזיים, ועדכונים.
+        </p>
+        <a class="btn" href="research.html">למחקר</a>
+        <a class="btn" href="opportunities.html">הצטרפות למעבדה</a>
+      </section>
+
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>מסכי CRISPRi</h3>
+          <p>מסכים גנומיים רחבי היקף, מיפוי גנים תומכי עמידות, ולידציה פונקציונלית.</p>
+        </div>
+        <div class="card">
+          <h3>תרכובות ממקור צמחי</h3>
+          <p>ספריות תמציות, פרקציונציה מונחית פעילות, זיהוי מולקולות פעילות ואפיון מנגנון.</p>
+        </div>
+        <div class="card">
+          <h3>רב-אומיקס</h3>
+          <p>שילוב טרנסקריפטומיקה, פרוטאומיקה, ופנוטיפינג עתיר תפוקה לצורך בניית מודלים.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">עדכונים</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="kicker">2025-12-XX</div>
+          <h3>פרסום חדש</h3>
+          <p>כאן נוסיף מאמרים חדשים עם DOI וקישור.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">2025-11-XX</div>
+          <h3>כנס / הרצאה</h3>
+          <p>כאן נוסיף כנסים, סמינרים, ומשרות.</p>
+        </div>
+      </div>
+
+      <hr class="hr" />
+
+      <div class="card">
+        <h3>עמוד מוסדי</h3>
+        <p>
+          <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Dr. Ofri Levi (MIGAL)</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Levi Lab. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
