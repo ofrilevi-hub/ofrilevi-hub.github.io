@@ -180,3 +180,26 @@ a:hover{color:var(--telhai-green);}
   .brand-title span{display:none;}
   .nav{gap:10px;}
 }
+/* People photos: grayscale by default, color on hover */
+.person-photo,
+.person-card img,
+.person-row img,
+.card img {
+  filter: grayscale(100%);
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+.person-photo:hover,
+.person-card img:hover,
+.person-row img:hover,
+.card img:hover {
+  filter: grayscale(0%);
+  transform: translateY(-1px);
+}
+
+/* Make sure headshots fit fully inside the frame (no cropping) */
+.person-card img,
+.person-photo {
+  object-fit: contain !important;
+  background: #f6f6f6; /* subtle background so non-cropped photos look clean */
+}
