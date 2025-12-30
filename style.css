@@ -1,22 +1,16 @@
 :root{
-  /* Brand */
   --telhai-green:#64a839;
-
-  /* Neutrals */
-  --ink:#1f1f1f;
+  --ink:#212021;
   --muted:#6f6f6f;
   --bg:#ffffff;
   --bg-soft:#f2f6ee;
-  --line:rgba(31,31,31,0.12);
+  --line:rgba(33,32,33,0.12);
 
-  /* Layout */
   --max:1100px;
   --radius:16px;
 }
 
-/* =========================
-   Reset & Base
-========================= */
+/* ================= RESET ================= */
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
 
@@ -27,31 +21,27 @@ body{
   line-height:1.65;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
 }
 
-a:hover{
-  color:var(--telhai-green);
-}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--telhai-green);}
 
-/* =========================
-   Layout
-========================= */
+/* ================= LAYOUT ================= */
 .container{
   width:min(var(--max),calc(100% - 40px));
   margin:0 auto;
 }
 
-/* =========================
-   Header
-========================= */
+/* ================= HEADER ================= */
 .site-header{
   position:sticky;
   top:0;
   z-index:50;
-  height:120px;
+  height:110px;
   background:rgba(255,255,255,0.96);
   backdrop-filter:saturate(160%) blur(10px);
   border-bottom:1px solid var(--line);
@@ -62,35 +52,36 @@ a:hover{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:32px;
+  gap:24px;
 }
 
-/* =========================
-   Branding (Top Left)
-========================= */
+/* ===== Branding ===== */
 .brand{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:16px;
+  max-width:420px;
 }
 
-.brand img.logo-telhai{
-  height:90px;
+/* לוגו תל־חי – הגבלה קשיחה */
+.logo-telhai{
+  height:72px;
+  max-height:72px;
   width:auto;
-  display:block;
+  object-fit:contain;
+  flex-shrink:0;
 }
 
+/* Levi Lab */
 .brand-title{
-  font-size:28px;
+  font-size:18px;
   font-weight:700;
-  letter-spacing:-0.02em;
-  color:var(--ink);
+  letter-spacing:-0.01em;
+  color:#1f1f1f;
   white-space:nowrap;
 }
 
-/* =========================
-   Navigation
-========================= */
+/* ================= NAV ================= */
 .nav{
   display:flex;
   align-items:center;
@@ -101,17 +92,9 @@ a:hover{
   position:relative;
   padding:10px 16px;
   font-size:14px;
-  color:rgba(31,31,31,0.85);
+  color:rgba(33,32,33,0.85);
   border-radius:999px;
-  transition:
-    background 160ms ease,
-    color 160ms ease;
-}
-
-.nav a:hover,
-.nav a[aria-current="page"]{
-  background:rgba(100,168,57,0.14);
-  color:var(--ink);
+  transition:background 160ms ease,color 160ms ease;
 }
 
 .nav a::after{
@@ -123,8 +106,14 @@ a:hover{
   height:2px;
   background:var(--telhai-green);
   opacity:0;
-  transform:scaleX(0.7);
-  transition:opacity 160ms ease, transform 160ms ease;
+  transform:scaleX(0.6);
+  transition:opacity 160ms ease,transform 160ms ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"]{
+  background:rgba(100,168,57,0.12);
+  color:var(--ink);
 }
 
 .nav a:hover::after,
@@ -133,241 +122,130 @@ a:hover{
   transform:scaleX(1);
 }
 
-/* =========================
-   Main
-========================= */
-.main{
-  padding:48px 0 64px;
-}
-
-/* =========================
-   Hero
-========================= */
+/* ================= HERO ================= */
 .hero{
   background:linear-gradient(180deg,var(--bg-soft),var(--bg));
   border-bottom:1px solid var(--line);
 }
 
 .hero-inner{
-  padding:56px 0 44px;
+  padding:48px 0 36px;
   display:grid;
-  grid-template-columns:1.5fr 1fr;
-  gap:36px;
-}
-
-.badge{
-  display:inline-block;
-  margin-bottom:14px;
-  padding:6px 12px;
-  font-size:12px;
-  font-weight:500;
-  color:#2f4f1e;
-  background:rgba(100,168,57,0.15);
-  border-radius:999px;
+  grid-template-columns:1.4fr 1fr;
+  gap:32px;
 }
 
 .hero h1{
-  margin:0 0 16px;
-  font-size:42px;
+  margin:0 0 14px;
+  font-size:40px;
   line-height:1.15;
   letter-spacing:-0.02em;
 }
 
 .hero p{
-  margin:0 0 18px;
+  margin:0 0 16px;
   font-size:16px;
-  color:rgba(31,31,31,0.88);
+  color:rgba(33,32,33,0.85);
 }
 
-.hero-actions{
-  display:flex;
-  gap:14px;
-  margin-top:8px;
+/* Badge */
+.badge{
+  display:inline-block;
+  margin-bottom:12px;
+  padding:6px 12px;
+  font-size:12px;
+  font-weight:600;
+  color:#2f5f1f;
+  background:rgba(100,168,57,0.15);
+  border-radius:999px;
 }
 
-/* =========================
-   Hero Card
-========================= */
+/* Hero card */
 .hero-card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:22px;
-  box-shadow:0 10px 28px rgba(0,0,0,0.06);
+  padding:20px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.06);
 }
 
-.hero-card h2{
-  margin:0 0 12px;
-  font-size:18px;
+/* ================= MAIN ================= */
+.main{
+  padding:36px 0 56px;
 }
 
-.hero-card hr{
-  border:none;
-  border-top:1px solid var(--line);
-  margin:16px 0;
+/* ================= GRID / CARDS ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:20px;
 }
 
-/* =========================
-   Buttons
-========================= */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 18px;
-  font-size:14px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:#fff;
-  cursor:pointer;
-  transition:filter 160ms ease;
-}
-
-.btn.primary{
-  background:var(--telhai-green);
-  color:#fff;
-  border-color:rgba(100,168,57,0.6);
-}
-
-.btn:hover{
-  filter:brightness(0.96);
-}
-
-/* =========================
-   Lists & Utilities
-========================= */
-.clean-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-
-.clean-list li{
-  margin-bottom:6px;
-}
-
-.small{
-  font-size:13px;
-  color:var(--muted);
-}
-
-.muted{
-  color:var(--muted);
-}
-
-/* =========================
-   Cards & Sections
-========================= */
 .card{
+  grid-column:span 6;
   background:#fff;
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:22px;
+  padding:20px;
 }
 
-.card h2{
-  margin:0 0 12px;
+.card h3{
+  margin:0 0 8px;
   font-size:18px;
 }
 
-/* =========================
-   Funding Logos
-========================= */
+.card p{
+  margin:0;
+  color:rgba(33,32,33,0.85);
+}
+
+/* ================= FUNDING ================= */
 .funding-logos{
   display:flex;
   flex-wrap:wrap;
-  gap:20px 26px;
+  gap:18px;
   align-items:center;
-  margin-top:14px;
-  padding-top:14px;
-  border-top:1px solid rgba(0,0,0,0.08);
+  margin-top:12px;
 }
 
 .funding-logos img{
-  height:120px;
+  height:90px;
   width:auto;
-  transition:transform 160ms ease;
+  object-fit:contain;
 }
 
-.funding-logos img:hover{
-  transform:translateY(-2px);
-}
-
-/* =========================
-   Footer
-========================= */
+/* ================= FOOTER ================= */
 .footer{
   border-top:1px solid var(--line);
-  padding:26px 0;
+  padding:22px 0;
   font-size:13px;
   color:var(--muted);
 }
 
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-}
-
-/* =========================
-   Accessibility
-========================= */
+/* ================= ACCESSIBILITY ================= */
 .skip-link{
   position:absolute;
   left:-999px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
 }
 
 .skip-link:focus{
   left:16px;
   top:16px;
-  width:auto;
-  height:auto;
   padding:10px 12px;
   background:#fff;
-  border:1px solid rgba(0,0,0,0.2);
+  border:1px solid var(--line);
   border-radius:10px;
   z-index:9999;
 }
 
-/* =========================
-   Responsive
-========================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width:900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .brand img.logo-telhai{
-    height:72px;
-  }
-
-  .brand-title{
-    font-size:22px;
-  }
+  .hero-inner{grid-template-columns:1fr;}
+  .hero h1{font-size:32px;}
+  .card{grid-column:span 12;}
 }
 
 @media (max-width:560px){
-  .site-header{
-    height:auto;
-  }
-
-  .header-inner{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:16px 0;
-    gap:12px;
-  }
-
-  .nav{
-    flex-wrap:wrap;
-  }
+  .logo-telhai{height:56px;}
+  .brand-title{font-size:16px;}
 }
