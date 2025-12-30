@@ -9,21 +9,65 @@
   <script defer src="site.js"></script>
 
   <style>
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px;}
-    .kicker{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.12);background:rgba(0,0,0,0.02);margin-bottom:10px;}
-    h1{font-size:42px;line-height:1.1;margin:6px 0 10px;}
-    .lead{margin:0 0 18px;color:rgba(0,0,0,0.72);max-width:90ch;line-height:1.6;}
-    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start;}
-    .card{border:1px solid rgba(0,0,0,0.10);border-radius:16px;padding:18px;background:#fff;}
-    .card h2{margin:0 0 10px;font-size:18px;}
-    .row{margin:10px 0 0;line-height:1.6;color:rgba(0,0,0,0.82);}
-    .row .label{display:inline-block;min-width:92px;color:rgba(0,0,0,0.62);font-size:13px;}
-    a{color:inherit;}
-    .btn{display:inline-block;margin-top:14px;padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.14);text-decoration:none;color:inherit;}
-    .btn:hover{opacity:.85;}
-    .muted{color:rgba(0,0,0,0.68);font-size:13px;margin-top:10px;}
-    .mini{font-size:13px;color:rgba(0,0,0,0.78);line-height:1.6;}
-    @media(max-width:860px){.grid{grid-template-columns:1fr;}}
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 38px 22px 80px;
+    }
+
+    .lead {
+      margin-bottom: 24px;
+      max-width: 90ch;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 10px;
+    }
+
+    @media(max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card h2 {
+      font-size: 20px;
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 6px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .row {
+      margin-top: 8px;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .row .label {
+      display: inline-block;
+      min-width: 92px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .mini {
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 12px;
+    }
   </style>
 </head>
 
@@ -48,9 +92,11 @@
     </div>
   </header>
 
+
   <main class="wrap">
-    <span class="kicker">Contact</span>
+    <span class="badge">Contact</span>
     <h1>Contact</h1>
+
     <p class="lead">
       For research collaborations, student positions, or general inquiries, please contact the PI or the lab office.
     </p>
@@ -73,17 +119,16 @@
 
       <section class="card">
         <h2>Location</h2>
-
         <div class="mini">
           <strong>Tel-Hai University (Kiryat Shmona)</strong><br/>
           Eastern campus, Kiryat Shmona, Israel
         </div>
 
-        <p class="muted" style="margin-top:12px;">
+        <p class="muted">
           For meetings, please email in advance to coordinate access and directions.
         </p>
 
-        <h2 style="margin-top:18px;">Lab office</h2>
+        <h2 style="margin-top: 22px;">Lab office</h2>
         <div class="row"><span class="label">Lab manager</span> Hazem Khamaisi</div>
         <div class="row"><span class="label">Email</span> <a href="mailto:hazemkh@migal.org.il">hazemkh@migal.org.il</a></div>
 
@@ -91,7 +136,8 @@
       </section>
     </div>
 
-    <section class="card" style="margin-top:16px;">
+
+    <section class="card" style="margin-top: 26px;">
       <h2>Quick links</h2>
       <div class="mini">
         <a href="opportunities.html">Open positions</a><br/>
@@ -99,7 +145,9 @@
         <a href="research.html">Research</a>
       </div>
     </section>
+
   </main>
+
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -107,6 +155,8 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
