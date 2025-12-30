@@ -1,503 +1,228 @@
-:root {
-  --telhai-green: #64a839;
-  --ink: #212021;
-  --muted: #6f6f6f;
-  --bg: #ffffff;
-  --bg-soft: #f5f7f2;
-  --line: rgba(33, 32, 33, 0.14);
+/* ===========================
+   Levi Lab — Tel-Hai University
+   Academic green theme
+   =========================== */
 
-  --max-width: 1100px;
-  --radius: 16px;
+/* ---------- FONTS ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Tel-Hai green palette */
+  --green-dark: #006F3C;
+  --green-mid: #008651;
+  --green-light: #00A862;
+  --green-bg: #E8F5E9;
+
+  /* neutrals */
+  --text: #1f1f1f;
+  --text-light: #404040;
+  --line: rgba(0,0,0,0.12);
+  --bg-main: #ffffff;
+
+  --radius: 14px;
+  --maxw: 1020px;
 }
 
-/* Reset בסיסי */
-*,
-*::before,
-*::after {
+/* ---------- GLOBAL ---------- */
+* {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
+  background: var(--bg-main);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
-  font-size: 15px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* קישורים */
 a {
-  color: inherit;
+  color: var(--green-mid);
   text-decoration: none;
 }
-
 a:hover {
-  color: var(--telhai-green);
+  color: var(--green-dark);
+  text-decoration: underline;
 }
 
-/* קונטיינר מרכזי */
+/* ---------- LAYOUT ---------- */
 .container {
-  width: min(var(--max-width), 100% - 40px);
+  max-width: var(--maxw);
   margin: 0 auto;
+  padding: 0 22px;
 }
 
-/* כפתור Skip ל־Accessibility (אם קיים) */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.main {
+  padding: 36px 0 80px;
 }
 
-.skip-link:focus {
-  left: 16px;
-  top: 16px;
-  width: auto;
-  height: auto;
-  padding: 8px 12px;
-  background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+.section {
+  margin-top: 48px;
 }
 
-/* ========================= */
-/* Header                    */
-/* ========================= */
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--green-bg);
+  color: var(--green-dark);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
 
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--green-dark);
+}
+h1 { font-size: 34px; margin: 12px 0 14px; }
+h2 { font-size: 26px; margin: 24px 0 10px; }
+h3 { font-size: 20px; margin: 18px 0 6px; }
+
+p {
+  margin: 8px 0 14px;
+  color: var(--text-light);
+  max-width: 90ch;
+}
+
+/* ---------- HEADER NAV ---------- */
 .site-header {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: saturate(150%) blur(8px);
-  border-bottom: 1px solid var(--line);
+  z-index: 50;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  height: 80px;
+  min-height: 72px;
 }
 
-/* מותג - לוגו + טקסט */
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .brand-logo {
-  height: 52px;
-  width: auto;
-  display: block;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
+  width: 46px;
+  border-radius: var(--radius);
+  margin-right: 12px;
 }
 
 .brand-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  color: var(--green-dark);
 }
 
-/* ניווט עליון */
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
-}
-
+/* NAVIGATION LINKS */
 .nav a {
-  position: relative;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.75);
+  margin-left: 22px;
+  font-size: 15px;
+  color: var(--text);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .15s ease;
+}
+
+.nav a:hover {
+  border-color: var(--green-light);
+  color: var(--green-dark);
 }
 
 .nav a.active,
 .nav a[aria-current="page"] {
-  background-color: rgba(100, 168, 57, 0.12);
-  color: #111111;
+  border-bottom: 2px solid var(--green-dark);
+  color: var(--green-dark);
+  font-weight: 500;
 }
 
-/* ========================= */
-/* טיפוגרפיה כללית          */
-/* ========================= */
-
-h1,
-h2,
-h3 {
-  margin: 0 0 8px;
-  font-weight: 600;
-  color: #111111;
-}
-
-h1 {
-  font-size: 32px;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: 22px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-p {
-  margin: 0 0 10px;
-}
-
-/* טקסט מודגש ראשון בראש עמוד */
-.lead {
-  font-size: 15px;
-  max-width: 80ch;
-  color: rgba(0, 0, 0, 0.82);
-}
-
-/* תג קטנטן בראש עמוד - כמו Research / Opportunities וכו */
-.badge {
+/* ---------- BUTTONS ---------- */
+.btn, button {
   display: inline-block;
-  font-size: 12px;
-  padding: 4px 10px;
+  padding: 9px 18px;
+  color: #fff;
+  background: var(--green-mid);
   border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: rgba(0, 0, 0, 0.02);
-  margin-bottom: 10px;
-}
-
-/* ========================= */
-/* Layout כללי               */
-/* ========================= */
-
-.main {
-  padding: 32px 0 40px;
-}
-
-/* בלוקים סטנדרטיים של קטעים */
-.section {
-  margin-top: 26px;
-}
-
-/* כרטיס בסיסי - טקסט במסגרת */
-.card {
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background-color: #ffffff;
-  padding: 16px 18px;
-  margin-top: 14px;
-}
-
-/* גריד לשני טורים */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 12px;
-}
-
-/* כרטיס קטן - אזורי מחקר וכו */
-.mini-card {
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background-color: #fafafa;
-  padding: 12px 14px;
-  font-size: 14px;
-}
-
-/* ========================= */
-/* עמוד הבית: Hero + חדשות  */
-/* ========================= */
-
-.hero {
-  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
-  border-bottom: 1px solid var(--line);
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 24px;
-  padding: 30px 0 26px;
-}
-
-.hero-actions {
-  margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* כפתורים כלליים */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background-color: #ffffff;
-  font-size: 14px;
+  font-size: 15px;
+  border: none;
   cursor: pointer;
+  text-decoration: none;
+  transition: background .15s ease;
 }
-
-.btn.primary {
-  background-color: var(--telhai-green);
-  color: #ffffff;
-  border-color: rgba(100, 168, 57, 0.6);
-}
-
 .btn:hover {
-  filter: brightness(0.97);
+  background: var(--green-dark);
 }
 
-/* כרטיס צד ב-Hero */
-.hero-card {
+/* ---------- CARDS ---------- */
+.card {
+  background: var(--green-bg);
+  padding: 20px;
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background-color: #ffffff;
-  padding: 16px 18px;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
-/* תמונת בית */
-.home-feature {
-  padding: 20px 0 0;
+/* ---------- LISTS ---------- */
+ul, ol {
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 6px;
+  color: var(--text-light);
 }
 
-.feature-figure {
-  margin: 0;
-}
-
-.feature-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-}
-
-.feature-caption {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* חדשות + מימון */
-.home-section {
-  padding: 24px 0 32px;
-}
-
-.home-two-col {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-  gap: 20px;
-}
-
-.home-block {
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background-color: #ffffff;
-  padding: 16px 18px;
-}
-
-/* רשימת חדשות */
-.news-list {
-  margin: 8px 0 0;
-  padding-left: 18px;
-}
-
-.news-list li {
-  margin-bottom: 8px;
-}
-
-/* לוגואים למימון */
-.funding-logos,
-.logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.funding-logos img,
-.logos img {
-  height: 46px;
-  width: auto;
-  display: block;
-}
-
-/* ========================= */
-/* עמוד Research             */
-/* ========================= */
-
-/* חוצץ עליון ב־research בתוך ה-container */
-.research-hero {
-  padding-top: 26px;
-  padding-bottom: 4px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  gap: 20px;
-}
-
-/* פרויקטים */
-.projects {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-top: 10px;
-}
-
+/* ---------- FIGURES ON RIGHT (Research projects) ---------- */
 .project {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+  margin-top: 38px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.project:last-of-type {
+  border-bottom: none;
+}
+
+.project img {
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background-color: #ffffff;
-  padding: 16px 18px;
 }
 
-.project.reverse {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-}
-
-.project ul {
-  margin: 8px 0 0;
-  padding-left: 18px;
-}
-
-/* מספר פרויקט עגול בצד הכותרת */
-.project-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
-}
-
-.project-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  font-size: 13px;
-  background-color: #f5f7f2;
-}
-
-/* איורים בפרויקטים */
-.figure {
-  margin: 0;
-}
-
-.figure img {
+/* ---------- TABLES (future-proof) ---------- */
+table {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 14px;
+  border-collapse: collapse;
+  margin: 12px 0 24px;
+}
+td, th {
   border: 1px solid var(--line);
+  padding: 8px 12px;
+}
+th {
+  background: var(--green-bg);
+  color: var(--green-dark);
 }
 
-.figure figcaption {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* כרטיס קטן ליד פרויקט 3 לדוגמה */
-.mini-card h3 {
-  font-size: 15px;
-}
-
-/* ========================= */
-/* Footer                    */
-/* ========================= */
-
-.footer,
+/* ---------- FOOTER ---------- */
 .site-footer {
   border-top: 1px solid var(--line);
-  padding: 16px 0;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.65);
-  background-color: #ffffff;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ========================= */
-/* התאמות רספונסיביות       */
-/* ========================= */
-
-@media (max-width: 900px) {
-  .header-inner {
-    height: auto;
-    padding: 8px 0;
-    align-items: flex-start;
-  }
-
-  .hero-inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .project,
-  .project.reverse {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .home-two-col {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .grid-2 {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .brand-logo {
-    height: 46px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  .container {
-    width: min(var(--max-width), 100% - 28px);
-  }
+  margin-top: 48px;
+  padding: 22px 0;
+  background: #fff;
+  color: var(--text-light);
+  font-size: 14px;
+  text-align: center;
 }
