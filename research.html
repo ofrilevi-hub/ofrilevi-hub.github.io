@@ -4,8 +4,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Levi Lab</title>
-  <meta name="description" content="Current research projects in the Levi Lab: CRISPRi screens, antifungal discovery, multi-omics." />
+  <meta name="description" content="Research projects in the Levi Lab." />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .research-wrap { max-width:1000px; margin:0 auto; padding:38px 22px 80px; }
+    .research-wrap h1 { margin-bottom:6px; }
+    .research-note { color:#5e5e5e; font-size:14px; margin-bottom:28px; }
+
+    .project-block {
+      background:#f6f6f6;
+      border-radius:14px;
+      padding:24px 26px;
+      margin:22px 0 42px;
+      border:1px solid #e6e6e6;
+    }
+
+    .proj-title {
+      font-size:22px;
+      margin:0 0 10px;
+      color:#007e55;
+      font-weight:600;
+    }
+    .proj-text {
+      line-height:1.65;
+      color:#2b2b2b;
+      max-width:65ch;
+      padding-right:20px;
+    }
+
+    .proj-layout {
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:30px;
+      align-items:center;
+      margin-top:16px;
+    }
+
+    .proj-img {
+      max-width:360px;
+      border-radius:8px;
+      border:1px solid #dcdcdc;
+      background:#fff;
+      padding:6px;
+    }
+
+    .proj-subnote {
+      color:#666;
+      font-size:13px;
+      margin-top:10px;
+    }
+
+    @media(max-width:880px){
+      .proj-layout { grid-template-columns:1fr; }
+      .proj-img { max-width:100%; margin-top:10px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -13,14 +67,11 @@
   <div class="container header-inner">
     <a class="brand" href="index.html">
       <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
-      <div class="brand-text">
-        <div class="brand-title">Levi Lab</div>
-      </div>
+      <div class="brand-text"><div class="brand-title">Levi Lab</div></div>
     </a>
-
-    <nav class="nav" aria-label="Primary navigation">
+    <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="research.html" aria-current="page">Research</a>
+      <a class="active" href="research.html">Research</a>
       <a href="publications.html">Publications</a>
       <a href="people.html">People</a>
       <a href="opportunities.html">Opportunities</a>
@@ -29,137 +80,102 @@
   </div>
 </header>
 
-<main class="container">
+<main class="main">
+  <div class="research-wrap">
+    <span class="badge">Research</span>
+    <h1>Current research projects</h1>
+    <p class="research-note">
+      Our lab studies how pathogenic fungi respond to antifungal stresses using genome-scale perturbations,
+      multi-omics profiling, and quantitative phenotyping.
+    </p>
 
-  <div class="badge">Research</div>
-  <h1>Current research projects</h1>
+    <!-- PROJECT 1 -->
+    <section class="project-block">
+      <h2 class="proj-title">1. Genome-wide CRISPRi screening for antifungal resistance</h2>
 
-  <section class="projects">
+      <div class="proj-layout">
+        <div>
+          <p class="proj-text">
+            We use genome-scale CRISPRi screens to perturb gene expression across the fungal genome and reveal
+            genetic determinants of resistance, sensitivity, and tolerance under antifungal stress.
+          </p>
 
-    <!-- Project 1 -->
-    <article class="project" aria-labelledby="p1">
-      <div>
-        <div class="project-head">
-          <span class="project-num">1</span>
-          <h3 id="p1">Genome-wide CRISPRi screening for antifungal resistance</h3>
+          <ul class="proj-text">
+            <li>Identification of pathways required for antifungal survival</li>
+            <li>Prioritization of genetic targets for mechanistic follow-up</li>
+            <li>Quantitative sensitivity and resistance scoring from pooled screens</li>
+          </ul>
         </div>
 
-        <p>
-          We use genome-scale CRISPRi libraries to systematically perturb gene expression and map genetic
-          determinants of sensitivity, resistance, and tolerance under antifungal stress.
-        </p>
-        <ul>
-          <li>Unbiased identification of pathways that shape antifungal response.</li>
-          <li>Prioritization of actionable targets for mechanistic follow-up.</li>
-          <li>Quantitative genotype-to-phenotype mapping under defined drug or compound exposures.</li>
-        </ul>
+        <img class="proj-img" src="assets/crispri_scheme.png" alt="CRISPRi pooled screening overview" />
       </div>
 
-      <figure class="figure">
-        <img
-          src="assets/fig-crispri-screen.png.png"
-          alt="Genome-scale CRISPRi screening workflow under antifungal stress"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption>
-          Genome-scale CRISPRi screening: pooled perturbation, selective growth under antifungal stress,
-          and sequencing-based readout to identify resistance and sensitivity determinants.
-        </figcaption>
-      </figure>
-    </article>
+      <p class="proj-subnote">
+        Genome-scale CRISPRi: pooled perturbation, selective growth, sequencing-based readout.
+      </p>
+    </section>
 
-    <!-- Project 2 -->
-    <article class="project" aria-labelledby="p2">
-      <div>
-        <div class="project-head">
-          <span class="project-num">2</span>
-          <h3 id="p2">Plant-derived antifungal discovery and quantitative phenotyping</h3>
+    <!-- PROJECT 2 -->
+    <section class="project-block">
+      <h2 class="proj-title">2. Plant-derived antifungal discovery and quantitative phenotyping</h2>
+
+      <div class="proj-layout">
+        <div>
+          <p class="proj-text">
+            We screen and fractionate plant extracts to identify small molecules with antifungal activity,
+            then quantify growth inhibition and recovery under defined conditions.
+          </p>
+
+          <ul class="proj-text">
+            <li>Bioactivity-guided fractionation to identify active molecules</li>
+            <li>Quantitative plate-based kinetics for inhibition and persistence</li>
+            <li>Synergy testing with existing antifungal drugs</li>
+          </ul>
         </div>
 
-        <p>
-          We screen plant-derived extracts and purified molecules, then quantify growth inhibition and
-          recovery dynamics using kinetic plate-reader assays to capture resistance and tolerance phenotypes.
-        </p>
-        <ul>
-          <li>Bioactivity-guided fractionation to identify active antifungal molecules.</li>
-          <li>Growth-curve based metrics to separate inhibition from tolerance and persistence.</li>
-          <li>Combination testing to identify synergistic interactions with existing antifungals.</li>
-        </ul>
+        <img class="proj-img" src="assets/growthcurve.png" alt="Quantitative antifungal growth curve profiling" />
       </div>
 
-      <figure class="figure">
-        <img
-          src="assets/fig-plate-reader-growth.png.png"
-          alt="Plate-reader based growth phenotyping and growth curve analysis"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption>
-          Quantitative growth phenotyping: standardized inoculation, plate-reader kinetics,
-          and model-based extraction of growth parameters across treatments.
-        </figcaption>
-      </figure>
-    </article>
+      <p class="proj-subnote">
+        Quantitative phenotyping: standardized inoculation, time-resolved growth dynamics, computational extraction of phenotypic parameters.
+      </p>
+    </section>
 
-    <!-- Project 3 (text only, no figure) -->
-    <article class="project" aria-labelledby="p3">
-      <div>
-        <div class="project-head">
-          <span class="project-num">3</span>
-          <h3 id="p3">Mechanistic dissection using integrative multi-omics</h3>
+    <!-- PROJECT 3 -->
+    <section class="project-block">
+      <h2 class="proj-title">3. Mechanistic dissection using integrative multi-omics</h2>
+
+      <div class="proj-layout">
+        <div>
+          <p class="proj-text">
+            We integrate CRISPRi screens with transcriptomics and proteomics to define mechanisms of antifungal response,
+            validate targets, and reveal stress adaptive regulation.
+          </p>
+
+          <ul class="proj-text">
+            <li>RNA-seq and proteomics for pathway-level phenotypic interpretation</li>
+            <li>Candidate validation through targeted perturbation</li>
+            <li>Mechanistic mapping of antifungal response networks</li>
+          </ul>
         </div>
 
-        <p>
-          We integrate transcriptomics, proteomics, and targeted validation to connect molecular programs
-          to antifungal phenotypes and define mechanism-of-action hypotheses grounded in reproducible data.
-        </p>
-        <ul>
-          <li>Pathway-level interpretation of CRISPRi hits and compound responses.</li>
-          <li>Orthogonal validation using genetics, microscopy, and functional assays.</li>
-          <li>Cross-condition comparison to identify conserved versus context-specific response modules.</li>
-        </ul>
+        <img class="proj-img" src="assets/proteomic_validation.png" alt="Multi-omics validation scheme" />
       </div>
-    </article>
 
-  </section>
+      <p class="proj-subnote">
+        Functional validation: CRISPRi knockdown, phenotypic assays, stress response profiling.
+      </p>
+    </section>
 
-  <section class="section">
-    <h2>Research areas</h2>
-    <div class="grid-2">
-      <div class="mini-card">
-        <h3>Antifungal resistance mechanisms</h3>
-        <p>Genetic determinants and pathway logic that enable resistance and tolerance under drug pressure.</p>
-      </div>
-      <div class="mini-card">
-        <h3>CRISPRi-based genomic screening</h3>
-        <p>Genome-wide perturbation to map sensitivity and resistance, followed by targeted mechanistic studies.</p>
-      </div>
-      <div class="mini-card">
-        <h3>Plant-derived antifungal compounds</h3>
-        <p>Extraction, fractionation, and identification of antifungal molecules from plant sources.</p>
-      </div>
-      <div class="mini-card">
-        <h3>Integrative multi-omics</h3>
-        <p>Transcriptomics and proteomics integration to define stress programs and phenotypic outcomes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Funding</h2>
-    <div class="funding-logos">
-      <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Charitable Trust" />
-      <img src="assets/logo-isf.jpg" alt="Israel Science Foundation" />
-      <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University" />
-    </div>
-  </section>
-
+  </div>
 </main>
 
 <footer class="site-footer">
-  <div class="container">© 2025 Levi Lab. All rights reserved.</div>
+  <div class="container footer-inner">
+    © <span id="year"></span> Levi Lab. All rights reserved.
+  </div>
 </footer>
 
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
