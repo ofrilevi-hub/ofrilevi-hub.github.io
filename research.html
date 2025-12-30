@@ -7,6 +7,72 @@
   <meta name="description" content="Research at the Levi Lab focuses on antifungal resistance, genome-scale CRISPRi screening, and plant-derived antifungal discovery." />
   <link rel="stylesheet" href="style.css" />
   <script defer src="site.js"></script>
+
+  <style>
+    /* Research page layout: consistent, clean, and responsive */
+    .research-block {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin: 20px 0;
+      transition: box-shadow 220ms ease, transform 220ms ease;
+    }
+
+    .research-block:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .research-block h2 {
+      margin-top: 0;
+    }
+
+    .research-content {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .research-text .caption {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* Same-size image container for all research blocks */
+    .research-media {
+      max-width: 360px;
+      justify-self: end;
+    }
+
+    .research-figure {
+      display: block;
+      width: 100%;
+      height: 220px;              /* key: makes images visually same size */
+      object-fit: contain;        /* keeps full figure visible */
+      background: rgba(0, 0, 0, 0.02);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .research-content {
+        grid-template-columns: 1fr;
+      }
+
+      .research-media {
+        max-width: 520px;
+        justify-self: start;
+      }
+
+      .research-figure {
+        height: 240px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -38,7 +104,7 @@
     <span class="badge">Research</span>
     <h1>Current research projects</h1>
 
-    <p style="max-width: 82ch; color: var(--text-secondary);">
+    <p style="max-width: 82ch; color: var(--text-muted);">
       Our lab studies how pathogenic fungi respond to antifungal stresses using genome-scale perturbations, multi-omics profiling, and quantitative phenotyping. We combine CRISPRi-based functional genomics with mechanistic microbiology to reveal determinants of fungal resistance and to enable discovery of antifungal strategies including plant-derived molecules.
     </p>
 
@@ -66,10 +132,15 @@
           </p>
         </div>
 
-        <!-- Smaller figure for project 1 -->
-        <figure class="research-figure" style="max-width: 70%; margin: 24px auto;">
-          <img src="assets/fig-crispri-screen.png.png" alt="CRISPRi pooled screening overview" />
-        </figure>
+        <div class="research-media">
+          <img
+            class="research-figure"
+            src="assets/fig-crispri-screen.png.png"
+            alt="CRISPRi pooled screening overview"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
     </section>
 
@@ -97,9 +168,15 @@
           </p>
         </div>
 
-        <figure class="research-figure">
-          <img src="assets/fig-plate-reader-growth.png.png" alt="Quantitative antifungal growth curve profiling" />
-        </figure>
+        <div class="research-media">
+          <img
+            class="research-figure"
+            src="assets/fig-plate-reader-growth.png.png"
+            alt="Quantitative antifungal growth curve profiling"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
     </section>
 
@@ -125,7 +202,8 @@
             Functional validation: CRISPRi knockdown, phenotypic assays, stress response profiling.
           </p>
         </div>
-        <!-- No figure needed for multi-omics block -->
+
+        <div class="research-media" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -139,7 +217,9 @@
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
