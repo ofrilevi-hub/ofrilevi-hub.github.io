@@ -40,8 +40,13 @@
     .person-role { margin: 4px 0 0; color: rgba(33,32,33,0.75); font-size: 13px; }
     .person-text { margin: 10px 0 0; color: rgba(33,32,33,0.88); line-height: 1.65; max-width: 95ch; font-size: 14px; }
     .person-links { margin: 10px 0 0; font-size: 13px; }
-    .person-links a { text-decoration: none; border-bottom: 1px solid rgba(33,32,33,0.25); }
-    .person-links a:hover { border-bottom-color: rgba(33,32,33,0.6); }
+    .person-links a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(33,32,33,0.25);
+    }
+    .person-links a:hover {
+      border-bottom-color: rgba(33,32,33,0.6);
+    }
 
     @media (max-width: 720px) {
       .person-row { grid-template-columns: 1fr; }
@@ -51,26 +56,26 @@
 </head>
 
 <body>
- <!-- Header / Nav -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Levi Lab home">
-      <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
-      <div class="brand-text">
-        <div class="brand-title">Levi Lab</div>
-      </div>
-    </a>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Levi Lab home">
+        <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
+        <div class="brand-text">
+          <div class="brand-title">Levi Lab</div>
+        </div>
+      </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a class="active" href="people.html">People</a>
-      <a href="opportunities.html">Opportunities</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a class="active" href="people.html">People</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main class="main">
     <div class="container people-wrap">
@@ -78,6 +83,9 @@
 
       <section class="people-hero">
         <h1>People</h1>
+        <p>
+          The Levi Lab brings together researchers working on fungal resistance mechanisms, CRISPRi screens,
+          and antifungal discovery across clinical and agricultural contexts.
         </p>
       </section>
 
@@ -89,16 +97,33 @@
           <img class="person-photo" src="assets/ofri.jpg.jpg" alt="Dr. Ofri Levi" />
           <div>
             <h3 class="person-name">Dr. Ofri Levi</h3>
-            <div class="person-role">Principal Investigator - Tel-Hai University (Kiryat Shmona) and MIGAL</div>
+            <div class="person-role">
+              Principal Investigator - Tel-Hai University (Kiryat Shmona) and MIGAL
+            </div>
             <p class="person-text">
               We study how pathogenic fungi adapt to antifungal stress at genetic, regulatory, and systems levels.
               Our work integrates genome-scale CRISPRi screening, mechanistic microbiology, and multi-omics to identify
               pathways that govern resistance and tolerance, and to enable antifungal discovery including plant-derived molecules.
             </p>
             <div class="person-links">
-              ✉ <a href="mailto:ofri.le@migal.org.il">ofri.le@migal.org.il</a><br/>
-              ☎ <a href="tel:+972526264128">+972-52-626-4128</a><br/>
-              Profile: <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Official MIGAL profile</a>
+              ✉ <a href="mailto:ofri.le@migal.org.il">ofri.le@migal.org.il</a><br />
+              ☎ <a href="tel:+972526264128">+972-52-626-4128</a><br />
+              Profile:
+              <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">
+                Official MIGAL profile
+              </a><br />
+              Academic profiles:
+              <a href="https://scholar.google.com/scholar?hl=en&q=Ofri+Levi" target="_blank" rel="noreferrer">
+                Google Scholar
+              </a>
+              ·
+              <a href="https://www.researchgate.net/search?q=Ofri%20Levi" target="_blank" rel="noreferrer">
+                ResearchGate
+              </a>
+              ·
+              <a href="https://orcid.org/0000-0001-5253-8257" target="_blank" rel="noreferrer">
+                ORCID
+              </a>
             </div>
           </div>
         </div>
@@ -175,6 +200,8 @@
   </footer>
 
   <script src="site.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
