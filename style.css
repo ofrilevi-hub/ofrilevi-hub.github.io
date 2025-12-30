@@ -1,235 +1,119 @@
-/* ===============================
-   Levi Lab – Core Stylesheet
-   Reset + Stable Layout
-   =============================== */
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Research | Levi Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-/* ---------- Variables ---------- */
-:root{
-  --telhai-green:#64a839;
-  --ink:#1f1f1f;
-  --muted:#666;
-  --bg:#ffffff;
-  --bg-soft:#f5f7f2;
-  --line:#e3e6de;
+<body>
 
-  --max:1100px;
-  --radius:14px;
-}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University">
+      <strong>Levi Lab</strong>
+    </a>
 
-/* ---------- Reset ---------- */
-*,
-*::before,
-*::after{
-  box-sizing:border-box;
-}
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-html,body{
-  margin:0;
-  padding:0;
-}
+<main>
 
-body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.65;
-}
+<section>
+  <div class="container">
+    <h1>Fungal resistance mechanisms and antifungal discovery</h1>
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
+    <p>
+      Our lab studies fungal resistance and tolerance, focusing on how gene-expression regulation
+      shapes antifungal stress responses in clinically and agriculturally relevant contexts.
+    </p>
 
-/* ---------- Links ---------- */
-a{
-  color:var(--telhai-green);
-  text-decoration:none;
-}
+    <p>
+      We integrate genome-scale CRISPRi screening, mechanistic microbiology,
+      plant-derived antifungal discovery, and multi-omics approaches to identify pathways
+      governing resistance and tolerance.
+    </p>
 
-a:hover{
-  text-decoration:underline;
-}
+    <div class="affiliations">
+      <ul>
+        <li>Tel-Hai University, Kiryat Shmona</li>
+        <li>MIGAL – Galilee Research Institute</li>
+      </ul>
+      <a href="https://www.migal.org.il/en/node/7790/research" target="_blank">
+        MIGAL research profile
+      </a>
+    </div>
+  </div>
+</section>
 
-/* ---------- Layout ---------- */
-.container{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 20px;
-}
+<section>
+  <div class="container">
+    <h2>Current research projects</h2>
 
-/* ---------- Header ---------- */
-.site-header{
-  background:#fff;
-  border-bottom:1px solid var(--line);
-}
+    <div class="project">
+      <div>
+        <h3>1. Genome-wide CRISPRi screening for antifungal resistance</h3>
+        <p>
+          We use genome-scale CRISPRi libraries to systematically perturb gene expression
+          and map genetic determinants of antifungal sensitivity, resistance, and tolerance.
+        </p>
+        <ul>
+          <li>Unbiased pathway discovery</li>
+          <li>Target prioritization for mechanistic studies</li>
+          <li>Quantitative genotype-phenotype mapping</li>
+        </ul>
+      </div>
 
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:72px;
-}
+      <figure>
+        <img src="assets/fig-crispri-screen.png.png" alt="CRISPRi screening workflow">
+        <figcaption>
+          Genome-scale CRISPRi screening strategy under antifungal stress.
+        </figcaption>
+      </figure>
+    </div>
 
-/* ---------- Branding ---------- */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+    <div class="project">
+      <div>
+        <h3>2. Plant-derived antifungal discovery and quantitative phenotyping</h3>
+        <p>
+          Plant extracts and purified compounds are screened using high-resolution growth assays
+          to distinguish inhibition, tolerance, and persistence.
+        </p>
+        <ul>
+          <li>Bioactivity-guided fractionation</li>
+          <li>Plate-reader growth kinetics</li>
+          <li>Synergy testing with existing antifungals</li>
+        </ul>
+      </div>
 
-.brand-logo{
-  height:36px;
-  width:auto;
-}
+      <figure>
+        <img src="assets/fig-plate-reader-growth.png.png" alt="Plate reader growth assay">
+        <figcaption>
+          Quantitative growth phenotyping using plate-reader kinetics.
+        </figcaption>
+      </figure>
+    </div>
 
-.brand-name{
-  font-size:16px;
-  font-weight:600;
-  color:var(--ink);
-}
+  </div>
+</section>
 
-/* ---------- Navigation ---------- */
-.nav{
-  display:flex;
-  gap:18px;
-}
+</main>
 
-.nav a{
-  font-size:14px;
-  color:#444;
-  padding:6px 8px;
-}
+<footer>
+  <div class="container">
+    © 2025 Levi Lab. All rights reserved.
+  </div>
+</footer>
 
-.nav a.active{
-  color:var(--telhai-green);
-  font-weight:600;
-}
-
-/* ---------- Main ---------- */
-.main{
-  padding:48px 0;
-}
-
-/* ---------- Intro ---------- */
-.page-intro{
-  background:var(--bg-soft);
-  border-bottom:1px solid var(--line);
-  padding:48px 0;
-}
-
-.intro-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:40px;
-}
-
-.kicker{
-  display:block;
-  font-size:13px;
-  font-weight:600;
-  color:var(--telhai-green);
-  margin-bottom:8px;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
-}
-
-.page-intro h1{
-  margin:0 0 16px;
-  font-size:34px;
-  line-height:1.2;
-}
-
-.page-intro p{
-  margin:0 0 14px;
-  color:#444;
-}
-
-/* ---------- Intro box ---------- */
-.intro-box{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:20px;
-}
-
-.intro-box h2{
-  margin:0 0 12px;
-  font-size:18px;
-}
-
-.intro-box ul{
-  margin:0 0 12px;
-  padding-left:18px;
-}
-
-/* ---------- Sections ---------- */
-.section{
-  padding:56px 0;
-}
-
-.section-soft{
-  background:var(--bg-soft);
-}
-
-/* ---------- Research blocks ---------- */
-.research-block{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:36px;
-  align-items:center;
-}
-
-.research-block.reverse{
-  grid-template-columns:1fr 1.2fr;
-}
-
-.research-text h2{
-  margin:0 0 14px;
-  font-size:26px;
-}
-
-.research-text p{
-  margin:0 0 12px;
-  color:#444;
-}
-
-/* ---------- Figures ---------- */
-.research-figure{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:16px;
-}
-
-.research-figure img{
-  width:100%;
-}
-
-.research-figure figcaption{
-  margin-top:10px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* ---------- Footer ---------- */
-.footer{
-  border-top:1px solid var(--line);
-  padding:20px 0;
-  font-size:13px;
-  color:var(--muted);
-  text-align:center;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width:900px){
-  .intro-grid,
-  .research-block,
-  .research-block.reverse{
-    grid-template-columns:1fr;
-  }
-
-  .nav{
-    gap:12px;
-  }
-}
+</body>
+</html>
