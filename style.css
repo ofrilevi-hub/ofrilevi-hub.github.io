@@ -1,119 +1,291 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Research | Levi Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-</head>
+/* ===============================
+   Levi Lab – Academic Style.css
+   Clean, stable, minimal
+   =============================== */
 
-<body>
+/* ---------- CSS Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University">
-      <strong>Levi Lab</strong>
-    </a>
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a class="active" href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="people.html">People</a>
-      <a href="opportunities.html">Opportunities</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2933;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
 
-<main>
+/* ---------- Variables ---------- */
+:root {
+  --max-width: 1100px;
+  --line: rgba(0, 0, 0, 0.12);
+  --muted: rgba(0, 0, 0, 0.65);
+  --accent: #1f3a5f;
+  --bg-soft: #f7f8fa;
+  --radius: 16px;
+}
 
-<section>
-  <div class="container">
-    <h1>Fungal resistance mechanisms and antifungal discovery</h1>
+/* ---------- Utilities ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    <p>
-      Our lab studies fungal resistance and tolerance, focusing on how gene-expression regulation
-      shapes antifungal stress responses in clinically and agriculturally relevant contexts.
-    </p>
+.main {
+  padding: 32px 0 64px;
+}
 
-    <p>
-      We integrate genome-scale CRISPRi screening, mechanistic microbiology,
-      plant-derived antifungal discovery, and multi-omics approaches to identify pathways
-      governing resistance and tolerance.
-    </p>
+.section {
+  margin: 56px 0;
+}
 
-    <div class="affiliations">
-      <ul>
-        <li>Tel-Hai University, Kiryat Shmona</li>
-        <li>MIGAL – Galilee Research Institute</li>
-      </ul>
-      <a href="https://www.migal.org.il/en/node/7790/research" target="_blank">
-        MIGAL research profile
-      </a>
-    </div>
-  </div>
-</section>
+.muted {
+  color: var(--muted);
+}
 
-<section>
-  <div class="container">
-    <h2>Current research projects</h2>
+.badge,
+.pill,
+.kicker {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.03);
+}
 
-    <div class="project">
-      <div>
-        <h3>1. Genome-wide CRISPRi screening for antifungal resistance</h3>
-        <p>
-          We use genome-scale CRISPRi libraries to systematically perturb gene expression
-          and map genetic determinants of antifungal sensitivity, resistance, and tolerance.
-        </p>
-        <ul>
-          <li>Unbiased pathway discovery</li>
-          <li>Target prioritization for mechanistic studies</li>
-          <li>Quantitative genotype-phenotype mapping</li>
-        </ul>
-      </div>
+/* ---------- Typography ---------- */
+h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 12px 0 16px;
+}
 
-      <figure>
-        <img src="assets/fig-crispri-screen.png.png" alt="CRISPRi screening workflow">
-        <figcaption>
-          Genome-scale CRISPRi screening strategy under antifungal stress.
-        </figcaption>
-      </figure>
-    </div>
+h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
 
-    <div class="project">
-      <div>
-        <h3>2. Plant-derived antifungal discovery and quantitative phenotyping</h3>
-        <p>
-          Plant extracts and purified compounds are screened using high-resolution growth assays
-          to distinguish inhibition, tolerance, and persistence.
-        </p>
-        <ul>
-          <li>Bioactivity-guided fractionation</li>
-          <li>Plate-reader growth kinetics</li>
-          <li>Synergy testing with existing antifungals</li>
-        </ul>
-      </div>
+h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
 
-      <figure>
-        <img src="assets/fig-plate-reader-growth.png.png" alt="Plate reader growth assay">
-        <figcaption>
-          Quantitative growth phenotyping using plate-reader kinetics.
-        </figcaption>
-      </figure>
-    </div>
+p {
+  margin: 10px 0;
+}
 
-  </div>
-</section>
+ul {
+  padding-left: 18px;
+  margin: 10px 0;
+}
 
-</main>
+li {
+  margin: 6px 0;
+}
 
-<footer>
-  <div class="container">
-    © 2025 Levi Lab. All rights reserved.
-  </div>
-</footer>
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
 
-</body>
-</html>
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a.active,
+.nav a[aria-current="page"] {
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Hero (Home + Research) ---------- */
+.hero,
+.research-hero {
+  background: var(--bg-soft);
+  padding: 56px 0;
+}
+
+.hero-inner,
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.lead {
+  font-size: 17px;
+  max-width: 80ch;
+}
+
+/* ---------- Cards ---------- */
+.card,
+.mini-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #ffffff;
+}
+
+.mini-card {
+  background: var(--bg-soft);
+}
+
+/* ---------- Projects (Research) ---------- */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.project.reverse {
+  direction: ltr;
+}
+
+.project-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.project-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+/* ---------- Figures ---------- */
+.figure,
+figure {
+  margin: 0;
+}
+
+.figure img,
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+}
+
+figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ---------- Grids ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ---------- Funding ---------- */
+.funding-logos {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.funding-logos img {
+  height: 48px;
+  width: auto;
+}
+
+/* ---------- Footer ---------- */
+.site-footer,
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-inner,
+  .hero-grid,
+  .project,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+}
