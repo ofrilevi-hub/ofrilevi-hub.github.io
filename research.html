@@ -4,24 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Levi Lab</title>
-  <meta name="description" content="Fungal resistance mechanisms and antifungal discovery - genome-scale CRISPRi screening, plant-derived antifungals, and integrative multi-omics." />
-  <link rel="stylesheet" href="style.css?v=2025-12-30-1" />
+  <meta name="description" content="Research focus areas of the Levi Lab: antifungal resistance mechanisms, genome-scale CRISPRi screening, plant-derived antifungal discovery, and integrative multi-omics." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="site.js"></script>
 </head>
 
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Levi Lab home">
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" loading="eager" decoding="async" />
-        <span class="brand-text">
-          <span class="brand-title">Levi Lab</span>
-          <span class="brand-subtitle">Tel-Hai University (Kiryat Shmona)</span>
-        </span>
+      <a class="brand" href="index.html">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" class="brand-logo" />
+        <div class="brand-text">
+          <div class="brand-title">Levi Lab</div>
+        </div>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="research.html" aria-current="page">Research</a>
+        <a href="research.html" aria-current="page" class="active">Research</a>
         <a href="publications.html">Publications</a>
         <a href="people.html">People</a>
         <a href="opportunities.html">Opportunities</a>
@@ -30,165 +31,112 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="research-hero" aria-labelledby="research-title">
-      <div class="hero-grid">
-        <div>
-          <div class="pill">Pathogenic fungi · Antifungal resistance · CRISPRi · Multi-omics</div>
-          <p class="page-kicker">Research</p>
-          <h1 id="research-title">Fungal resistance mechanisms and antifungal discovery</h1>
+  <!-- Main -->
+  <main class="main">
+    <div class="container">
+      <span class="badge">Research</span>
+      <h1>Fungal resistance mechanisms and antifungal discovery</h1>
 
-          <p class="lead">
-            Our lab studies fungal resistance and tolerance, with an emphasis on how gene-expression regulation shapes antifungal stress responses in clinically and agriculturally relevant contexts.
-          </p>
-          <p class="lead" style="margin-top:10px;">
-            In parallel, we investigate plant-derived antifungal molecules and leverage genome-scale CRISPRi screening to connect genes, pathways, and phenotypes, supporting the development of innovative and sustainable antifungal strategies.
-          </p>
-        </div>
+      <section class="section">
+        <p class="lead">
+          The Levi Lab studies how pathogenic fungi adapt to antifungal stress through genetic, regulatory, and systems-level mechanisms.
+          We integrate genome-scale CRISPRi screening with mechanistic microbiology and multi-omics to identify pathways that govern resistance,
+          tolerance, and persistence. In parallel, we investigate plant-derived antifungal molecules as sources for novel antifungal interventions.
+        </p>
+      </section>
 
-        <aside class="card" aria-label="Affiliations">
-          <h2 style="margin-top:0;">Affiliations</h2>
+      <!-- Projects -->
+      <section class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title">Current research directions</h2>
+
+        <div class="card">
+          <h3>Genome-wide CRISPRi screening for antifungal resistance</h3>
+          <p>
+            Systematic perturbation of gene expression using pooled CRISPR interference libraries enables high-resolution mapping of resistance
+            and sensitivity determinants. Hits are prioritized for mechanistic validation using targeted approaches.
+          </p>
           <ul>
-            <li>Tel-Hai University, Kiryat Shmona</li>
-            <li>MIGAL - Galilee Research Institute</li>
+            <li>Genotype to phenotype mapping under antifungal stress</li>
+            <li>Identification of genetic buffering pathways</li>
+            <li>Integration with proteomics and transcriptomics</li>
           </ul>
-          <a href="https://www.migal.org.il/en/node/7790/research" target="_blank" rel="noopener">MIGAL research profile</a>
-          <p class="muted" style="margin-top:10px;">
-            For collaborations, please use the Contact page.
+        </div>
+
+        <div class="card">
+          <h3>Plant-derived antifungal compounds</h3>
+          <p>
+            Extracts and purified plant molecules are screened for antifungal activity and phenotypic outcomes are quantified using kinetic growth assays.
+            Active fractions undergo structural analysis and follow-up testing for synergistic interactions with existing drugs.
           </p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="projects">
-      <h2 id="projects">Current research projects</h2>
-
-      <div class="projects">
-        <!-- Project 1 -->
-        <article class="project" aria-labelledby="p1">
-          <div>
-            <div class="project-head">
-              <span class="project-num">1</span>
-              <h3 id="p1" style="margin:0;">Genome-wide CRISPRi screening for antifungal resistance</h3>
-            </div>
-
-            <p>
-              We use genome-scale CRISPRi libraries to systematically perturb gene expression and map genetic determinants of sensitivity, resistance, and tolerance under antifungal stress.
-            </p>
-
-            <ul>
-              <li>Unbiased identification of pathways that shape antifungal response.</li>
-              <li>Prioritization of actionable targets for mechanistic follow-up.</li>
-              <li>Quantitative genotype-to-phenotype mapping under defined drug or compound exposures.</li>
-            </ul>
-          </div>
-
-          <figure class="figure">
-            <img src="assets/fig-crispri-screen.png.png"
-                 alt="Schematic overview of a genome-scale CRISPRi screening workflow"
-                 loading="lazy" decoding="async" />
-            <figcaption>
-              Genome-scale CRISPRi screening framework: pooled perturbation, selective growth under antifungal stress, and sequencing-based readout to identify resistance and sensitivity determinants.
-            </figcaption>
-          </figure>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project reverse" aria-labelledby="p2">
-          <figure class="figure">
-            <img src="assets/fig-plate-reader-growth.png.png"
-                 alt="Schematic of plate-reader based growth phenotyping and growth curve analysis"
-                 loading="lazy" decoding="async" />
-            <figcaption>
-              Quantitative growth phenotyping: standardized inoculation, plate-reader kinetics, and model-based extraction of growth parameters to compare antifungal responses across conditions.
-            </figcaption>
-          </figure>
-
-          <div>
-            <div class="project-head">
-              <span class="project-num">2</span>
-              <h3 id="p2" style="margin:0;">Plant-derived antifungal discovery and quantitative phenotyping</h3>
-            </div>
-
-            <p>
-              We screen plant-derived extracts and purified molecules, then quantify growth inhibition and recovery dynamics using kinetic plate-reader assays to capture resistance and tolerance phenotypes.
-            </p>
-
-            <ul>
-              <li>Bioactivity-guided fractionation to identify active antifungal molecules.</li>
-              <li>Growth-curve based metrics to separate inhibition from tolerance and persistence.</li>
-              <li>Combination testing to identify synergistic interactions with existing antifungals.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Project 3 (no figure provided, text-first but same “project” layout) -->
-        <article class="project" aria-labelledby="p3">
-          <div>
-            <div class="project-head">
-              <span class="project-num">3</span>
-              <h3 id="p3" style="margin:0;">Mechanistic dissection using integrative multi-omics</h3>
-            </div>
-
-            <p>
-              We integrate transcriptomics, proteomics, and targeted validation to connect molecular programs to antifungal phenotypes and define mechanism-of-action hypotheses grounded in reproducible data.
-            </p>
-
-            <ul>
-              <li>Pathway-level interpretation of CRISPRi hits and compound responses.</li>
-              <li>Orthogonal validation using genetics, microscopy, and functional assays.</li>
-              <li>Cross-condition comparison to identify conserved versus context-specific response modules.</li>
-            </ul>
-          </div>
-
-          <div class="mini-card" aria-label="Example outputs">
-            <h3 style="margin-top:0;">Typical outputs</h3>
-            <p>Ranked genetic determinants, pathway enrichments, interaction networks, and validated mechanistic models of antifungal response.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="areas">
-      <h2 id="areas">Research areas</h2>
-
-      <div class="grid-2">
-        <div class="mini-card">
-          <h3 style="margin-top:0;">Antifungal resistance mechanisms</h3>
-          <p>Genetic determinants and pathway logic that enable resistance and tolerance, including stress signaling, membrane biology, and metabolic rewiring under drug pressure.</p>
+          <ul>
+            <li>Bioactivity guided fractionation</li>
+            <li>Quantitative growth curve analysis and modeling</li>
+            <li>Compound synergy testing with clinical antifungals</li>
+          </ul>
         </div>
 
-        <div class="mini-card">
-          <h3 style="margin-top:0;">CRISPRi-based genomic screening</h3>
-          <p>Genome-wide functional genomics to map sensitivity and resistance, followed by targeted validation and mechanistic dissection of key hits.</p>
+        <div class="card">
+          <h3>Integrative multi-omics and mechanistic validation</h3>
+          <p>
+            Multi-omics datasets guide mechanistic dissection of antifungal response programs. Candidate determinants of resistance are validated
+            through genetics, microscopy, and biochemical approaches to define testable models of antifungal mode of action.
+          </p>
+          <ul>
+            <li>Transcriptomics and proteomics integration</li>
+            <li>Targeted genetic validation using CRISPR based tools</li>
+            <li>Structure function approaches for candidate pathways</li>
+          </ul>
         </div>
+      </section>
 
-        <div class="mini-card">
-          <h3 style="margin-top:0;">Plant-derived antifungal compounds</h3>
-          <p>Extraction, fractionation, and identification of antifungal molecules, including testing against pathogenic fungi and exploration of drug synergy.</p>
+      <!-- Areas -->
+      <section class="section" aria-labelledby="areas-title">
+        <h2 id="areas-title">Research areas</h2>
+
+        <div class="grid-2">
+          <div class="mini-card">
+            <h3>Antifungal resistance mechanisms</h3>
+            <p>Pathways and stress programs that drive resistance and tolerance under drug pressure.</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Functional genomics using CRISPRi</h3>
+            <p>High resolution functional mapping of genetic determinants of phenotype.</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Plant derived antifungal discovery</h3>
+            <p>Extraction, fractionation, and testing of plant compounds against fungal pathogens.</p>
+          </div>
+
+          <div class="mini-card">
+            <h3>Multi omics integration</h3>
+            <p>Proteomics and transcriptomics to define mechanistic hypotheses and response networks.</p>
+          </div>
         </div>
+      </section>
 
-        <div class="mini-card">
-          <h3 style="margin-top:0;">Integrative multi-omics</h3>
-          <p>Transcriptomics and proteomics integration to define fungal stress programs and link molecular changes to phenotypic outcomes.</p>
+      <!-- Funding -->
+      <section class="section" aria-labelledby="funding-title">
+        <h2 id="funding-title">Funding</h2>
+        <div class="logos">
+          <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Charitable Trust logo" />
+          <img src="assets/logo-isf.jpg" alt="Israel Science Foundation logo" />
+          <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
         </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="funding">
-      <h2 id="funding">Funding</h2>
-      <div class="funding-logos" aria-label="Funding logos">
-        <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Charitable Trust logo" loading="lazy" decoding="async" />
-        <img src="assets/logo-isf.jpg" alt="Israel Science Foundation logo" loading="lazy" decoding="async" />
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" loading="lazy" decoding="async" />
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      © 2025 Levi Lab. All rights reserved.
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
