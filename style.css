@@ -1,207 +1,153 @@
-:root{
-  --telhai-green:#64a839;
-  --ink:#1f1f1f;
-  --muted:#6f6f6f;
-  --bg:#ffffff;
-  --bg-soft:#f4f7f2;
-  --line:rgba(0,0,0,0.12);
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research | Levi Lab</title>
+  <meta name="description" content="Research at the Levi Lab: antifungal resistance mechanisms, CRISPRi genomic screens, plant-derived antifungal compounds, and integrative multi-omics." />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  --max:1100px;
-  --radius:14px;
-}
+<body>
 
-/* Reset */
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.65;
-  overflow-x:hidden;
-}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Levi Lab home">
+      <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University" class="brand-logo" />
+      <span class="brand-name">Levi Lab</span>
+    </a>
 
-img,svg{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-/* Layout */
-.container{
-  width:min(var(--max),calc(100% - 48px));
-  margin:0 auto;
-}
+<main class="main">
 
-/* ================= HEADER ================= */
+  <!-- Page intro -->
+  <section class="page-intro">
+    <div class="container intro-grid">
 
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#fff;
-  border-bottom:1px solid var(--line);
-}
+      <div class="intro-text">
+        <span class="kicker">Research</span>
 
-.header-inner{
-  height:88px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
+        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
 
-/* Branding */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:0;
-}
+        <p>
+          The Levi Lab studies fungal resistance and tolerance, with a particular emphasis on how
+          gene-expression regulation shapes antifungal stress responses in both clinically and
+          agriculturally relevant contexts.
+        </p>
 
-/* Tel-Hai logo – HEADER ONLY */
-.logo-telhai{
-  height:36px;
-  width:auto;
-  flex-shrink:0;
-}
+        <p>
+          In parallel, we investigate plant-derived antifungal molecules and apply genome-scale
+          CRISPRi screening to connect genes, pathways, and phenotypes that underlie resistance,
+          tolerance, and persistence.
+        </p>
+      </div>
 
-/* Levi Lab text */
-.brand-title{
-  font-size:20px;
-  font-weight:700;
-  letter-spacing:-0.01em;
-  white-space:nowrap;
-}
+      <aside class="intro-box">
+        <h2>Affiliations</h2>
+        <ul>
+          <li>Tel-Hai University, Kiryat Shmona</li>
+          <li>MIGAL – Galilee Research Institute</li>
+        </ul>
 
-/* Navigation */
-.nav{
-  display:flex;
-  gap:6px;
-}
+        <p class="small">
+          <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener">
+            MIGAL research profile
+          </a>
+        </p>
+      </aside>
 
-.nav a{
-  padding:8px 14px;
-  font-size:14px;
-  border-radius:999px;
-  color:rgba(0,0,0,0.75);
-}
+    </div>
+  </section>
 
-.nav a:hover,
-.nav a[aria-current="page"]{
-  background:rgba(100,168,57,0.14);
-  color:var(--ink);
-}
+  <!-- Research areas -->
+  <section class="section">
+    <div class="container">
+      <h2>Research areas</h2>
 
-/* ================= HERO ================= */
+      <div class="grid-2">
 
-.hero{
-  background:linear-gradient(180deg,var(--bg-soft),var(--bg));
-  border-bottom:1px solid var(--line);
-}
+        <article class="card">
+          <h3>Antifungal resistance mechanisms</h3>
+          <p>
+            We investigate genetic determinants and pathway logic that enable resistance and tolerance,
+            focusing on stress signaling, membrane biology, and metabolic rewiring under drug pressure.
+          </p>
+        </article>
 
-.hero-inner{
-  padding:48px 0 40px;
-  display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:32px;
-}
+        <article class="card">
+          <h3>CRISPRi-based genomic screening</h3>
+          <p>
+            Genome-wide CRISPRi screens are used to map sensitivity and resistance, followed by targeted
+            validation and mechanistic dissection of key hits.
+          </p>
+        </article>
 
-.hero h1{
-  margin:0 0 12px;
-  font-size:36px;
-  line-height:1.15;
-}
+        <article class="card">
+          <h3>Plant-derived antifungal compounds</h3>
+          <p>
+            We apply bioactivity-guided fractionation of plant extracts to identify antifungal molecules
+            and characterize their molecular modes of action.
+          </p>
+        </article>
 
-.hero p{
-  margin:0 0 16px;
-  color:rgba(0,0,0,0.82);
-}
+        <article class="card">
+          <h3>Integrative multi-omics</h3>
+          <p>
+            Transcriptomics and proteomics are integrated to define fungal stress programs and link
+            molecular changes to phenotypic outcomes.
+          </p>
+        </article>
 
-.hero-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:20px;
-}
+      </div>
+    </div>
+  </section>
 
-/* ================= CONTENT ================= */
+  <!-- Experimental framework -->
+  <section class="section section-soft">
+    <div class="container">
+      <h2>Experimental framework</h2>
 
-.main{
-  padding:40px 0 60px;
-}
+      <div class="grid-2">
 
-.section{
-  padding:36px 0;
-}
+        <figure class="figure-card">
+          <img src="assets/fig-crispri-screen.png.png"
+               alt="Schematic overview of genome-scale CRISPRi screening strategy" />
+          <figcaption>
+            Genome-scale CRISPRi screening strategy used to identify genes governing antifungal
+            sensitivity and resistance.
+          </figcaption>
+        </figure>
 
-.section h2{
-  margin-bottom:20px;
-}
+        <figure class="figure-card">
+          <img src="assets/fig-plate-reader-growth.png.png"
+               alt="Plate reader-based growth assays for antifungal profiling" />
+          <figcaption>
+            High-throughput growth assays using plate-reader measurements to quantify antifungal
+            responses and drug interactions.
+          </figcaption>
+        </figure>
 
-/* Cards */
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-}
+      </div>
+    </div>
+  </section>
 
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
+</main>
 
-.card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:22px;
-}
+<footer class="footer">
+  <div class="container">
+    © 2025 Levi Lab · Tel-Hai University
+  </div>
+</footer>
 
-.card h3{
-  margin-top:0;
-}
-
-/* ================= FUNDING ================= */
-
-.funding-logos{
-  display:flex;
-  align-items:center;
-  gap:28px;
-  flex-wrap:wrap;
-  margin-top:12px;
-}
-
-/* כלל זהב: לוגו מימון */
-.funding-logos img{
-  max-height:70px;
-  width:auto;
-  opacity:0.9;
-}
-
-/* Tel-Hai funding logo – קטן יותר */
-.funding-logos img.logo-telhai{
-  max-height:60px;
-}
-
-/* ================= FOOTER ================= */
-
-.footer{
-  border-top:1px solid var(--line);
-  padding:24px 0;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width:900px){
-  .hero-inner{grid-template-columns:1fr;}
-  .grid-3{grid-template-columns:1fr;}
-  .grid-2{grid-template-columns:1fr;}
-}
-
-@media (max-width:560px){
-  .brand-title{display:none;}
-}
+</body>
+</html>
