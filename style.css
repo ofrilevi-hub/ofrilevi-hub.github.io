@@ -1,13 +1,13 @@
 /* ----------------------------------------
-   Levi Lab — Global styles
+   Levi Lab - Global styles
    Tel-Hai modern academic theme
 ----------------------------------------- */
 
 /* ===== Color system ===== */
 :root {
-  --green-dark: #007e55;
-  --green: #00a56f;
-  --green-light: #89d6b1;
+  --green-dark: #016e39;          /* Tel-Hai deep green */
+  --green: #3a8f63;               /* soft leaf green */
+  --green-light: #d5efe3;         /* pale green for accents */
 
   --text-strong: #1b1b1b;
   --text-main: #323232;
@@ -151,6 +151,7 @@ li {
   font-weight: 600;
 }
 
+/* ===== Cards ===== */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--line);
@@ -160,7 +161,6 @@ li {
   transition: box-shadow .25s ease, transform .25s ease;
 }
 
-/* ===== Modern subtle hover ===== */
 .card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
   transform: translateY(-2px);
@@ -178,12 +178,13 @@ li {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  transition: background .25s ease, color .25s ease;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
 }
 
 .btn:hover {
   background: var(--green);
   color: white;
+  transform: translateY(-1px);
 }
 
 
@@ -208,7 +209,9 @@ img {
   color: var(--text-muted);
   font-size: 14px;
 }
-/* Funding block */
+
+
+/* ===== Funding block ===== */
 .funding-logos {
   display: flex;
   flex-wrap: wrap;
@@ -218,20 +221,19 @@ img {
   margin-top: 10px;
 }
 
-/* הלוגואים עצמם - גובה קטן יותר ומקסימום רוחב */
 .funding-logos img {
-  height: 70px;          /* היה כנראה 120px או ללא הגבלה - כאן הקטנה משמעותית */
+  height: 70px;
   max-width: 180px;
   object-fit: contain;
 }
 
-/* במסכים קטנים עוד יותר - קטנה נוספת */
 @media (max-width: 720px) {
   .funding-logos img {
     height: 56px;
     max-width: 140px;
   }
 }
+
 .footer-logo,
 .home-footer-logo img {
   max-width: 260px;
