@@ -4,74 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Levi Lab</title>
-  <meta name="description" content="Research projects in the Levi Lab." />
+  <meta name="description" content="Current research projects in the Levi Lab." />
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .research-wrap { max-width:1000px; margin:0 auto; padding:38px 22px 80px; }
-    .research-wrap h1 { margin-bottom:6px; }
-    .research-note { color:#5e5e5e; font-size:14px; margin-bottom:28px; }
-
-    .project-block {
-      background:#f6f6f6;
-      border-radius:14px;
-      padding:24px 26px;
-      margin:22px 0 42px;
-      border:1px solid #e6e6e6;
-    }
-
-    .proj-title {
-      font-size:22px;
-      margin:0 0 10px;
-      color:#007e55;
-      font-weight:600;
-    }
-    .proj-text {
-      line-height:1.65;
-      color:#2b2b2b;
-      max-width:65ch;
-      padding-right:20px;
-    }
-
-    .proj-layout {
-      display:grid;
-      grid-template-columns:1fr 360px;
-      gap:30px;
-      align-items:center;
-      margin-top:16px;
-    }
-
-    .proj-img {
-      max-width:360px;
-      border-radius:8px;
-      border:1px solid #dcdcdc;
-      background:#fff;
-      padding:6px;
-    }
-
-    .proj-subnote {
-      color:#666;
-      font-size:13px;
-      margin-top:10px;
-    }
-
-    @media(max-width:880px){
-      .proj-layout { grid-template-columns:1fr; }
-      .proj-img { max-width:100%; margin-top:10px; }
-    }
-  </style>
 </head>
 
 <body>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
-      <div class="brand-text"><div class="brand-title">Levi Lab</div></div>
+      <img class="brand-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University">
+      <span class="brand-title">Levi Lab</span>
     </a>
+
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a class="active" href="research.html">Research</a>
+      <a href="research.html" class="active">Research</a>
       <a href="publications.html">Publications</a>
       <a href="people.html">People</a>
       <a href="opportunities.html">Opportunities</a>
@@ -81,101 +28,112 @@
 </header>
 
 <main class="main">
-  <div class="research-wrap">
-    <span class="badge">Research</span>
+  <div class="container">
+
+    <span class="badge">Current research projects</span>
     <h1>Current research projects</h1>
-    <p class="research-note">
+
+    <p class="lead">
       Our lab studies how pathogenic fungi respond to antifungal stresses using genome-scale perturbations,
       multi-omics profiling, and quantitative phenotyping.
     </p>
 
-    <!-- PROJECT 1 -->
-    <section class="project-block">
-      <h2 class="proj-title">1. Genome-wide CRISPRi screening for antifungal resistance</h2>
+    <!-- ======================================= -->
+    <!-- 1) CRISPRi screening -->
+    <!-- ======================================= -->
+    <section class="card project">
+      <h2>1. Genome-wide CRISPRi screening for antifungal resistance</h2>
 
-      <div class="proj-layout">
+      <div class="project-grid">
         <div>
-          <p class="proj-text">
-            We use genome-scale CRISPRi screens to perturb gene expression across the fungal genome and reveal
-            genetic determinants of resistance, sensitivity, and tolerance under antifungal stress.
+          <p>
+            We use genome-scale CRISPRi screens to perturb gene expression across the fungal genome and reveal genetic determinants of resistance,
+            sensitivity, and tolerance under antifungal stress.
           </p>
-
-          <ul class="proj-text">
+          <ul>
             <li>Identification of pathways required for antifungal survival</li>
             <li>Prioritization of genetic targets for mechanistic follow-up</li>
             <li>Quantitative sensitivity and resistance scoring from pooled screens</li>
           </ul>
+          <p class="mini">
+            Genome-scale CRISPRi: pooled perturbation, selective growth, sequencing-based readout.
+          </p>
         </div>
 
-        <img class="proj-img" src="assets/crispri_scheme.png" alt="CRISPRi pooled screening overview" />
+        <figure class="figure">
+          <img src="assets/fig-crispri-workflow.png" 
+               alt="CRISPRi pooled screening overview">
+        </figure>
       </div>
-
-      <p class="proj-subnote">
-        Genome-scale CRISPRi: pooled perturbation, selective growth, sequencing-based readout.
-      </p>
     </section>
 
-    <!-- PROJECT 2 -->
-    <section class="project-block">
-      <h2 class="proj-title">2. Plant-derived antifungal discovery and quantitative phenotyping</h2>
 
-      <div class="proj-layout">
+    <!-- ======================================= -->
+    <!-- 2) Plant-derived phenotyping -->
+    <!-- ======================================= -->
+    <section class="card project">
+      <h2>2. Plant-derived antifungal discovery and quantitative phenotyping</h2>
+
+      <div class="project-grid">
         <div>
-          <p class="proj-text">
+          <p>
             We screen and fractionate plant extracts to identify small molecules with antifungal activity,
             then quantify growth inhibition and recovery under defined conditions.
           </p>
-
-          <ul class="proj-text">
+          <ul>
             <li>Bioactivity-guided fractionation to identify active molecules</li>
             <li>Quantitative plate-based kinetics for inhibition and persistence</li>
             <li>Synergy testing with existing antifungal drugs</li>
           </ul>
+          <p class="mini">
+            Quantitative phenotyping: standardized inoculation, time-resolved growth dynamics, computational extraction of phenotypic parameters.
+          </p>
         </div>
 
-        <img class="proj-img" src="assets/growthcurve.png" alt="Quantitative antifungal growth curve profiling" />
+        <figure class="figure">
+          <img src="assets/fig-growth-curves.png"
+               alt="Quantitative antifungal growth curve profiling">
+        </figure>
       </div>
-
-      <p class="proj-subnote">
-        Quantitative phenotyping: standardized inoculation, time-resolved growth dynamics, computational extraction of phenotypic parameters.
-      </p>
     </section>
 
-    <!-- PROJECT 3 -->
-    <section class="project-block">
-      <h2 class="proj-title">3. Mechanistic dissection using integrative multi-omics</h2>
 
-      <div class="proj-layout">
+    <!-- ======================================= -->
+    <!-- 3) Multi-omics mechanistic validation -->
+    <!-- ======================================= -->
+    <section class="card project">
+      <h2>3. Mechanistic dissection using integrative multi-omics</h2>
+
+      <div class="project-grid">
         <div>
-          <p class="proj-text">
+          <p>
             We integrate CRISPRi screens with transcriptomics and proteomics to define mechanisms of antifungal response,
             validate targets, and reveal stress adaptive regulation.
           </p>
-
-          <ul class="proj-text">
+          <ul>
             <li>RNA-seq and proteomics for pathway-level phenotypic interpretation</li>
             <li>Candidate validation through targeted perturbation</li>
             <li>Mechanistic mapping of antifungal response networks</li>
           </ul>
+          <p class="mini">
+            Functional validation: CRISPRi knockdown, phenotypic assays, stress response profiling.
+          </p>
         </div>
-
-        <img class="proj-img" src="assets/proteomic_validation.png" alt="Multi-omics validation scheme" />
       </div>
-
-      <p class="proj-subnote">
-        Functional validation: CRISPRi knockdown, phenotypic assays, stress response profiling.
-      </p>
     </section>
 
   </div>
 </main>
 
-<footer class="site-footer">
+<footer class="footer">
   <div class="container footer-inner">
     © <span id="year"></span> Levi Lab. All rights reserved.
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
