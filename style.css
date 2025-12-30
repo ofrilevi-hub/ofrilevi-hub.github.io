@@ -1,228 +1,168 @@
-/* ===========================
+/* =======================================
    Levi Lab — Tel-Hai University
-   Academic green theme
-   =========================== */
+   Modern academic minimal green theme
+   ======================================= */
 
-/* ---------- FONTS ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Tel-Hai green palette */
-  --green-dark: #006F3C;
-  --green-mid: #008651;
-  --green-light: #00A862;
-  --green-bg: #E8F5E9;
+  /* refined Tel-Hai style */
+  --green-dark: #0C5F3F;     /* softer than before */
+  --green-mid:  #1E8A62;
+  --green-light:#52B788;
+  --green-bg:   #F1FAF5;
 
-  /* neutrals */
-  --text: #1f1f1f;
-  --text-light: #404040;
-  --line: rgba(0,0,0,0.12);
+  --text: #222;
+  --text-muted: #555;
+  --line: rgba(0,0,0,0.10);
+
   --bg-main: #ffffff;
-
   --radius: 14px;
-  --maxw: 1020px;
+  --maxw: 1040px;
 }
 
-/* ---------- GLOBAL ---------- */
-* {
-  box-sizing: border-box;
+/* -------- Global -------- */
+*{ box-sizing:border-box; }
+
+body {
+  margin:0;
+  padding:0;
+  font-family:"Inter",system-ui,sans-serif;
+  color:var(--text);
+  background:var(--bg-main);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg-main);
-  color: var(--text);
-  font-family: "Inter", system-ui, sans-serif;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
+a { color:var(--green-mid); text-decoration:none; }
+a:hover { color:var(--green-dark); text-decoration:underline; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width:100%; display:block; }
 
-a {
-  color: var(--green-mid);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--green-dark);
-  text-decoration: underline;
-}
-
-/* ---------- LAYOUT ---------- */
 .container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 22px;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 22px;
 }
 
-.main {
-  padding: 36px 0 80px;
-}
+.main { padding:40px 0 80px; }
 
-.section {
-  margin-top: 48px;
-}
+/* -------- Headings -------- */
+h1,h2,h3,h4 { font-weight:600; color:var(--green-dark); }
 
-.badge {
-  display: inline-block;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--green-bg);
-  color: var(--green-dark);
-  margin-bottom: 10px;
-  font-weight: 500;
-}
+h1 { font-size:32px; margin:0 0 12px; }
+h2 { font-size:24px; margin:28px 0 10px; }
+h3 { font-size:18px; margin:18px 0 6px; }
 
-h1, h2, h3 {
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--green-dark);
-}
-h1 { font-size: 34px; margin: 12px 0 14px; }
-h2 { font-size: 26px; margin: 24px 0 10px; }
-h3 { font-size: 20px; margin: 18px 0 6px; }
+/* -------- Text -------- */
+p { color:var(--text-muted); max-width:90ch; margin:8px 0 16px; }
+ul,ol { color:var(--text-muted); padding-left:22px; }
 
-p {
-  margin: 8px 0 14px;
-  color: var(--text-light);
-  max-width: 90ch;
-}
-
-/* ---------- HEADER NAV ---------- */
+/* -------- Header nav -------- */
 .site-header {
-  border-bottom: 1px solid var(--line);
-  background: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:72px;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
 }
 
 .brand-logo {
-  width: 46px;
-  border-radius: var(--radius);
-  margin-right: 12px;
+  width:42px;
+  border-radius:6px;
+  margin-right:10px;
 }
 
 .brand-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--green-dark);
+  font-size:20px;
+  font-weight:600;
+  color:var(--green-dark);
 }
 
-/* NAVIGATION LINKS */
 .nav a {
-  margin-left: 22px;
-  font-size: 15px;
-  color: var(--text);
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  transition: border-color .15s ease;
-}
-
-.nav a:hover {
-  border-color: var(--green-light);
-  color: var(--green-dark);
+  margin-left:20px;
+  padding-bottom:4px;
+  font-size:15px;
+  color:var(--text-muted);
+  border-bottom:2px solid transparent;
+  transition:border-color .15s;
 }
 
 .nav a.active,
 .nav a[aria-current="page"] {
-  border-bottom: 2px solid var(--green-dark);
-  color: var(--green-dark);
-  font-weight: 500;
+  color:var(--green-dark);
+  border-bottom:2px solid var(--green-dark);
+  font-weight:500;
 }
 
-/* ---------- BUTTONS ---------- */
-.btn, button {
-  display: inline-block;
-  padding: 9px 18px;
-  color: #fff;
-  background: var(--green-mid);
-  border-radius: 999px;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background .15s ease;
-}
-.btn:hover {
-  background: var(--green-dark);
+.nav a:hover {
+  color:var(--green-mid);
+  border-bottom:2px solid var(--green-light);
 }
 
-/* ---------- CARDS ---------- */
+/* -------- Buttons -------- */
+.btn {
+  display:inline-block;
+  padding:9px 18px;
+  background:var(--green-mid);
+  color:#fff;
+  border-radius:999px;
+  font-size:15px;
+  transition:background .15s;
+}
+.btn:hover { background:var(--green-dark); }
+
+/* -------- Sections / cards -------- */
+.section { margin-top:40px; }
+
 .card {
-  background: var(--green-bg);
-  padding: 20px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(0,0,0,0.08);
+  background:var(--green-bg);
+  padding:18px 20px;
+  border-radius:var(--radius);
+  border:1px solid rgba(0,0,0,0.06);
 }
 
-/* ---------- LISTS ---------- */
-ul, ol {
-  padding-left: 20px;
-}
-li {
-  margin-bottom: 6px;
-  color: var(--text-light);
-}
-
-/* ---------- FIGURES ON RIGHT (Research projects) ---------- */
-.project {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 24px;
-  align-items: start;
-  margin-top: 38px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--line);
-}
-.project:last-of-type {
-  border-bottom: none;
+/* -------- Badge -------- */
+.badge {
+  display:inline-block;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:999px;
+  background:var(--green-bg);
+  color:var(--green-mid);
+  font-weight:500;
+  margin-bottom:12px;
 }
 
-.project img {
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
+/* -------- Logos footer -------- */
+.funding-logos img {
+  max-width:240px;         /* smaller */
+  margin:14px 24px 0 0;    /* spacing */
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:white;
+  padding:8px;
 }
 
-/* ---------- TABLES (future-proof) ---------- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 12px 0 24px;
-}
-td, th {
-  border: 1px solid var(--line);
-  padding: 8px 12px;
-}
-th {
-  background: var(--green-bg);
-  color: var(--green-dark);
-}
-
-/* ---------- FOOTER ---------- */
+/* -------- Footer -------- */
 .site-footer {
-  border-top: 1px solid var(--line);
-  margin-top: 48px;
-  padding: 22px 0;
-  background: #fff;
-  color: var(--text-light);
-  font-size: 14px;
-  text-align: center;
+  border-top:1px solid var(--line);
+  padding:24px 0;
+  background:#fff;
+  color:var(--text-muted);
+  font-size:14px;
+  margin-top:60px;
+  text-align:center;
 }
