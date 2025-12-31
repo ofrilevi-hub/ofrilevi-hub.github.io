@@ -22,8 +22,22 @@
 
 
 /* ===== Global reset ===== */
-html, body, div, span, h1, h2, h3, h4, p, ul, li, a, img {
-  margin: 0; padding: 0; border: 0;
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+a,
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 body {
@@ -53,7 +67,10 @@ body {
 
 
 /* ===== Typography ===== */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-title);
   color: var(--text-strong);
   font-weight: 600;
@@ -102,22 +119,40 @@ li {
   padding: 16px 0;
 }
 
-.brand-logo {
-  height: 136px;        /* פי 4 מגודל 34px */
-  margin-right: 10px;
+/* container for both logos */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+/* Tel-Hai logo - big */
+.brand-logo-telhai {
+  height: 136px;
   object-fit: contain;
 }
 
-/* אופציונלי: כיוונון למובייל, שלא יהיה ענק במסך קטן */
+/* Levi Lab logo - slightly smaller */
+.brand-logo-lab {
+  height: 72px;
+  object-fit: contain;
+}
+
+/* on small screens shrink both logos a bit */
 @media (max-width: 720px) {
-  .brand-logo {
+  .brand-logo-telhai {
     height: 90px;
+  }
+
+  .brand-logo-lab {
+    height: 52px;
   }
 }
 
+/* no visible lab title text near the logos */
 .brand-title {
-  font-size: 20px;
-  font-weight: 600;
+  display: none;
 }
 
 .nav a {
@@ -127,19 +162,20 @@ li {
   font-size: 15px;
   position: relative;
   padding-bottom: 3px;
-  transition: color .25s ease;
+  transition: color 0.25s ease;
 }
 
 .nav a:hover {
   color: var(--green-dark);
 }
 
-/* underline on hover */
+/* underline on hover and active */
 .nav a:hover::after,
 .nav a.active::after {
   content: "";
   position: absolute;
-  left: 0; bottom: -1px;
+  left: 0;
+  bottom: -1px;
   width: 100%;
   height: 2px;
   background: var(--green-dark);
@@ -159,6 +195,7 @@ li {
   font-weight: 600;
 }
 
+
 /* ===== Cards ===== */
 .card {
   background: var(--bg-card);
@@ -166,11 +203,11 @@ li {
   border-radius: 14px;
   padding: 22px 24px;
   margin: 20px 0;
-  transition: box-shadow .25s ease, transform .25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
 
@@ -183,15 +220,15 @@ li {
   border-radius: 999px;
   border: 1px solid var(--green-dark);
   background: var(--green-dark);
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  transition: background .25s ease, color .25s ease, transform .25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .btn:hover {
   background: var(--green);
-  color: white;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
