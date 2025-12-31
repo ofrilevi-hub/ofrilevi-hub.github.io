@@ -51,17 +51,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; height: auto; display: block; }
-
-::selection {
-  background: rgba(0, 200, 83, 0.18);
-}
+::selection { background: rgba(0, 200, 83, 0.18); }
 
 /* ===== Layout ===== */
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
 .main { padding: 64px 0 120px; }
 .section { margin: 84px 0; }
 
-/* Helpful layout utilities (optional) */
+/* Utilities */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .stack-16 > * + * { margin-top: 16px; }
@@ -105,9 +102,7 @@ a.underline,
   text-underline-offset: 3px;
   text-decoration-color: rgba(0, 200, 83, 0.35);
 }
-.main a:not(.btn):hover {
-  text-decoration-color: rgba(0, 200, 83, 0.75);
-}
+.main a:not(.btn):hover { text-decoration-color: rgba(0, 200, 83, 0.75); }
 a:focus-visible {
   outline: none;
   box-shadow: var(--ring);
@@ -129,20 +124,22 @@ a:focus-visible {
   height: 10px;
   background: linear-gradient(90deg, var(--acid), var(--teal), var(--violet));
 }
+
+/* 3 columns: brand (left), nav (right), lab badge (far right) */
 .header-inner {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   padding: 12px 0;
 }
 
-/* Logos: editorial and readable */
+/* Brand: Tel-Hai only (Levi moves to right badge) */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 26px;
-  min-width: 280px;
+  gap: 18px;
+  min-width: 260px;
 }
 .brand-logo-telhai {
   height: 150px;
@@ -150,15 +147,9 @@ a:focus-visible {
   object-fit: contain;
   filter: drop-shadow(0 10px 16px rgba(17, 24, 39, 0.08));
 }
-.brand-logo-lab {
-  height: 230px; /* increased for stronger visibility */
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 16px rgba(17, 24, 39, 0.10));
-}
 .brand-title { display: none; }
 
-/* Nav: modern underline + subtle pill hover */
+/* Nav */
 .nav {
   display: flex;
   align-items: center;
@@ -197,6 +188,33 @@ a:focus-visible {
 }
 .nav a:hover::after { transform: scaleX(1); }
 .nav a.active::after { transform: scaleX(1); }
+
+/* Levi Lab logo as right-side badge */
+.lab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(17,24,39,0.12);
+  background: rgba(255,255,255,0.86);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.lab-badge:hover {
+  background: rgba(0, 200, 83, 0.06);
+  border-color: rgba(0, 200, 83, 0.22);
+  transform: translateY(-1px);
+}
+.lab-logo {
+  height: 64px; /* smaller logo on the right */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(17, 24, 39, 0.08));
+}
+
+/* Backward-compat (if any page still uses this class) */
+.brand-logo-lab { height: 190px; width: auto; object-fit: contain; }
 
 /* ===== Badge ===== */
 .badge {
@@ -241,8 +259,6 @@ a:focus-visible {
   box-shadow: var(--shadow-lg);
   border-color: rgba(0,200,83,0.22);
 }
-
-/* Card section titles inside cards (optional) */
 .card h3 { margin-top: 0; }
 
 /* ===== Buttons ===== */
@@ -263,21 +279,16 @@ a:focus-visible {
 }
 .btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
 .btn:active { transform: translateY(0); }
+.btn.btn-ghost { background: rgba(255,255,255,0.75); border-color: rgba(17,24,39,0.12); }
 
-/* Secondary button (optional) */
-.btn.btn-ghost {
-  background: rgba(255,255,255,0.75);
-  border-color: rgba(17,24,39,0.12);
-}
-
-/* ===== Figures and media ===== */
+/* ===== Figures ===== */
 .figure img {
   border-radius: 16px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
 }
 
-/* ===== Funding block ===== */
+/* ===== Funding ===== */
 .funding-logos {
   display: flex;
   flex-wrap: wrap;
@@ -293,11 +304,7 @@ a:focus-visible {
   filter: drop-shadow(0 10px 14px rgba(17, 24, 39, 0.07));
 }
 
-/* ===== News block (CSS support for aligned icon + year) =====
-   Use one of these HTML patterns:
-   1) <ul class="news-list"><li class="news-item">...</li></ul>
-   2) Or wrap your existing list with class "news-list"
-*/
+/* ===== News block ===== */
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-item {
   display: grid;
@@ -308,7 +315,6 @@ a:focus-visible {
   border-bottom: 1px dashed rgba(17,24,39,0.14);
 }
 .news-item:last-child { border-bottom: 0; }
-
 .news-icon {
   width: 22px;
   height: 22px;
@@ -316,18 +322,13 @@ a:focus-visible {
   opacity: 0.95;
   filter: drop-shadow(0 6px 10px rgba(17, 24, 39, 0.10));
 }
-
-.news-title a {
-  font-weight: 800;
-  text-decoration: none;
-}
+.news-title a { font-weight: 800; text-decoration: none; }
 .news-title a:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
   text-decoration-color: rgba(0, 200, 83, 0.65);
 }
-
 .news-year {
   font-variant-numeric: tabular-nums;
   font-weight: 950;
@@ -338,7 +339,7 @@ a:focus-visible {
   background: rgba(255,255,255,0.8);
 }
 
-/* ===== Publications support ===== */
+/* ===== Publications ===== */
 .pub-list { list-style: none; margin: 0; padding: 0; }
 .pub-item {
   background: var(--paper);
@@ -352,7 +353,7 @@ a:focus-visible {
 .pub-item .pub-meta { color: var(--muted); margin-top: 6px; }
 .pub-item .pub-links a { font-weight: 850; margin-right: 12px; }
 
-/* ===== Tables (optional) ===== */
+/* ===== Tables ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -373,7 +374,7 @@ th {
 }
 tr:last-child td { border-bottom: 0; }
 
-/* ===== Forms (Contact page support) ===== */
+/* ===== Forms ===== */
 input, textarea, select {
   width: 100%;
   font-family: var(--font-body);
@@ -389,7 +390,12 @@ input:focus, textarea:focus, select:focus {
   box-shadow: var(--ring);
   border-color: rgba(0,200,83,0.35);
 }
-label { display: block; font-weight: 850; margin: 10px 0 6px; color: rgba(17,24,39,0.86); }
+label {
+  display: block;
+  font-weight: 850;
+  margin: 10px 0 6px;
+  color: rgba(17,24,39,0.86);
+}
 
 /* ===== Footer ===== */
 .footer-inner {
@@ -405,15 +411,19 @@ label { display: block; font-weight: 850; margin: 10px 0 6px; color: rgba(17,24,
 @media (max-width: 980px) {
   .header-inner { grid-template-columns: 1fr; }
   .nav { justify-content: flex-start; }
+  .lab-badge { justify-self: flex-start; }
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .container { padding: 0 18px; }
   body { font-size: 17px; }
-  .brand-logo-telhai { height: 115px; }
-  .brand-logo-lab { height: 175px; }
+
+  .brand-logo-telhai { height: 110px; }
+  .lab-logo { height: 52px; }
+
   .nav a { padding: 10px 10px; }
+
   .news-item { grid-template-columns: auto 1fr; }
   .news-year { justify-self: start; margin-left: 34px; }
 }
