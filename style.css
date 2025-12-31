@@ -103,8 +103,16 @@ li {
 }
 
 .brand-logo {
-  height: 34px;
-  margin-right: 8px;
+  height: 136px;        /* פי 4 מגודל 34px */
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+/* אופציונלי: כיוונון למובייל, שלא יהיה ענק במסך קטן */
+@media (max-width: 720px) {
+  .brand-logo {
+    height: 90px;
+  }
 }
 
 .brand-title {
