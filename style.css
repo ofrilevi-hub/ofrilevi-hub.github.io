@@ -1,179 +1,283 @@
 /* ========================================
-   Levi Lab Website - Version 2
-   White Paper + Neon Green Grid
+   Levi Lab Website - Version 2 (Enhanced)
+   White Paper + Neon Green Grid (Premium)
    Replace entire style.css with this file
 ======================================== */
 
 :root {
+  /* Core */
   --bg: #fbfbfb;
   --paper: #ffffff;
-  --ink: #111827;
+  --ink: #0f172a;
   --muted: #5b677a;
+  --muted-2: #7b8798;
   --line: #e5e7eb;
 
+  /* Accents */
   --acid: #00c853;
   --teal: #00b8d4;
   --violet: #7c3aed;
 
+  /* UI */
   --radius: 16px;
+  --radius-sm: 12px;
+  --radius-lg: 22px;
+
+  --shadow-sm: 0 10px 26px rgba(17, 24, 39, 0.07);
+  --shadow-md: 0 18px 45px rgba(17, 24, 39, 0.10);
+  --shadow-lg: 0 28px 70px rgba(17, 24, 39, 0.12);
+
+  --ring: 0 0 0 3px rgba(0, 200, 83, 0.22);
+  --maxw: 1180px;
 
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
 
-/* Reset */
+/* ===== Reset ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px) 0 0 / 44px 44px,
-    linear-gradient(180deg, rgba(0,0,0,0.03) 1px, transparent 1px) 0 0 / 44px 44px,
-    radial-gradient(900px 520px at 10% 0%, rgba(0,200,83,0.12), transparent 58%),
-    radial-gradient(900px 520px at 95% 15%, rgba(0,184,212,0.10), transparent 62%),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(180deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px) 0 0 / 44px 44px,
+    radial-gradient(1000px 560px at 10% 0%, rgba(0, 200, 83, 0.14), transparent 60%),
+    radial-gradient(1000px 560px at 95% 15%, rgba(0, 184, 212, 0.12), transparent 64%),
     var(--bg);
   line-height: 1.75;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
 }
+img { max-width: 100%; height: auto; display: block; }
 
-/* Layout */
-.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
-.main { padding: 58px 0 110px; }
-.section { margin: 78px 0; }
+::selection {
+  background: rgba(0, 200, 83, 0.18);
+}
 
-/* Typography */
-h1, h2, h3, h4 { font-family: var(--font-title); }
+/* ===== Layout ===== */
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+.main { padding: 64px 0 120px; }
+.section { margin: 84px 0; }
+
+/* Helpful layout utilities (optional) */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.stack-16 > * + * { margin-top: 16px; }
+.stack-24 > * + * { margin-top: 24px; }
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 { font-family: var(--font-title); color: var(--ink); }
 h1 {
-  font-size: clamp(40px, 4.5vw, 70px);
-  line-height: 1.05;
-  font-weight: 900;
-  letter-spacing: -0.8px;
-  margin: 14px 0 18px;
+  font-size: clamp(42px, 4.6vw, 74px);
+  line-height: 1.03;
+  font-weight: 950;
+  letter-spacing: -0.9px;
+  margin: 16px 0 18px;
 }
 h2 {
-  font-size: clamp(24px, 2.4vw, 36px);
-  font-weight: 850;
-  margin: 28px 0 18px;
+  font-size: clamp(24px, 2.5vw, 38px);
+  font-weight: 900;
+  margin: 30px 0 18px;
   padding-left: 14px;
   border-left: 6px solid var(--acid);
 }
-h3 { font-size: 22px; font-weight: 800; margin: 16px 0 12px; }
-p { margin: 12px 0 18px; max-width: 900px; color: var(--muted); }
-ul { margin: 10px 0 22px 22px; color: var(--muted); }
+h3 {
+  font-size: 22px;
+  font-weight: 850;
+  margin: 18px 0 12px;
+}
+p {
+  margin: 12px 0 18px;
+  max-width: 920px;
+  color: var(--muted);
+}
+small, .text-muted { color: var(--muted-2); }
 
-/* Links */
+/* ===== Links and focus ===== */
 a { color: var(--ink); text-decoration: none; }
 a:hover { color: #000; }
-a:focus-visible { outline: 3px solid rgba(0,200,83,0.45); outline-offset: 3px; border-radius: 10px; }
+a.underline,
+.main a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(0, 200, 83, 0.35);
+}
+.main a:not(.btn):hover {
+  text-decoration-color: rgba(0, 200, 83, 0.75);
+}
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 10px;
+}
 
-/* Header */
+/* ===== Header ===== */
 .site-header {
-  background: rgba(255,255,255,0.72);
-  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .site-header::before {
   content: "";
   display: block;
-  height: 8px;
+  height: 10px;
   background: linear-gradient(90deg, var(--acid), var(--teal), var(--violet));
 }
 .header-inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 14px 0;
   gap: 18px;
+  padding: 12px 0;
 }
 
-/* Logos very large, editorial style */
+/* Logos: editorial and readable */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
+  min-width: 280px;
 }
-.brand-logo-telhai { height: 150px; width: auto; object-fit: contain; }
-.brand-logo-lab { height: 210px; width: auto; object-fit: contain; }
+.brand-logo-telhai {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(17, 24, 39, 0.08));
+}
+.brand-logo-lab {
+  height: 230px; /* increased for stronger visibility */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(17, 24, 39, 0.10));
+}
 .brand-title { display: none; }
 
-/* Nav minimal with underline */
-.nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+/* Nav: modern underline + subtle pill hover */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 .nav a {
   font-size: 16px;
-  font-weight: 750;
-  padding: 10px 6px;
+  font-weight: 850;
+  padding: 10px 12px;
+  border-radius: 999px;
   position: relative;
   color: var(--ink);
+  border: 1px solid transparent;
+  background: transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.nav a:hover {
+  background: rgba(0, 200, 83, 0.07);
+  border-color: rgba(0, 200, 83, 0.18);
+  transform: translateY(-1px);
 }
 .nav a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 4px;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
   height: 3px;
-  width: 0%;
+  transform: scaleX(0);
+  transform-origin: left;
   background: linear-gradient(90deg, var(--acid), var(--teal));
-  transition: width 0.18s ease;
+  border-radius: 99px;
+  transition: transform 0.16s ease;
 }
-.nav a:hover::after { width: 100%; }
-.nav a.active::after { width: 100%; }
+.nav a:hover::after { transform: scaleX(1); }
+.nav a.active::after { transform: scaleX(1); }
 
-/* Badge */
+/* ===== Badge ===== */
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 8px 12px;
   border-radius: 999px;
   color: #003b19;
   background: rgba(0,200,83,0.14);
-  border: 1px solid rgba(0,200,83,0.28);
+  border: 1px solid rgba(0,200,83,0.30);
   margin-bottom: 14px;
 }
 
-/* Cards: paper with strong accent corner */
+/* ===== Cards ===== */
 .card {
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px 28px;
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
   margin: 24px 0;
-  box-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+  box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(350px 220px at 0% 0%, rgba(0,200,83,0.14), transparent 60%);
+  background:
+    radial-gradient(420px 240px at 0% 0%, rgba(0,200,83,0.14), transparent 62%),
+    radial-gradient(420px 240px at 100% 0%, rgba(0,184,212,0.10), transparent 62%);
   pointer-events: none;
 }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0,200,83,0.22);
+}
 
-/* Buttons: high-contrast */
+/* Card section titles inside cards (optional) */
+.card h3 { margin-top: 0; }
+
+/* ===== Buttons ===== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 12px 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1px solid rgba(0,200,83,0.35);
   background: linear-gradient(90deg, rgba(0,200,83,0.18), rgba(0,184,212,0.12));
   color: var(--ink);
-  font-weight: 850;
+  font-weight: 950;
   text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
-.btn:hover { filter: brightness(1.03); }
+.btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
+.btn:active { transform: translateY(0); }
 
-/* Images */
-img { max-width: 100%; height: auto; }
-.figure img { border-radius: 14px; border: 1px solid var(--line); }
+/* Secondary button (optional) */
+.btn.btn-ghost {
+  background: rgba(255,255,255,0.75);
+  border-color: rgba(17,24,39,0.12);
+}
 
-/* Funding */
+/* ===== Figures and media ===== */
+.figure img {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Funding block ===== */
 .funding-logos {
   display: flex;
   flex-wrap: wrap;
@@ -182,11 +286,114 @@ img { max-width: 100%; height: auto; }
   justify-content: flex-start;
   margin-top: 14px;
 }
-.funding-logos img { height: 70px; max-width: 200px; object-fit: contain; }
+.funding-logos img {
+  height: 70px;
+  max-width: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(17, 24, 39, 0.07));
+}
 
-/* Footer */
+/* ===== News block (CSS support for aligned icon + year) =====
+   Use one of these HTML patterns:
+   1) <ul class="news-list"><li class="news-item">...</li></ul>
+   2) Or wrap your existing list with class "news-list"
+*/
+.news-list { list-style: none; margin: 0; padding: 0; }
+.news-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(17,24,39,0.14);
+}
+.news-item:last-child { border-bottom: 0; }
+
+.news-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 6px 10px rgba(17, 24, 39, 0.10));
+}
+
+.news-title a {
+  font-weight: 800;
+  text-decoration: none;
+}
+.news-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(0, 200, 83, 0.65);
+}
+
+.news-year {
+  font-variant-numeric: tabular-nums;
+  font-weight: 950;
+  color: rgba(17,24,39,0.72);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17,24,39,0.12);
+  background: rgba(255,255,255,0.8);
+}
+
+/* ===== Publications support ===== */
+.pub-list { list-style: none; margin: 0; padding: 0; }
+.pub-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 18px;
+  margin: 14px 0;
+  box-shadow: var(--shadow-sm);
+}
+.pub-item .pub-title { font-weight: 900; }
+.pub-item .pub-meta { color: var(--muted); margin-top: 6px; }
+.pub-item .pub-links a { font-weight: 850; margin-right: 12px; }
+
+/* ===== Tables (optional) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  font-weight: 950;
+  background: linear-gradient(90deg, rgba(0,200,83,0.10), rgba(0,184,212,0.06));
+}
+tr:last-child td { border-bottom: 0; }
+
+/* ===== Forms (Contact page support) ===== */
+input, textarea, select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(17,24,39,0.14);
+  background: rgba(255,255,255,0.92);
+  color: var(--ink);
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: var(--ring);
+  border-color: rgba(0,200,83,0.35);
+}
+label { display: block; font-weight: 850; margin: 10px 0 6px; color: rgba(17,24,39,0.86); }
+
+/* ===== Footer ===== */
 .footer-inner {
-  margin-top: 110px;
+  margin-top: 120px;
   padding: 34px 0;
   text-align: center;
   border-top: 1px solid var(--line);
@@ -194,14 +401,19 @@ img { max-width: 100%; height: auto; }
   font-size: 15px;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 980px) {
-  .header-inner { flex-direction: column; align-items: flex-start; }
+  .header-inner { grid-template-columns: 1fr; }
   .nav { justify-content: flex-start; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .container { padding: 0 18px; }
-  .brand-logo-telhai { height: 115px; }
-  .brand-logo-lab { height: 160px; }
   body { font-size: 17px; }
+  .brand-logo-telhai { height: 115px; }
+  .brand-logo-lab { height: 175px; }
+  .nav a { padding: 10px 10px; }
+  .news-item { grid-template-columns: auto 1fr; }
+  .news-year { justify-self: start; margin-left: 34px; }
 }
