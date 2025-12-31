@@ -30,6 +30,10 @@
   --ring: 0 0 0 3px rgba(0, 200, 83, 0.22);
   --maxw: 1180px;
 
+  /* Logo sizing (synced heights) */
+  --logo-h: 150px;            /* Tel-Hai height */
+  --lab-logo-h: var(--logo-h);/* Levi Lab height matches Tel-Hai */
+
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
@@ -125,7 +129,7 @@ a:focus-visible {
   background: linear-gradient(90deg, var(--acid), var(--teal), var(--violet));
 }
 
-/* 3 columns: brand (left), nav (right), lab badge (far right) */
+/* 3 columns: Tel-Hai (left), nav (middle), Levi badge (right) */
 .header-inner {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -134,7 +138,7 @@ a:focus-visible {
   padding: 12px 0;
 }
 
-/* Brand: Tel-Hai only (Levi moves to right badge) */
+/* Brand: Tel-Hai only */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -142,7 +146,7 @@ a:focus-visible {
   min-width: 260px;
 }
 .brand-logo-telhai {
-  height: 150px;
+  height: var(--logo-h);
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 16px rgba(17, 24, 39, 0.08));
@@ -189,13 +193,15 @@ a:focus-visible {
 .nav a:hover::after { transform: scaleX(1); }
 .nav a.active::after { transform: scaleX(1); }
 
-/* Levi Lab logo as right-side badge */
+/* Levi Lab logo as right-side badge (same height as Tel-Hai) */
 .lab-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
-  border-radius: 14px;
+
+  /* keep chrome minimal so the logo height defines the header */
+  padding: 0;
+  border-radius: 16px;
   border: 1px solid rgba(17,24,39,0.12);
   background: rgba(255,255,255,0.86);
   box-shadow: var(--shadow-sm);
@@ -207,14 +213,18 @@ a:focus-visible {
   transform: translateY(-1px);
 }
 .lab-logo {
-  height: 64px; /* smaller logo on the right */
+  height: var(--lab-logo-h);
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 8px 12px rgba(17, 24, 39, 0.08));
 }
 
 /* Backward-compat (if any page still uses this class) */
-.brand-logo-lab { height: 190px; width: auto; object-fit: contain; }
+.brand-logo-lab {
+  height: var(--lab-logo-h);
+  width: auto;
+  object-fit: contain;
+}
 
 /* ===== Badge ===== */
 .badge {
@@ -415,12 +425,15 @@ label {
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 720px) {
+  :root {
+    --logo-h: 110px; /* Tel-Hai */
+    --lab-logo-h: var(--logo-h); /* Levi matches */
+  }
+
   .container { padding: 0 18px; }
   body { font-size: 17px; }
-
-  .brand-logo-telhai { height: 110px; }
-  .lab-logo { height: 52px; }
 
   .nav a { padding: 10px 10px; }
 
