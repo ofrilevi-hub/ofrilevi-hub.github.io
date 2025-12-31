@@ -9,7 +9,48 @@
   <script defer src="site.js"></script>
 
   <style>
-    /* Home-only polish: modern, vibrant, and consistent with the global Tel-Hai green palette */
+    /* ============================================================
+       Global polish for home - consistent with Tel-Hai green
+    ============================================================ */
+
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .news-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .news-text a {
+      font-weight: 600;
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+    .news-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Funding logos larger + color */
+    .funding-logos img {
+      width: 180px;
+      margin-right: 20px;
+      filter: none !important;
+    }
+
+    /* Existing hero + grid design kept exactly as before */
     .home-hero {
       position: relative;
       border-radius: 18px;
@@ -22,72 +63,6 @@
       border: 1px solid rgba(0, 0, 0, 0.06);
       box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
     }
-
-    .home-hero h1 {
-      font-size: 44px;
-      line-height: 1.1;
-      margin: 8px 0 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .home-hero .lead {
-      max-width: 92ch;
-      margin: 0;
-      color: var(--text-main);
-      opacity: 0.92;
-      font-size: 16.5px;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease;
-      outline: none;
-    }
-
-    .cta-primary {
-      background: linear-gradient(180deg, #016e39, #025f33);
-      color: #ffffff;
-      border: 1px solid rgba(1, 110, 57, 0.35);
-      box-shadow: 0 10px 22px rgba(1, 110, 57, 0.18);
-    }
-
-    .cta-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(1, 110, 57, 0.22);
-    }
-
-    .cta-secondary {
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--green-dark);
-      border: 1px solid rgba(1, 110, 57, 0.22);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-    }
-
-    .cta-secondary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
-      border-color: rgba(1, 110, 57, 0.32);
-    }
-
-    .cta:focus-visible {
-      box-shadow: 0 0 0 4px rgba(1, 110, 57, 0.18);
-    }
-
     .home-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -95,170 +70,146 @@
       margin-top: 22px;
       align-items: start;
     }
-
-    .home-grid .card h2 {
+    .card h2 {
       font-size: 20px;
-      margin-top: 0;
       margin-bottom: 12px;
       border-bottom: 2px solid var(--green-light);
       padding-bottom: 6px;
     }
-
-    .home-grid ul {
-      margin-left: 18px;
-    }
-
-    .link-strong {
-      color: var(--green-dark);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .link-strong:hover {
-      text-decoration: underline;
-    }
-
-    .news-list li {
-      margin: 6px 0;
-    }
-
-    .funding-card .funding-logos {
-      margin-top: 14px;
-    }
-
-    .funding-card .muted {
-      margin-top: 12px;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
     @media (max-width: 900px) {
-      .home-hero {
-        padding: 28px 20px;
-      }
-
-      .home-hero h1 {
-        font-size: 36px;
-      }
-
-      .home-grid {
-        grid-template-columns: 1fr;
-      }
+      .home-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Levi Lab home">
-        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" class="brand-logo" />
-        <div class="brand-text">
-          <div class="brand-title">Levi Lab</div>
-        </div>
-      </a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Levi Lab home">
+      <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" class="brand-logo" />
+      <div class="brand-text">
+        <div class="brand-title">Levi Lab</div>
+      </div>
+    </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="active" href="index.html" aria-current="page">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-        <a href="opportunities.html">Opportunities</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="active" href="index.html" aria-current="page">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+<div class="container">
+
+  <!-- HERO -->
+  <section class="home-hero" aria-labelledby="home-title">
+    <span class="badge">Levi Lab</span>
+    <h1 id="home-title">Fungal resistance mechanisms and antifungal discovery</h1>
+    <p class="lead">
+      The Levi Lab studies how pathogenic fungi adapt to antifungal stress under clinically and agriculturally relevant environments,
+      integrating genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping.
+    </p>
+
+    <div class="hero-actions">
+      <a class="cta cta-primary" href="research.html">Explore research</a>
+      <a class="cta cta-secondary" href="opportunities.html">Join the lab</a>
     </div>
-  </header>
+  </section>
 
+  <!-- GRID -->
+  <section class="home-grid" aria-label="Home content">
 
-  <main class="main">
-    <div class="container">
+    <!-- Affiliations -->
+    <section class="card" aria-labelledby="affiliations">
+      <h2 id="affiliations">Affiliations</h2>
+      <ul>
+        <li>Tel-Hai University, Kiryat Shmona</li>
+        <li>MIGAL - Galilee Research Institute</li>
+      </ul>
+      <p style="margin-top:10px;">
+        <a class="link-strong" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener">
+          Official MIGAL research profile
+        </a>
+      </p>
+    </section>
 
-      <section class="home-hero" aria-labelledby="home-title">
-        <span class="badge">Levi Lab</span>
-        <h1 id="home-title">Fungal resistance mechanisms and antifungal discovery</h1>
+    <!-- LATEST NEWS WITH LOGOS -->
+    <section class="card" aria-labelledby="latest-news">
+      <h2 id="latest-news">Latest news</h2>
+      <ul class="news-list">
 
-        <p class="lead">
-          The Levi Lab studies how pathogenic fungi adapt to antifungal stress under clinically and agriculturally relevant environments,
-          integrating genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping.
-        </p>
-
-        <div class="hero-actions" aria-label="Primary calls to action">
-          <a class="cta cta-primary" href="research.html">Explore research</a>
-          <a class="cta cta-secondary" href="opportunities.html">Join the lab</a>
-        </div>
-      </section>
-
-
-      <section class="home-grid" aria-label="Home content">
-        <section class="card" aria-labelledby="affiliations">
-          <h2 id="affiliations">Affiliations</h2>
-          <ul>
-            <li>Tel-Hai University, Kiryat Shmona</li>
-            <li>MIGAL - Galilee Research Institute</li>
-          </ul>
-          <p style="margin-top: 10px;">
-            <a class="link-strong" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener">
-              Official MIGAL research profile
+        <li class="news-item">
+          <img class="news-logo" src="assets/global_header_logo.png" alt="Ynet logo">
+          <div class="news-text">
+            <strong>2025</strong> - 
+            <a href="https://www.ynetnews.com/environment/article/ryzjwsnlbl" target="_blank">
+              Israeli researchers uncover plant-derived compound with potent antifungal activity
             </a>
-          </p>
-        </section>
-
-        <section class="card" aria-labelledby="latest-news">
-  <h2 id="latest-news">Latest news</h2>
-  <ul class="news-list">
-    <li>
-      2025 - 
-      <a class="link-strong" href="https://www.ynetnews.com/environment/article/ryzjwsnlbl" target="_blank" rel="noopener">
-        Israeli researchers uncover plant-derived compound with potent antifungal activity
-      </a>
-    </li>
-
-    <li>
-      2025 - 
-      <a class="link-strong" href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank" rel="noopener">
-        Genome-scale CRISPRi screen and proteomics reveal FA-responsive pathways (mBio)
-      </a>
-    </li>
-
-    <li>
-      2025 -
-      <a class="link-strong" href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank" rel="noopener">
-        Cytoplasmic sequestration of stress-activated MAPK under FA response (PLOS Pathogens)
-      </a>
-    </li>
-
-    <li>2024 - Establishment of the Levi Lab at Tel-Hai University</li>
-  </ul>
-</section>
-
-
-        <section class="card funding-card" aria-labelledby="funding" style="grid-column: 1 / -1;">
-          <h2 id="funding">Funding</h2>
-
-          <div class="funding-logos" aria-label="Funding logos">
-            <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Charitable Trust logo" loading="lazy" decoding="async" />
-            <img src="assets/logo-isf.jpg" alt="Israel Science Foundation" loading="lazy" decoding="async" />
-            <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" loading="lazy" decoding="async" />
           </div>
+        </li>
 
-          <p class="muted">
-            We gratefully acknowledge institutional and competitive funding support for research infrastructure and discovery-driven antifungal work.
-          </p>
-        </section>
-      </section>
+        <li class="news-item">
+          <img class="news-logo" src="assets/MBIO-logo-1601672967533.webp" alt="mBio logo">
+          <div class="news-text">
+            <strong>2025</strong> - 
+            <a href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank">
+              Genome-scale CRISPRi screen and proteomics reveal FA-responsive pathways (mBio)
+            </a>
+          </div>
+        </li>
 
-    </div>
-  </main>
+        <li class="news-item">
+          <img class="news-logo" src="assets/PLoS_Pathog_logo_1100x600.jpg" alt="PLOS Pathogens logo">
+          <div class="news-text">
+            <strong>2025</strong> - 
+            <a href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank">
+              Cytoplasmic sequestration of stress-activated MAPK under FA response (PLOS Pathogens)
+            </a>
+          </div>
+        </li>
 
+        <li class="news-item">
+          <img class="news-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo">
+          <div class="news-text">
+            <strong>2024</strong> - Establishment of the Levi Lab at Tel-Hai University
+          </div>
+        </li>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
-    </div>
-  </footer>
+      </ul>
+    </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <!-- FUNDING -->
+    <section class="card funding-card" aria-labelledby="funding" style="grid-column: 1 / -1;">
+      <h2 id="funding">Funding</h2>
+      <div class="funding-logos">
+        <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Trust">
+        <img src="assets/logo-isf.jpg" alt="Israel Science Foundation">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai">
+      </div>
+      <p class="muted">
+        We gratefully acknowledge institutional and competitive funding support for research infrastructure and antifungal discovery.
+      </p>
+    </section>
+
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
