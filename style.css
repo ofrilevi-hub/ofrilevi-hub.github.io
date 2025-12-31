@@ -1,87 +1,83 @@
 /* ========================================
-   Levi Lab Website - Version 1
-   Aurora Gradient Institute
+   Levi Lab Website - Version 2
+   White Paper + Neon Green Grid
    Replace entire style.css with this file
 ======================================== */
 
-/* ===== Design tokens ===== */
 :root {
-  --bg: #0b1220;
-  --bg-2: #0f1a2f;
-  --paper: #0e1627;
-  --card: rgba(255, 255, 255, 0.06);
-  --card-2: rgba(255, 255, 255, 0.09);
-  --line: rgba(255, 255, 255, 0.14);
+  --bg: #fbfbfb;
+  --paper: #ffffff;
+  --ink: #111827;
+  --muted: #5b677a;
+  --line: #e5e7eb;
 
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.68);
+  --acid: #00c853;
+  --teal: #00b8d4;
+  --violet: #7c3aed;
 
-  --accent: #22c55e;
-  --accent-2: #06b6d4;
-  --accent-3: #a78bfa;
-
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-
-  --radius: 18px;
-  --radius-sm: 12px;
+  --radius: 16px;
 
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
 
-/* ===== Reset ===== */
+/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  color: var(--text);
-  background: radial-gradient(1200px 700px at 20% -10%, rgba(34, 197, 94, 0.20), transparent 55%),
-              radial-gradient(1000px 600px at 110% 10%, rgba(6, 182, 212, 0.18), transparent 55%),
-              radial-gradient(900px 600px at 60% 120%, rgba(167, 139, 250, 0.16), transparent 55%),
-              linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(180deg, rgba(0,0,0,0.03) 1px, transparent 1px) 0 0 / 44px 44px,
+    radial-gradient(900px 520px at 10% 0%, rgba(0,200,83,0.12), transparent 58%),
+    radial-gradient(900px 520px at 95% 15%, rgba(0,184,212,0.10), transparent 62%),
+    var(--bg);
   line-height: 1.75;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== Layout ===== */
-.container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-.main { padding: 64px 0 110px; }
-.section { margin: 70px 0; }
+/* Layout */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+.main { padding: 58px 0 110px; }
+.section { margin: 78px 0; }
 
-/* ===== Typography ===== */
-h1, h2, h3, h4 { font-family: var(--font-title); letter-spacing: -0.4px; }
+/* Typography */
+h1, h2, h3, h4 { font-family: var(--font-title); }
 h1 {
-  font-size: clamp(38px, 4.2vw, 62px);
-  font-weight: 800;
-  line-height: 1.08;
-  margin: 10px 0 18px;
+  font-size: clamp(40px, 4.5vw, 70px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  margin: 14px 0 18px;
 }
 h2 {
-  font-size: clamp(24px, 2.4vw, 34px);
-  font-weight: 750;
-  margin: 26px 0 18px;
-  padding-bottom: 10px;
+  font-size: clamp(24px, 2.4vw, 36px);
+  font-weight: 850;
+  margin: 28px 0 18px;
+  padding-left: 14px;
+  border-left: 6px solid var(--acid);
+}
+h3 { font-size: 22px; font-weight: 800; margin: 16px 0 12px; }
+p { margin: 12px 0 18px; max-width: 900px; color: var(--muted); }
+ul { margin: 10px 0 22px 22px; color: var(--muted); }
+
+/* Links */
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: #000; }
+a:focus-visible { outline: 3px solid rgba(0,200,83,0.45); outline-offset: 3px; border-radius: 10px; }
+
+/* Header */
+.site-header {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
-h3 { font-size: 22px; font-weight: 700; margin: 14px 0 14px; }
-p { margin: 12px 0 18px; max-width: 880px; color: var(--muted); }
-ul { margin: 10px 0 22px 22px; color: var(--muted); }
-li { margin: 6px 0; }
-
-/* ===== Links and focus ===== */
-a { color: var(--text); text-decoration: none; }
-a:hover { color: rgba(255, 255, 255, 0.98); }
-a:focus-visible { outline: 3px solid rgba(34, 197, 94, 0.55); outline-offset: 3px; border-radius: 8px; }
-
-/* ===== Header ===== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(10px);
-  background: linear-gradient(90deg, rgba(14, 22, 39, 0.75), rgba(14, 22, 39, 0.55));
-  border-bottom: 1px solid var(--line);
+.site-header::before {
+  content: "";
+  display: block;
+  height: 8px;
+  background: linear-gradient(90deg, var(--acid), var(--teal), var(--violet));
 }
 .header-inner {
   display: flex;
@@ -91,131 +87,121 @@ a:focus-visible { outline: 3px solid rgba(34, 197, 94, 0.55); outline-offset: 3p
   gap: 18px;
 }
 
-/* Brand block: logos big and clear */
+/* Logos very large, editorial style */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 26px;
-  min-width: 320px;
+  gap: 24px;
 }
-.brand-logo-telhai { height: 165px; width: auto; object-fit: contain; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.28)); }
-.brand-logo-lab { height: 190px; width: auto; object-fit: contain; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.28)); }
+.brand-logo-telhai { height: 150px; width: auto; object-fit: contain; }
+.brand-logo-lab { height: 210px; width: auto; object-fit: contain; }
 .brand-title { display: none; }
 
-/* Navigation as pills */
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
+/* Nav minimal with underline */
+.nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
 .nav a {
   font-size: 16px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.05);
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  font-weight: 750;
+  padding: 10px 6px;
+  position: relative;
+  color: var(--ink);
 }
-.nav a:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.09);
-  border-color: rgba(34, 197, 94, 0.45);
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--acid), var(--teal));
+  transition: width 0.18s ease;
 }
-.nav a.active {
-  background: linear-gradient(90deg, rgba(34,197,94,0.22), rgba(6,182,212,0.18));
-  border-color: rgba(34, 197, 94, 0.55);
-}
+.nav a:hover::after { width: 100%; }
+.nav a.active::after { width: 100%; }
 
-/* ===== Badge ===== */
+/* Badge */
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 12px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
   border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.90);
-  background: linear-gradient(90deg, rgba(34,197,94,0.22), rgba(6,182,212,0.16));
-  border: 1px solid rgba(34,197,94,0.35);
-  margin-bottom: 12px;
+  color: #003b19;
+  background: rgba(0,200,83,0.14);
+  border: 1px solid rgba(0,200,83,0.28);
+  margin-bottom: 14px;
 }
 
-/* ===== Cards ===== */
+/* Cards: paper with strong accent corner */
 .card {
-  background: linear-gradient(180deg, var(--card), var(--card-2));
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px 28px;
-  margin: 22px 0;
-  box-shadow: var(--shadow);
+  margin: 24px 0;
+  box-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+  position: relative;
+  overflow: hidden;
 }
-.card:hover {
-  border-color: rgba(34,197,94,0.35);
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(350px 220px at 0% 0%, rgba(0,200,83,0.14), transparent 60%);
+  pointer-events: none;
 }
 
-/* ===== Buttons ===== */
+/* Buttons: high-contrast */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 11px 16px;
-  border-radius: 999px;
-  font-weight: 750;
-  font-size: 15px;
-  color: rgba(255,255,255,0.95);
-  border: 1px solid rgba(34,197,94,0.50);
-  background: linear-gradient(90deg, rgba(34,197,94,0.35), rgba(6,182,212,0.22));
-  transition: transform 0.15s ease, filter 0.15s ease;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,200,83,0.35);
+  background: linear-gradient(90deg, rgba(0,200,83,0.18), rgba(0,184,212,0.12));
+  color: var(--ink);
+  font-weight: 850;
+  text-decoration: none;
 }
-.btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.btn:hover { filter: brightness(1.03); }
 
-/* ===== Images ===== */
+/* Images */
 img { max-width: 100%; height: auto; }
-.figure img {
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.30);
-}
+.figure img { border-radius: 14px; border: 1px solid var(--line); }
 
-/* ===== Funding logos ===== */
+/* Funding */
 .funding-logos {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 12px;
+  margin-top: 14px;
 }
-.funding-logos img {
-  height: 64px;
-  max-width: 190px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 16px rgba(0,0,0,0.25));
-  opacity: 0.95;
-}
+.funding-logos img { height: 70px; max-width: 200px; object-fit: contain; }
 
-/* ===== Footer ===== */
+/* Footer */
 .footer-inner {
-  margin-top: 90px;
-  padding: 28px 0;
+  margin-top: 110px;
+  padding: 34px 0;
   text-align: center;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 15px;
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 980px) {
   .header-inner { flex-direction: column; align-items: flex-start; }
-  .brand { min-width: auto; }
   .nav { justify-content: flex-start; }
 }
 @media (max-width: 720px) {
   .container { padding: 0 18px; }
-  .brand-logo-telhai { height: 120px; }
-  .brand-logo-lab { height: 140px; }
+  .brand-logo-telhai { height: 115px; }
+  .brand-logo-lab { height: 160px; }
   body { font-size: 17px; }
 }
