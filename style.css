@@ -1,286 +1,158 @@
-/* ----------------------------------------
-   Levi Lab - Global styles
-   Tel-Hai modern academic theme
------------------------------------------ */
+/* ========================================
+   Levi Lab - Tel Hai theme
+   Version: Classic Academic
+======================================== */
 
-/* ===== Color system ===== */
+/* Colors */
 :root {
   --green-dark: #016e39;
   --green: #3a8f63;
   --green-light: #d5efe3;
-
-  --text-strong: #1b1b1b;
-  --text-main: #323232;
-  --text-muted: #666;
-  --line: #e2e2e2;
-  --bg-card: #f7f7f7;
   --bg-main: #ffffff;
-
+  --bg-accent: #f8f8f8;
+  --text-main: #1f1f1f;
+  --text-muted: #777;
+  --line: #e4e4e4;
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
 
-
-/* ===== Global reset ===== */
-html,
-body,
-div,
-span,
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-li,
-a,
-img {
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  border: 0;
+  box-sizing: border-box;
 }
-
 body {
   font-family: var(--font-body);
-  color: var(--text-main);
-  line-height: 1.65;
   background: var(--bg-main);
-  font-size: 16px;
+  color: var(--text-main);
+  font-size: 17px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
-
-/* ===== Layout wrappers ===== */
+/* Containers */
 .container {
   max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 22px;
+  margin: auto;
+  padding: 0 32px;
 }
-
 .main {
-  padding: 38px 0 80px;
+  padding: 48px 0 90px;
 }
-
 .section {
-  margin: 38px 0 52px;
+  margin: 64px 0;
 }
 
-
-/* ===== Typography ===== */
-h1,
-h2,
-h3,
-h4 {
+/* Typography */
+h1, h2, h3, h4 {
   font-family: var(--font-title);
-  color: var(--text-strong);
   font-weight: 600;
+  color: var(--text-main);
 }
-
 h1 {
-  font-size: 38px;
-  margin: 6px 0 14px;
-}
-
-h2 {
-  font-size: 26px;
+  font-size: 46px;
   margin: 10px 0 20px;
-  border-bottom: 2px solid var(--green-light);
-  padding-bottom: 4px;
 }
-
+h2 {
+  font-size: 32px;
+  margin: 20px 0 26px;
+  border-bottom: 3px solid var(--green-light);
+  padding-bottom: 8px;
+}
 h3 {
-  font-size: 20px;
-  margin: 8px 0 12px;
+  font-size: 22px;
+  margin: 14px 0 16px;
 }
-
 p {
-  margin: 10px 0 12px;
+  margin: 12px 0 16px;
+  max-width: 800px;
 }
-
 ul {
-  margin: 6px 0 16px 22px;
+  margin: 10px 0 22px 26px;
 }
 
-li {
-  margin: 4px 0;
-}
-
-
-/* ===== Header and Navigation ===== */
+/* Header and Logos */
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: #ffffff;
+  background: var(--bg-main);
 }
-
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
-/* container for both logos */
+/* Logos much larger */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
-  text-decoration: none;
+  gap: 32px;
 }
-
-/* Tel-Hai logo */
 .brand-logo-telhai {
-  height: 136px;
+  height: 170px;
   object-fit: contain;
 }
-
-/* Levi Lab logo enlarged */
 .brand-logo-lab {
-  height: 112px;
+  height: 150px;
   object-fit: contain;
 }
 
-/* mobile: proportional scaling */
-@media (max-width: 720px) {
-  .brand-logo-telhai {
-    height: 90px;
-  }
-  .brand-logo-lab {
-    height: 76px;
-  }
-}
-
-/* hide text next to logos */
-.brand-title {
-  display: none;
-}
-
-/* Navigation links */
+/* Nav */
 .nav a {
-  margin-left: 18px;
+  margin-left: 24px;
   text-decoration: none;
   color: var(--text-main);
-  font-size: 15px;
+  font-size: 18px;
+  padding-bottom: 4px;
   position: relative;
-  padding-bottom: 3px;
-  transition: color 0.25s ease;
 }
-
+.nav a.active,
 .nav a:hover {
   color: var(--green-dark);
 }
-
-/* underline on hover and active */
 .nav a:hover::after,
 .nav a.active::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -2px;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: var(--green-dark);
-  border-radius: 2px;
 }
 
-
-/* ===== Elements ===== */
-.badge {
-  background: var(--green-light);
-  color: var(--green-dark);
-  padding: 4px 10px;
-  border-radius: 16px;
-  font-size: 12px;
-  display: inline-block;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-
-/* ===== Cards ===== */
+/* Cards */
 .card {
-  background: var(--bg-card);
+  background: var(--bg-accent);
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px 24px;
-  margin: 20px 0;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  border-radius: 10px;
+  padding: 26px 30px;
+  margin: 26px 0;
 }
 
-.card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-
-/* ===== Buttons ===== */
+/* Buttons */
 .btn {
   display: inline-block;
-  padding: 8px 14px;
-  margin-top: 10px;
+  padding: 10px 18px;
   border-radius: 999px;
-  border: 1px solid var(--green-dark);
   background: var(--green-dark);
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  margin-top: 12px;
 }
-
 .btn:hover {
   background: var(--green);
-  color: #ffffff;
-  transform: translateY(-1px);
 }
 
-
-/* ===== Figures and photos ===== */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.figure img {
-  border-radius: 8px;
-  border: 1px solid var(--line);
-}
-
-
-/* ===== Footer ===== */
+/* Footer */
 .footer-inner {
-  padding: 24px 0;
+  margin-top: 100px;
+  padding: 26px 0;
   text-align: center;
   border-top: 1px solid var(--line);
-  margin-top: 80px;
   color: var(--text-muted);
-  font-size: 14px;
-}
-
-
-/* ===== Funding block ===== */
-.funding-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 10px;
-}
-
-.funding-logos img {
-  height: 70px;
-  max-width: 180px;
-  object-fit: contain;
-}
-
-@media (max-width: 720px) {
-  .funding-logos img {
-    height: 56px;
-    max-width: 140px;
-  }
-}
-
-.footer-logo,
-.home-footer-logo img {
-  max-width: 260px;
-  height: auto;
+  font-size: 15px;
 }
