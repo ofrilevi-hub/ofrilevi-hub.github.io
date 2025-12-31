@@ -3,235 +3,225 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Levi Lab | Tel-Hai University & MIGAL</title>
-  <meta name="description" content="Levi Lab studies fungal resistance mechanisms and antifungal discovery using genome-scale CRISPRi screens, plant-derived compound discovery, and quantitative phenotyping." />
-
-  <meta property="og:title" content="Levi Lab" />
-  <meta property="og:description" content="Fungal resistance mechanisms and antifungal discovery. Tel-Hai University & MIGAL." />
-  <meta property="og:type" content="website" />
-
+  <title>Levi Lab | Tel-Hai University</title>
+  <meta name="description" content="Levi Lab studies fungal resistance mechanisms and antifungal discovery using genome-scale CRISPRi screening, quantitative phenotyping, and multi-omics." />
   <link rel="stylesheet" href="style.css" />
+  <script defer src="site.js"></script>
+
+  <style>
+    /* ============================================================
+       Global polish for home - consistent with Tel-Hai green
+    ============================================================ */
+
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .news-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .news-text a {
+      font-weight: 600;
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+    .news-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Funding logos larger + color */
+    .funding-logos img {
+      width: 180px;
+      margin-right: 20px;
+      filter: none !important;
+    }
+
+    /* Existing hero + grid design kept exactly as before */
+    .home-hero {
+      position: relative;
+      border-radius: 18px;
+      padding: 34px 28px;
+      margin-top: 10px;
+      background:
+        radial-gradient(900px 280px at 20% 10%, rgba(58, 143, 99, 0.18), transparent 60%),
+        radial-gradient(760px 260px at 85% 20%, rgba(1, 110, 57, 0.14), transparent 62%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01));
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    }
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 22px;
+      align-items: start;
+    }
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 6px;
+    }
+    @media (max-width: 900px) {
+      .home-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Levi Lab home">
-        <img
-          class="brand-logo-telhai"
-          src="assets/telhai-logo.jpg.png"
-          alt="Tel-Hai University logo"
-        />
-      </a>
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- Left: Tel-Hai logo -->
+    <a class="brand" href="index.html" aria-label="Levi Lab home">
+      <img
+        class="brand-logo-telhai"
+        src="assets/telhai-logo.jpg.png"
+        alt="Tel-Hai University logo"
+      />
+    </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-        <a href="opportunities.html">Opportunities</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <!-- Middle: Navigation -->
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-      <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
-        <img
-          class="lab-logo"
-          src="assets/Levi%20Lab%20logo.png"
-          alt="Levi Lab logo"
-        />
-      </a>
+    <!-- Right: Levi Lab logo (right of Contact) -->
+    <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
+      <img
+        class="lab-logo"
+        src="assets/Levi%20Lab%20logo.png"
+        alt="Levi Lab logo"
+      />
+    </a>
+  </div>
+</header>
+
+<main class="main">
+<div class="container">
+
+  <!-- HERO -->
+  <section class="home-hero" aria-labelledby="home-title">
+    <span class="badge">Levi Lab</span>
+    <h1 id="home-title">Fungal resistance mechanisms and antifungal discovery</h1>
+    <p class="lead">
+      The Levi Lab studies how pathogenic fungi adapt to antifungal stress under clinically and agriculturally relevant environments,
+      integrating genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping.
+    </p>
+
+    <div class="hero-actions">
+      <a class="cta cta-primary" href="research.html">Explore research</a>
+      <a class="cta cta-secondary" href="opportunities.html">Join the lab</a>
     </div>
-  </header>
+  </section>
 
-  <main class="main">
-    <div class="container">
-      <!-- HERO -->
-      <section class="section" aria-label="Levi Lab overview">
-        <div class="badge">Levi Lab</div>
+  <!-- GRID -->
+  <section class="home-grid" aria-label="Home content">
 
-        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
+    <!-- Affiliations -->
+    <section class="card" aria-labelledby="affiliations">
+      <h2 id="affiliations">Affiliations</h2>
+      <ul>
+        <li>Tel-Hai University, Kiryat Shmona</li>
+        <li>MIGAL - Galilee Research Institute</li>
+      </ul>
+      <p style="margin-top:10px;">
+        <a class="link-strong" href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noopener">
+          Official MIGAL research profile
+        </a>
+      </p>
+    </section>
 
-        <p>
-          We study how pathogenic fungi adapt to antifungal stress in clinically and agriculturally relevant settings.
-          Our work integrates genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping
-          to identify molecular targets and resistance pathways.
-        </p>
+    <!-- LATEST NEWS WITH LOGOS -->
+    <section class="card" aria-labelledby="latest-news">
+      <h2 id="latest-news">Latest news</h2>
+      <ul class="news-list">
 
-        <div class="stack-16" style="margin-top: 14px;">
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn" href="research.html" aria-label="Explore Levi Lab research">Explore research</a>
-            <a class="btn btn-ghost" href="opportunities.html" aria-label="Join the lab opportunities">Join the lab</a>
+        <li class="news-item">
+          <img class="news-logo" src="assets/global_header_logo.png" alt="Ynet logo">
+          <div class="news-text">
+            <strong>2025</strong> - 
+            <a href="https://www.ynetnews.com/environment/article/ryzjwsnlbl" target="_blank">
+              Israeli researchers uncover plant-derived compound with potent antifungal activity
+            </a>
           </div>
+        </li>
 
-          <small class="text-muted">
-            Tel-Hai University (Kiryat Shmona) and MIGAL - Galilee Research Institute.
-          </small>
-        </div>
-      </section>
-
-      <!-- AFFILIATIONS + NEWS -->
-      <section class="section" aria-label="Affiliations and latest news">
-        <div class="grid-2">
-          <div class="card">
-            <h2>Affiliations</h2>
-            <ul>
-              <li>Tel-Hai University, Kiryat Shmona (Eastern campus)</li>
-              <li>MIGAL - Galilee Research Institute</li>
-            </ul>
-
-            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px;">
-              <a class="btn btn-ghost" href="people.html" aria-label="Levi Lab people page">People</a>
-              <a class="btn btn-ghost" href="contact.html" aria-label="Contact Levi Lab">Contact</a>
-            </div>
-
-            <p class="text-muted" style="margin-top: 16px;">
-              For collaboration inquiries, student positions, or shared resources, please contact the PI or the lab office.
-            </p>
+        <li class="news-item">
+          <img class="news-logo" src="assets/MBIO-logo-1601672967533.webp" alt="mBio logo">
+          <div class="news-text">
+            <strong>2025</strong> - 
+            <a href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank">
+              Genome-scale CRISPRi screen and proteomics reveal FA-responsive pathways (mBio)
+            </a>
           </div>
+        </li>
 
-          <div class="card">
-            <h2>Latest news</h2>
-
-            <ul class="news-list" aria-label="Latest news list">
-              <li class="news-item">
-                <!-- ynet icon as inline SVG to avoid extra asset -->
-                <svg class="news-icon" viewBox="0 0 24 24" role="img" aria-label="News">
-                  <circle cx="12" cy="12" r="10" fill="currentColor"></circle>
-                  <path d="M7 7h2.2l2 3.2L13.2 7H15l-3 4.9V17h-1.8v-5.1L7 7z" fill="#ffffff"></path>
-                </svg>
-
-                <div class="news-title">
-                  <a href="https://www.ynetnews.com/environment/article/ryzjwsnlbl" target="_blank" rel="noopener noreferrer"
-                     aria-label="Read ynetnews article (opens in new tab)">
-                    Israeli researchers uncover plant-derived compound with potent antifungal activity
-                  </a>
-                </div>
-
-                <div class="news-year" aria-label="Year 2025">2025</div>
-              </li>
-
-              <li class="news-item">
-                <img class="news-icon" src="assets/MBIO-logo-1601672967533.webp" alt="mBio journal logo" />
-                <div class="news-title">
-                  <a href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank" rel="noopener noreferrer"
-                     aria-label="Read mBio paper (opens in new tab)">
-                    Genome-scale CRISPRi screen and proteomics reveal FA-responsive pathways
-                  </a>
-                </div>
-                <div class="news-year" aria-label="Year 2025">2025</div>
-              </li>
-
-              <li class="news-item">
-                <img class="news-icon" src="assets/PloS_Pathog_logo_1100x600.jpg" alt="PLOS Pathogens journal logo" />
-                <div class="news-title">
-                  <a href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank" rel="noopener noreferrer"
-                     aria-label="Read PLOS Pathogens paper (opens in new tab)">
-                    Cytoplasmic sequestration of stress-activated MAPK under ferulic acid response
-                  </a>
-                </div>
-                <div class="news-year" aria-label="Year 2025">2025</div>
-              </li>
-
-              <li class="news-item">
-                <!-- campus icon -->
-                <svg class="news-icon" viewBox="0 0 24 24" role="img" aria-label="Lab update">
-                  <path d="M12 3l9 5-9 5-9-5 9-5z" fill="currentColor"></path>
-                  <path d="M5 12v6h14v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-                </svg>
-                <div class="news-title">
-                  <span style="font-weight:800;">Establishment of the Levi Lab at Tel-Hai University</span>
-                </div>
-                <div class="news-year" aria-label="Year 2024">2024</div>
-              </li>
-            </ul>
+        <li class="news-item">
+          <img class="news-logo" src="assets/PLoS_Pathog_logo_1100x600.jpg" alt="PLOS Pathogens logo">
+          <div class="news-text">
+            <strong>2025</strong> - 
+            <a href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank">
+              Cytoplasmic sequestration of stress-activated MAPK under FA response (PLOS Pathogens)
+            </a>
           </div>
-        </div>
-      </section>
+        </li>
 
-      <!-- RESEARCH PILLARS -->
-      <section class="section" aria-label="Research pillars">
-        <h2>Research pillars</h2>
-
-        <div class="grid-3" role="list">
-          <div class="card" role="listitem">
-            <h3>Genome-scale CRISPRi screens</h3>
-            <p>
-              Functional genomics in yeast and pathogenic fungi to map gene networks that mediate drug response,
-              resistance, and tolerance.
-            </p>
-            <a class="btn btn-ghost" href="research.html" aria-label="Read more about CRISPRi research">Read more</a>
+        <li class="news-item">
+          <img class="news-logo" src="assets/telhai-logo.jpg.png" alt="Tel-Hai logo">
+          <div class="news-text">
+            <strong>2024</strong> - Establishment of the Levi Lab at Tel-Hai University
           </div>
+        </li>
 
-          <div class="card" role="listitem">
-            <h3>Plant-derived antifungal discovery</h3>
-            <p>
-              High-throughput screening and bioactivity-guided fractionation to identify active molecules from plant extracts,
-              followed by rigorous validation in relevant fungal systems.
-            </p>
-            <a class="btn btn-ghost" href="research.html" aria-label="Read more about antifungal discovery">Read more</a>
-          </div>
+      </ul>
+    </section>
 
-          <div class="card" role="listitem">
-            <h3>Quantitative phenotyping</h3>
-            <p>
-              Growth kinetics, MIC, tolerance metrics, and combination studies to connect molecular mechanisms to robust,
-              reproducible antifungal phenotypes.
-            </p>
-            <a class="btn btn-ghost" href="research.html" aria-label="Read more about quantitative phenotyping">Read more</a>
-          </div>
-        </div>
-      </section>
+    <!-- FUNDING -->
+    <section class="card funding-card" aria-labelledby="funding" style="grid-column: 1 / -1;">
+      <h2 id="funding">Funding</h2>
+      <div class="funding-logos">
+        <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Trust">
+        <img src="assets/logo-isf.jpg" alt="Israel Science Foundation">
+        <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai">
+      </div>
+      <p class="muted">
+        We gratefully acknowledge institutional and competitive funding support for research infrastructure and antifungal discovery.
+      </p>
+    </section>
 
-      <!-- FEATURED PUBLICATIONS -->
-      <section class="section" aria-label="Featured publications">
-        <h2>Featured publications</h2>
+  </section>
 
-        <div class="pub-item">
-          <div class="pub-title">Genome-wide CRISPRi screen and proteomic profiling identify key genes related to ferulic acid’s antifungal activity</div>
-          <div class="pub-meta">mBio (2025) | DOI: 10.1128/mbio.01909-25</div>
-          <div class="pub-links" style="margin-top:10px;">
-            <a class="btn btn-ghost" href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank" rel="noopener noreferrer"
-               aria-label="Open mBio paper (opens in new tab)">Open paper</a>
-          </div>
-        </div>
+</div>
+</main>
 
-        <div class="pub-item">
-          <div class="pub-title">Cytoplasmic sequestration of a fungal stress-activated MAPK in response to a host plant phenolic acid</div>
-          <div class="pub-meta">PLOS Pathogens (2025) | DOI: 10.1371/journal.ppat.1013620</div>
-          <div class="pub-links" style="margin-top:10px;">
-            <a class="btn btn-ghost" href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank" rel="noopener noreferrer"
-               aria-label="Open PLOS Pathogens paper (opens in new tab)">Open paper</a>
-          </div>
-        </div>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Levi Lab. All rights reserved.</div>
+  </div>
+</footer>
 
-        <div style="margin-top: 14px;">
-          <a class="btn" href="publications.html" aria-label="Go to full publications list">View all publications</a>
-        </div>
-      </section>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-      <!-- FUNDING -->
-      <section class="section" aria-label="Funding and supporters">
-        <h2>Funding</h2>
-        <p>
-          The lab is supported by competitive research funding and institutional infrastructure at Tel-Hai University and MIGAL.
-        </p>
-
-        <div class="funding-logos" aria-label="Funding logos">
-          <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Leona M. and Harry B. Helmsley Charitable Trust logo" />
-          <img src="assets/logo-isf.jpg" alt="Israel Science Foundation logo" />
-        </div>
-      </section>
-
-      <footer class="footer-inner" aria-label="Site footer">
-        <div>
-          <strong>Levi Lab</strong> | Tel-Hai University & MIGAL, Kiryat Shmona, Israel
-        </div>
-        <div class="text-muted" style="margin-top: 6px;">
-          For inquiries: see the <a href="contact.html" aria-label="Contact page">Contact</a> page.
-        </div>
-      </footer>
-    </div>
-  </main>
 </body>
 </html>
