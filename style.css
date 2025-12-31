@@ -5,9 +5,9 @@
 
 /* ===== Color system ===== */
 :root {
-  --green-dark: #016e39;          /* Tel-Hai deep green */
-  --green: #3a8f63;               /* soft leaf green */
-  --green-light: #d5efe3;         /* pale green for accents */
+  --green-dark: #016e39;
+  --green: #3a8f63;
+  --green-light: #d5efe3;
 
   --text-strong: #1b1b1b;
   --text-main: #323232;
@@ -106,7 +106,7 @@ li {
 }
 
 
-/* ===== Header & Navigation ===== */
+/* ===== Header and Navigation ===== */
 .site-header {
   border-bottom: 1px solid var(--line);
   background: #ffffff;
@@ -116,45 +116,45 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 10px 0;
 }
 
 /* container for both logos */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   text-decoration: none;
 }
 
-/* Tel-Hai logo - big */
+/* Tel-Hai logo */
 .brand-logo-telhai {
   height: 136px;
   object-fit: contain;
 }
 
-/* Levi Lab logo - slightly smaller */
+/* Levi Lab logo enlarged */
 .brand-logo-lab {
-  height: 72px;
+  height: 112px;
   object-fit: contain;
 }
 
-/* on small screens shrink both logos a bit */
+/* mobile: proportional scaling */
 @media (max-width: 720px) {
   .brand-logo-telhai {
     height: 90px;
   }
-
   .brand-logo-lab {
-    height: 52px;
+    height: 76px;
   }
 }
 
-/* no visible lab title text near the logos */
+/* hide text next to logos */
 .brand-title {
   display: none;
 }
 
+/* Navigation links */
 .nav a {
   margin-left: 18px;
   text-decoration: none;
@@ -233,7 +233,7 @@ li {
 }
 
 
-/* ===== Figures/photos ===== */
+/* ===== Figures and photos ===== */
 img {
   max-width: 100%;
   height: auto;
