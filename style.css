@@ -1,44 +1,158 @@
 /* ========================================
-   Levi Lab - Strong Identity
-   Emphasizing leadership and brand presence
+   Levi Lab - Tel Hai theme
+   Version: Classic Academic
 ======================================== */
+
+/* Colors */
 :root {
-  --green-dark: #015e31;
-  --green: #2aa96e;
-  --bg: #ffffff;
-  --text: #101010;
-  --muted: #6f6f6f;
-  --font-title: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --green-dark: #016e39;
+  --green: #3a8f63;
+  --green-light: #d5efe3;
+  --bg-main: #ffffff;
+  --bg-accent: #f8f8f8;
+  --text-main: #1f1f1f;
+  --text-muted: #777;
+  --line: #e4e4e4;
+  --font-title: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 /* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 19px; line-height: 1.8; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-body);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* Layout */
-.container { max-width: 1320px; margin: auto; padding: 0 40px; }
-.main { padding: 70px 0 130px; }
-.section { margin: 90px 0; }
+/* Containers */
+.container {
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 32px;
+}
+.main {
+  padding: 48px 0 90px;
+}
+.section {
+  margin: 64px 0;
+}
 
-/* Titles bold and confident */
-h1 { font-size: 58px; font-family: var(--font-title); font-weight: 800; margin-bottom: 28px; letter-spacing: -1px; }
-h2 { font-size: 38px; font-weight: 700; margin-bottom: 34px; }
-h3 { font-size: 26px; font-weight: 600; margin: 26px 0; }
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  color: var(--text-main);
+}
+h1 {
+  font-size: 46px;
+  margin: 10px 0 20px;
+}
+h2 {
+  font-size: 32px;
+  margin: 20px 0 26px;
+  border-bottom: 3px solid var(--green-light);
+  padding-bottom: 8px;
+}
+h3 {
+  font-size: 22px;
+  margin: 14px 0 16px;
+}
+p {
+  margin: 12px 0 16px;
+  max-width: 800px;
+}
+ul {
+  margin: 10px 0 22px 26px;
+}
 
-/* Header */
-.site-header { border-bottom: 2px solid var(--green-dark); background: var(--bg); padding: 18px 0; }
-.header-inner { display: flex; justify-content: space-between; align-items: center; }
+/* Header and Logos */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-main);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
 
-/* Oversized logos like top institutes */
-.brand { display: flex; align-items: center; gap: 50px; }
-.brand-logo-telhai { height: 220px; }
-.brand-logo-lab { height: 200px; }
+/* Logos much larger */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+}
+.brand-logo-telhai {
+  height: 170px;
+  object-fit: contain;
+}
+.brand-logo-lab {
+  height: 150px;
+  object-fit: contain;
+}
 
-/* Nav bold */
-.nav a { margin-left: 32px; text-decoration: none; font-size: 22px; color: var(--text); font-weight: 600; }
-.nav a:hover,
-.nav a.active { color: var(--green-dark); }
+/* Nav */
+.nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 18px;
+  padding-bottom: 4px;
+  position: relative;
+}
+.nav a.active,
+.nav a:hover {
+  color: var(--green-dark);
+}
+.nav a:hover::after,
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: var(--green-dark);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-accent);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 26px 30px;
+  margin: 26px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--green-dark);
+  color: #fff;
+  text-decoration: none;
+  margin-top: 12px;
+}
+.btn:hover {
+  background: var(--green);
+}
 
 /* Footer */
-.footer-inner { text-align: center; border-top: 2px solid var(--green-dark); padding: 36px 0; color: var(--muted); font-size: 18px; margin-top: 160px; }
+.footer-inner {
+  margin-top: 100px;
+  padding: 26px 0;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 15px;
+}
