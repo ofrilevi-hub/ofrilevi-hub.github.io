@@ -1,45 +1,44 @@
 /* ========================================
-   Levi Lab - Modern Minimal
+   Levi Lab - Strong Identity
+   Emphasizing leadership and brand presence
 ======================================== */
 :root {
-  --green-dark: #016e39;
-  --green: #3a8f63;
-  --text-main: #1d1d1d;
-  --text-muted: #676767;
+  --green-dark: #015e31;
+  --green: #2aa96e;
   --bg: #ffffff;
-  --line: #e8e8e8;
-  --font-body: "Inter", sans-serif;
+  --text: #101010;
+  --muted: #6f6f6f;
   --font-title: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--text-main); font-family: var(--font-body); font-size: 20px; line-height: 1.8; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 19px; line-height: 1.8; }
 
 /* Layout */
-.container { max-width: 1280px; margin: auto; padding: 0 48px; }
-.main { padding: 80px 0 140px; }
-.section { margin: 100px 0; }
+.container { max-width: 1320px; margin: auto; padding: 0 40px; }
+.main { padding: 70px 0 130px; }
+.section { margin: 90px 0; }
 
-/* Typography */
-h1 { font-family: var(--font-title); font-size: 64px; font-weight: 700; margin-bottom: 26px; }
-h2 { font-size: 42px; font-weight: 600; margin-bottom: 32px; }
-h3 { font-size: 28px; margin: 26px 0; }
-p { margin: 16px 0 24px; max-width: 850px; }
+/* Titles bold and confident */
+h1 { font-size: 58px; font-family: var(--font-title); font-weight: 800; margin-bottom: 28px; letter-spacing: -1px; }
+h2 { font-size: 38px; font-weight: 700; margin-bottom: 34px; }
+h3 { font-size: 26px; font-weight: 600; margin: 26px 0; }
 
 /* Header */
-.site-header { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.site-header { border-bottom: 2px solid var(--green-dark); background: var(--bg); padding: 18px 0; }
 .header-inner { display: flex; justify-content: space-between; align-items: center; }
 
-/* Massive logos for identity */
-.brand { display: flex; align-items: center; gap: 40px; }
-.brand-logo-telhai { height: 190px; }
-.brand-logo-lab { height: 170px; }
+/* Oversized logos like top institutes */
+.brand { display: flex; align-items: center; gap: 50px; }
+.brand-logo-telhai { height: 220px; }
+.brand-logo-lab { height: 200px; }
 
-/* Nav large and clean */
-.nav a { margin-left: 36px; text-decoration: none; font-size: 24px; color: var(--text-main); }
+/* Nav bold */
+.nav a { margin-left: 32px; text-decoration: none; font-size: 22px; color: var(--text); font-weight: 600; }
 .nav a:hover,
 .nav a.active { color: var(--green-dark); }
 
 /* Footer */
-.footer-inner { text-align: center; border-top: 1px solid var(--line); padding: 40px 0; color: var(--text-muted); font-size: 20px; margin-top: 140px; }
+.footer-inner { text-align: center; border-top: 2px solid var(--green-dark); padding: 36px 0; color: var(--muted); font-size: 18px; margin-top: 160px; }
