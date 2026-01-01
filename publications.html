@@ -22,7 +22,8 @@
     .pub-year {
       margin: 26px 0 8px;
       font-size: 18px;
-      color: var(--green-dark);
+      color: var(--acid);
+      font-weight: 900;
     }
 
     .pub-list {
@@ -32,22 +33,32 @@
 
     .pub-list li {
       margin: 10px 0;
-      line-height: 1.6;
-      color: var(--text-muted);
+      line-height: 1.7;
+      color: var(--muted);
     }
 
     .pub-title a {
       color: inherit;
       text-decoration: underline;
-      text-underline-offset: 2px;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+      text-decoration-color: rgba(0, 200, 83, 0.35);
     }
 
     .pub-title a:hover {
-      color: var(--green-mid);
+      text-decoration-color: rgba(0, 200, 83, 0.75);
     }
 
+    /* Highlight lab members (including PI and key lab contributors) */
     .me {
-      font-weight: 700;
+      font-weight: 950;
+      color: var(--ink);
+      background: rgba(0, 200, 83, 0.12);
+      border: 1px solid rgba(0, 200, 83, 0.22);
+      padding: 0 8px;
+      border-radius: 999px;
+      display: inline-block;
+      line-height: 1.4;
     }
 
     /* corresponding author icon: superscript */
@@ -55,54 +66,55 @@
       font-size: 0.65em;
       margin-left: 2px;
       vertical-align: super;
+      color: rgba(15, 23, 42, 0.75);
     }
 
     .pub-journal {
-      color: #0b63d1;
-      font-weight: 600;
+      color: var(--ink);
+      font-weight: 900;
     }
 
     .pub-note {
       margin-top: 16px;
       font-size: 13px;
-      color: var(--text-muted);
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
   <!-- Header -->
-<header class="site-header">
-  <div class="container header-inner">
-    <!-- Left: Tel-Hai logo -->
-    <a class="brand" href="index.html" aria-label="Levi Lab home">
-      <img
-        class="brand-logo-telhai"
-        src="assets/telhai-logo.jpg.png"
-        alt="Tel-Hai University logo"
-      />
-    </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Left: Tel-Hai logo -->
+      <a class="brand" href="index.html" aria-label="Levi Lab home">
+        <img
+          class="brand-logo-telhai"
+          src="assets/telhai-logo.jpg.png"
+          alt="Tel-Hai University logo"
+        />
+      </a>
 
-    <!-- Middle: Navigation -->
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="people.html">People</a>
-      <a href="opportunities.html">Opportunities</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <!-- Middle: Navigation -->
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <!-- Right: Levi Lab logo (right of Contact) -->
-    <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
-      <img
-        class="lab-logo"
-        src="assets/Levi%20Lab%20logo.png"
-        alt="Levi Lab logo"
-      />
-    </a>
-  </div>
-</header>
+      <!-- Right: Levi Lab logo -->
+      <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
+        <img
+          class="lab-logo"
+          src="assets/Levi%20Lab%20logo.png"
+          alt="Levi Lab logo"
+        />
+      </a>
+    </div>
+  </header>
 
   <!-- Main -->
   <main class="main">
@@ -115,11 +127,11 @@
         <h2 id="pub-2025" class="pub-year">2025</h2>
         <ol class="pub-list">
           <li>
-            Zuchman R, Koren R, Ziv T, Lupu-Haber Y, Dahan N,
+            <span class="me">Zuchman R</span>, Koren R, Ziv T, Lupu-Haber Y, Dahan N,
             <span class="me">Levi O</span><span class="ca">✉</span>,
             Horwitz BA<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank" rel="noopener">
+              <a href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620" target="_blank" rel="noopener noreferrer">
                 <em>Cytoplasmic sequestering of a fungal stress-activated MAPK in response to a host plant phenolic acid</em>
               </a>
             </span>.
@@ -128,10 +140,10 @@
 
           <li>
             <span class="me">Levi O</span><span class="ca">✉</span>,
-            Zuchman R, Sleman N, Koren R, Khamaisi H,
+            <span class="me">Zuchman R</span>, <span class="me">Sleman N</span>, Koren R, <span class="me">Khamaisi H</span>,
             Horwitz BA<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank" rel="noopener">
+              <a href="https://journals.asm.org/doi/10.1128/mbio.01909-25" target="_blank" rel="noopener noreferrer">
                 <em>Genome-Wide CRISPRi Screen and Proteomic Profiling Identify Key Genes Related to Ferulic Acid's Antifungal Activity</em>
               </a>
             </span>.
@@ -143,7 +155,7 @@
             <span class="me">Levi O</span>, Arava YS, Vilensky A, Baasov T, Gotfredsen CH,
             Clausen MH<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://www.sciencedirect.com/science/article/pii/S2472555225000085" target="_blank" rel="noopener">
+              <a href="https://www.sciencedirect.com/science/article/pii/S2472555225000085" target="_blank" rel="noopener noreferrer">
                 <em>Design, Synthesis, and Screening of an RNA Optimized Fluorinated Fragment Library</em>
               </a>
             </span>.
@@ -159,7 +171,7 @@
           <li>
             <span class="me">Levi O</span>, Mallik M, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://www.mdpi.com/2073-4425/14/2/462" target="_blank" rel="noopener">
+              <a href="https://www.mdpi.com/2073-4425/14/2/462" target="_blank" rel="noopener noreferrer">
                 <em>ThrRS-mediated translation regulation of the RNA polymerase III subunit RPC10 occurs through an ASL-like structure and affects tRNA levels</em>
               </a>
             </span>.
@@ -175,7 +187,7 @@
           <li>
             Garin S, <span class="me">Levi O</span>, Forrest ME, Antonellis A, Arava YS<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://www.tandfonline.com/doi/full/10.1080/15476286.2021.1935116" target="_blank" rel="noopener">
+              <a href="https://www.tandfonline.com/doi/full/10.1080/15476286.2021.1935116" target="_blank" rel="noopener noreferrer">
                 <em>Comprehensive characterization of mRNAs associated with yeast cytosolic aminoacyl-tRNA synthetases</em>
               </a>
             </span>.
@@ -185,7 +197,7 @@
           <li>
             <span class="me">Levi O</span>, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://link.springer.com/article/10.1007/s00294-021-01168-1?wt_mc=Internal.Event.1.SEM.ArticleAuthorOnlineFirst&utm_source=ArticleAuthorOnlineFirst&utm_medium=email&utm_content=AA_en_06082018&ArticleAuthorOnlineFirst_20210309" target="_blank" rel="noopener">
+              <a href="https://link.springer.com/article/10.1007/s00294-021-01168-1" target="_blank" rel="noopener noreferrer">
                 <em>RNA modifications as a common denominator between tRNA and mRNA</em>
               </a>
             </span>.
@@ -195,7 +207,7 @@
           <li>
             <span class="me">Levi O</span>, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://academic.oup.com/nar/article/49/1/432/6030234" target="_blank" rel="noopener">
+              <a href="https://academic.oup.com/nar/article/49/1/432/6030234" target="_blank" rel="noopener noreferrer">
                 <em>Pseudouridine-mediated translation control by methionine aminoacyl tRNA synthetase</em>
               </a>
             </span>.
@@ -211,7 +223,7 @@
           <li>
             Garin S, <span class="me">Levi O</span>, Cohen B, Golani A, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://www.mdpi.com/2073-4425/11/10/1185" target="_blank" rel="noopener">
+              <a href="https://www.mdpi.com/2073-4425/11/10/1185" target="_blank" rel="noopener noreferrer">
                 <em>Localization and RNA binding of mitochondrial aminoacyl tRNA synthetases</em>
               </a>
             </span>.
@@ -221,7 +233,7 @@
           <li>
             <span class="me">Levi O</span>, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://link.springer.com/article/10.1007/s00284-019-01851-0" target="_blank" rel="noopener">
+              <a href="https://link.springer.com/article/10.1007/s00284-019-01851-0" target="_blank" rel="noopener noreferrer">
                 <em>Expanding the CRISPR/Cas9 toolbox for gene engineering in S. cerevisiae</em>
               </a>
             </span>.
@@ -237,7 +249,7 @@
           <li>
             <span class="me">Levi O</span>, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000274" target="_blank" rel="noopener">
+              <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000274" target="_blank" rel="noopener noreferrer">
                 <em>mRNA association by aminoacyl tRNA synthetase occurs at an anticodon mimic and autoregulates translation in response to tRNA levels</em>
               </a>
             </span>.
@@ -247,7 +259,7 @@
           <li>
             <span class="me">Levi O</span>, Garin S, Arava Y<span class="ca">✉</span>.
             <span class="pub-title">
-              <a href="https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wrna.1564" target="_blank" rel="noopener">
+              <a href="https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wrna.1564" target="_blank" rel="noopener noreferrer">
                 <em>RNA mimicry in post-transcriptional regulation by aminoacyl tRNA synthetases</em>
               </a>
             </span>.
