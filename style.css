@@ -556,40 +556,45 @@ body.home .btn{ padding: 10px 16px; border-radius: 12px; }
 /* Home logos smaller */
 body.home .brand-logo-telhai{ height: 120px; }
 body.home .lab-logo{ height: 120px; }
-
 /* ============================================================
-   Home: smaller carousel + NO zoom + NO crop
+   Home: hero carousel size aligned with "Latest news"
 ============================================================ */
+
 body.home .hero-carousel{
-  width: min(760px, 100%);
-  margin-top: 10px;
+  width: min(900px, 100%);
+  margin-top: 16px;
+  margin-bottom: 20px;
 }
 
-/* תמונת גלריה בעמוד הבית */
+/* גודל גלריה כמו Latest news */
 body.home .hero-slide img{
-  height: 260px;
+  height: 340px;
   object-fit: contain;
 }
 
-/* ביטול מוחלט של ה-zoom על תמונות הגלריה בעמוד הבית */
+/* ביטול מוחלט של zoom בעמוד הבית */
 body.home .hero-carousel img{
   transform: none !important;
   transition: none !important;
   box-shadow: none !important;
   cursor: default !important;
 }
+
 body.home .hero-carousel img:hover,
 body.home .hero-carousel img:focus-visible{
   transform: none !important;
   box-shadow: none !important;
 }
 
-/* Responsive carousel heights */
+/* Responsive */
 @media (max-width: 980px) {
-  body.home .hero-slide img { height: 230px; }
+  body.home .hero-slide img { height: 300px; }
 }
+
+@media (max-width: 720px) {
+  body.home .hero-slide img { height: 260px; }
+}
+
 @media (max-width: 520px) {
-  body.home .main { padding: 28px 0 64px; }
-  body.home .section { margin: 34px 0; }
-  body.home .hero-slide img { height: 200px; }
+  body.home .hero-slide img { height: 220px; }
 }
