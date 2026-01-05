@@ -578,3 +578,72 @@ body.home .btn{ padding: 10px 16px; border-radius: 12px; }
 /* logos only on Home */
 body.home .brand-logo-telhai{ height: 120px; }
 body.home .lab-logo{ height: 120px; }
+/* ============================================================
+   Home: tighter spacing + smaller carousel (override)
+   Paste at END of style.css
+============================================================ */
+
+/* Reduce overall vertical whitespace on Home only */
+body.home .main {
+  padding: 40px 0 80px;  /* פחות padding כללי */
+}
+
+body.home .section {
+  margin: 48px 0;        /* פחות רווח בין סקשנים */
+}
+
+/* Hero: tighter stack */
+body.home .section.hero-center {
+  margin: 28px 0 34px;
+}
+
+body.home .section.hero-center .badge {
+  margin-bottom: 10px;
+}
+
+body.home .section.hero-center h1 {
+  margin: 10px 0 10px;
+}
+
+body.home .section.hero-center p {
+  margin: 8px auto 10px;
+}
+
+/* Buttons row: less gap */
+body.home .section.hero-center > div[style*="display:flex"] {
+  margin-top: 10px !important;
+  gap: 10px !important;
+}
+
+/* Carousel: smaller and tighter */
+body.home .hero-carousel {
+  width: min(760px, 100%); /* הקטנה לרוחב נעים */
+  margin-top: 12px;        /* פחות רווח מעל הגלריה */
+}
+
+body.home .hero-slide img {
+  height: 280px;           /* הקטנת הגלריה */
+  object-fit: contain;     /* בלי crop */
+}
+
+/* Controls spacing (dots/arrows) */
+body.home .hero-controls {
+  margin-top: 8px;
+}
+
+body.home .hero-dot {
+  width: 8px;
+  height: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 980px) {
+  body.home .hero-slide img { height: 240px; }
+}
+
+@media (max-width: 520px) {
+  body.home .main { padding: 28px 0 64px; }
+  body.home .section { margin: 36px 0; }
+  body.home .hero-slide img { height: 200px; }
+}
+
