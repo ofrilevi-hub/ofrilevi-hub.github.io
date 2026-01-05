@@ -410,3 +410,16 @@ body.home .funding-logos img {
     height: 220px;
   }
 }
+/* ========================================
+   Funding logos: disable hover zoom
+======================================== */
+.funding-logos img,
+.funding-logos img:hover,
+.funding-logos img:focus-visible {
+  transform: none !important;
+  box-shadow: none !important;
+  position: static !important;
+  z-index: auto !important;
+  outline: none !important;
+  cursor: default !important;
+}
