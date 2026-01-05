@@ -34,21 +34,6 @@
     border-radius: 14px;
     border: 1px solid var(--line);
     background: #f6f6f6;
-
-    /* People: lower zoom than global (Research stays x2 via style.css) */
-    transition: transform 180ms ease, box-shadow 180ms ease;
-    transform-origin: center center;
-    will-change: transform;
-  }
-
-  /* Override the global hover zoom only for People photos */
-  .person-photo:hover,
-  .person-photo:focus-visible {
-    transform: scale(1.18); /* כמו מקודם */
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
-    outline: none;
   }
 
   .person-name { margin: 0; font-size: 22px; font-weight: 900; color: var(--ink); }
@@ -70,6 +55,31 @@
   @media (max-width: 720px) {
     .person-row { grid-template-columns: 1fr; }
     .person-photo { width: 100%; height: 240px; }
+  }
+
+  /* ============================================================
+     IMPORTANT: People page must NOT use the global x2 zoom rule.
+     This overrides the global ".main img:hover { transform: ... }"
+     ============================================================ */
+
+  /* reset any global transform/box-shadow on people photos */
+  .main .person-photo {
+    transform: none !important;
+    box-shadow: none !important;
+    z-index: auto !important;
+    position: static !important;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    transform-origin: center center;
+  }
+
+  /* apply a smaller zoom just for People */
+  .main .person-photo:hover,
+  .main .person-photo:focus-visible {
+    transform: scale(1.18) !important; /* כמו מקודם */
+    position: relative !important;
+    z-index: 10 !important;
+    box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18) !important;
+    outline: none;
   }
 </style>
 </head>
