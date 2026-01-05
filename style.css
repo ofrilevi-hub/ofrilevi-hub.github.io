@@ -254,7 +254,7 @@ a:focus-visible {
   margin: 24px 0;
   box-shadow: var(--shadow-md);
   position: relative;
-  overflow: visible; /* allow image zoom to escape */
+  overflow: visible;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .card::before {
@@ -302,56 +302,6 @@ a:focus-visible {
   box-shadow: var(--shadow-sm);
 }
 
-/* ============================================================
-   Image hover zoom (content images) + prevent clipping
-   - Applies to images in main content and cards/figures.
-   - Excludes header logos and funding/news small logos.
-============================================================ */
-.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img) {
-  transition: transform 220ms ease, box-shadow 220ms ease;
-  transform-origin: center center;
-  will-change: transform;
-  cursor: zoom-in;
-}
-
-.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):hover,
-.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):focus-visible {
-  transform: scale(var(--img-zoom));
-  position: relative;
-  z-index: 20;
-  box-shadow: var(--img-zoom-shadow);
-  outline: none;
-  cursor: zoom-out;
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img) {
-    transition: none;
-  }
-  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):hover,
-  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):focus-visible {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-/* ===== Funding ===== */
-.funding-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 14px;
-}
-.funding-logos img {
-  height: 70px;
-  max-width: 210px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 14px rgba(17, 24, 39, 0.07));
-}
-
 /* ===== News block ===== */
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-item {
@@ -392,6 +342,110 @@ a:focus-visible {
   border-radius: 999px;
   border: 1px solid rgba(17,24,39,0.12);
   background: rgba(255,255,255,0.8);
+}
+
+/* ===== Funding ===== */
+.funding-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 14px;
+  overflow: visible;
+}
+.funding-logos img {
+  height: 70px;
+  max-width: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(17, 24, 39, 0.07));
+}
+
+/* ============================================================
+   Global content image hover zoom (x2)
+   - EXCLUDES: header logos, news icons (images and svg), funding logos
+============================================================ */
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo) {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  transform-origin: center center;
+  will-change: transform;
+  cursor: zoom-in;
+}
+
+/* Also exclude funding logos explicitly by container */
+.main .funding-logos img {
+  cursor: default;
+}
+
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):hover,
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):focus-visible {
+  transform: scale(var(--img-zoom));
+  position: relative;
+  z-index: 20;
+  box-shadow: var(--img-zoom-shadow);
+  outline: none;
+  cursor: zoom-out;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo) {
+    transition: none;
+  }
+  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):hover,
+  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ============================================================
+   Hover animation: ONLY Latest news logos + Funding logos
+   - Desktop + mobile
+   - Overrides global x2 zoom
+============================================================ */
+
+/* Latest news: apply only to image logos (not svg icons) */
+.news-item img.news-icon {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform-origin: center center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.news-item img.news-icon:hover,
+.news-item img.news-icon:focus-visible {
+  transform: scale(1.18);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
+  position: relative;
+  z-index: 6;
+  outline: none;
+}
+
+/* Funding: force smaller zoom even if global rule exists */
+.funding-logos img {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform-origin: center center;
+  border-radius: 10px;
+
+  transform: none !important;
+  box-shadow: none !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+.funding-logos img:hover,
+.funding-logos img:focus-visible {
+  transform: scale(1.18) !important;
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18) !important;
+  position: relative !important;
+  z-index: 6 !important;
+  outline: none;
+}
+
+.news-item,
+.card {
+  overflow: visible;
 }
 
 /* ===== Publications ===== */
@@ -483,50 +537,6 @@ label {
   body { font-size: 17px; }
 
   .nav a { padding: 10px 10px; }
-/* ============================================================
-   Hover animation: ONLY Latest news logos + Funding logos
-   - Does NOT affect header logos
-   - Does NOT affect People page photos
-============================================================ */
-
-/* Latest news: apply only to image logos (not svg icons) */
-.news-item img.news-icon {
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  transform-origin: center center;
-  border-radius: 10px; /* soft corners for rectangular logos */
-}
-
-.news-item img.news-icon:hover,
-.news-item img.news-icon:focus-visible {
-  transform: scale(1.18);
-  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
-  position: relative;
-  z-index: 6;
-  outline: none;
-}
-
-/* Funding: apply only to funding logos */
-.funding-logos img {
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  transform-origin: center center;
-  border-radius: 10px;
-}
-
-.funding-logos img:hover,
-.funding-logos img:focus-visible {
-  transform: scale(1.18);
-  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
-  position: relative;
-  z-index: 6;
-  outline: none;
-}
-
-/* Ensure hover zoom is not clipped by surrounding layout */
-.funding-logos,
-.news-item,
-.card {
-  overflow: visible;
-}
 
   .news-item { grid-template-columns: 44px 1fr; }
   .news-year { justify-self: start; margin-left: 56px; }
