@@ -17,10 +17,7 @@
       flex-direction: column;
       align-items: center;
     }
-    .hero-center p {
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .hero-center p { margin-left: auto; margin-right: auto; }
 
     /* Two-line title control */
     .hero-title-line { display: block; }
@@ -29,33 +26,48 @@
     .no-break { white-space: nowrap; }
     @media (max-width: 520px) { .no-break { white-space: normal; } }
 
-    /* ===== HERO IMAGE (crop black edges + NO x2 zoom) ===== */
-    .hero-figure {
+    /* ===============================
+       HERO CAROUSEL (no x2 zoom)
+       - Crops edges (object-fit: cover)
+       - No global image hover zoom
+       - Auto-rotates + dots + arrows
+    =============================== */
+    .hero-carousel {
       width: min(1080px, 100%);
       margin-top: 26px;
-      margin-bottom: 10px;
     }
 
-    /* Frame controls the visible crop */
-    .hero-figure .hero-frame {
+    .hero-carousel-frame {
       width: 100%;
-      aspect-ratio: 16 / 7;          /* adjust if you want taller: e.g., 16/8 or 16/9 */
+      aspect-ratio: 16 / 7; /* adjust to 16/6 if you want tighter crop */
       border-radius: 18px;
       border: 1px solid var(--line);
       box-shadow: var(--shadow-md);
-      overflow: hidden;              /* key: hides black edges after cropping */
+      overflow: hidden;
       background: #fff;
+      position: relative;
     }
 
-    /* Crop by filling the frame */
-    .hero-figure img.hero-img {
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 400ms ease;
+      pointer-events: none;
+    }
+    .hero-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hero-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;             /* key: crops edges, removes black margins */
-      object-position: center;       /* change if you want: center 55% etc */
+      object-fit: cover;      /* crops black margins */
+      object-position: center;
       display: block;
 
-      /* IMPORTANT: behave like People photos (no global x2 hover zoom) */
+      /* behave like People photos: never zoom */
       transform: none !important;
       box-shadow: none !important;
       position: static !important;
@@ -63,18 +75,90 @@
       cursor: default !important;
       transition: none !important;
     }
-
-    /* If your global rule targets :hover/:focus-visible, neutralize it here too */
-    .hero-figure img.hero-img:hover,
-    .hero-figure img.hero-img:focus-visible {
+    .hero-slide img:hover,
+    .hero-slide img:focus-visible {
       transform: none !important;
       box-shadow: none !important;
       outline: none;
     }
 
+    /* Optional caption (hidden by default, keep for future) */
+    .hero-caption {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      padding: 8px 10px;
+      font-size: 14px;
+      color: rgba(15,23,42,0.92);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(17,24,39,0.12);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      display: none;
+    }
+
+    /* Controls */
+    .hero-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .hero-arrow {
+      border: 1px solid rgba(17,24,39,0.14);
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: var(--shadow-sm);
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+    .hero-arrow:hover {
+      transform: translateY(-1px);
+      background: rgba(0,200,83,0.06);
+      border-color: rgba(0,200,83,0.22);
+    }
+    .hero-arrow:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    .hero-dots {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,24,39,0.12);
+      background: rgba(255,255,255,0.70);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,24,39,0.22);
+      background: rgba(17,24,39,0.10);
+      cursor: pointer;
+      padding: 0;
+    }
+    .hero-dot.is-active {
+      background: rgba(0,200,83,0.65);
+      border-color: rgba(0,200,83,0.85);
+    }
+    .hero-dot:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    /* Responsive */
     @media (max-width: 520px) {
-      .hero-figure { margin-top: 18px; }
-      .hero-figure .hero-frame { border-radius: 14px; aspect-ratio: 4 / 3; }
+      .hero-carousel { margin-top: 18px; }
+      .hero-carousel-frame { border-radius: 14px; aspect-ratio: 4 / 3; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slide { transition: none; }
     }
   </style>
 </head>
@@ -131,17 +215,36 @@
           <a class="btn btn-ghost" href="opportunities.html" aria-label="Join the lab">Join the lab</a>
         </div>
 
-        <!-- HERO IMAGE (cropped, no zoom) -->
-        <figure class="hero-figure" aria-label="Featured image">
-          <div class="hero-frame">
-            <img
-              class="hero-img"
-              src="assets/GluRS_46.png"
-              alt="GluRS_46 figure"
-              loading="lazy"
-            />
+        <!-- HERO CAROUSEL -->
+        <div class="hero-carousel" aria-label="Featured image gallery">
+          <div class="hero-carousel-frame" id="heroCarousel" aria-roledescription="carousel" aria-label="Featured images">
+            <div class="hero-slide is-active">
+              <img src="assets/CRISPRi.png" alt="CRISPRi" loading="lazy" />
+            </div>
+            <div class="hero-slide">
+              <img src="assets/GluRS_46.png" alt="GluRS_46" loading="lazy" />
+            </div>
+            <div class="hero-slide">
+              <img src="assets/REesistant 10mM001_Res 10mM 53003_ch00.jpg" alt="Resistant 10 mM" loading="lazy" />
+            </div>
+            <div class="hero-slide">
+              <img src="assets/Plant Ex Plate Reader.jpg" alt="Plant extract plate reader" loading="lazy" />
+            </div>
           </div>
-        </figure>
+
+          <div class="hero-controls" aria-label="Gallery controls">
+            <button class="hero-arrow" type="button" id="heroPrev" aria-label="Previous image">‹</button>
+
+            <div class="hero-dots" role="tablist" aria-label="Select image">
+              <button class="hero-dot is-active" type="button" aria-label="Image 1" aria-current="true"></button>
+              <button class="hero-dot" type="button" aria-label="Image 2"></button>
+              <button class="hero-dot" type="button" aria-label="Image 3"></button>
+              <button class="hero-dot" type="button" aria-label="Image 4"></button>
+            </div>
+
+            <button class="hero-arrow" type="button" id="heroNext" aria-label="Next image">›</button>
+          </div>
+        </div>
       </section>
 
       <!-- LATEST NEWS -->
@@ -172,12 +275,7 @@
             </li>
 
             <li class="news-item">
-              <img
-                class="news-icon"
-                src="assets/MBIO-logo-1601672967533.webp"
-                alt="mBio logo"
-                loading="lazy"
-              />
+              <img class="news-icon" src="assets/MBIO-logo-1601672967533.webp" alt="mBio logo" loading="lazy" />
               <div class="news-title">
                 <a
                   href="https://journals.asm.org/doi/10.1128/mbio.01909-25"
@@ -188,17 +286,11 @@
                   Genome-wide CRISPRi screen and proteomics reveal FA-responsive pathways (mBio)
                 </a>
               </div>
-
               <div class="news-year" aria-label="Year 2025">2025</div>
             </li>
 
             <li class="news-item">
-              <img
-                class="news-icon"
-                src="assets/PLoS_Pathog_logo_1100x600.jpg"
-                alt="PLOS Pathogens logo"
-                loading="lazy"
-              />
+              <img class="news-icon" src="assets/PLoS_Pathog_logo_1100x600.jpg" alt="PLOS Pathogens logo" loading="lazy" />
               <div class="news-title">
                 <a
                   href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620"
@@ -209,7 +301,6 @@
                   Cytoplasmic sequestration of stress-activated MAPK under FA response (PLOS Pathogens)
                 </a>
               </div>
-
               <div class="news-year" aria-label="Year 2025">2025</div>
             </li>
 
@@ -235,23 +326,9 @@
         <h2>Funding</h2>
 
         <div class="funding-logos" aria-label="Funding logos">
-          <img
-            src="assets/telhai-logo.jpg.png"
-            alt="Tel-Hai University logo"
-            loading="lazy"
-          />
-
-          <img
-            src="assets/Helmsley_Trust_logo_2021.svg.png"
-            alt="Helmsley Charitable Trust logo"
-            loading="lazy"
-          />
-
-          <img
-            src="assets/logo-isf.jpg"
-            alt="Israel Science Foundation logo"
-            loading="lazy"
-          />
+          <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" loading="lazy" />
+          <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Charitable Trust logo" loading="lazy" />
+          <img src="assets/logo-isf.jpg" alt="Israel Science Foundation logo" loading="lazy" />
         </div>
       </section>
 
@@ -264,5 +341,74 @@
 
     </div>
   </main>
+
+  <script>
+    (function () {
+      const root = document.getElementById("heroCarousel");
+      if (!root) return;
+
+      const slides = Array.from(root.querySelectorAll(".hero-slide"));
+      const dotsWrap = document.querySelector(".hero-dots");
+      const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll(".hero-dot")) : [];
+      const prevBtn = document.getElementById("heroPrev");
+      const nextBtn = document.getElementById("heroNext");
+
+      let index = 0;
+      const AUTOPLAY_MS = 4500;
+      let timer = null;
+
+      function show(i) {
+        index = (i + slides.length) % slides.length;
+
+        slides.forEach((s, k) => s.classList.toggle("is-active", k === index));
+
+        dots.forEach((d, k) => {
+          const active = k === index;
+          d.classList.toggle("is-active", active);
+          if (active) {
+            d.setAttribute("aria-current", "true");
+          } else {
+            d.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      function next() { show(index + 1); }
+      function prev() { show(index - 1); }
+
+      function start() {
+        stop();
+        timer = window.setInterval(next, AUTOPLAY_MS);
+      }
+      function stop() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      }
+
+      if (nextBtn) nextBtn.addEventListener("click", () => { next(); start(); });
+      if (prevBtn) prevBtn.addEventListener("click", () => { prev(); start(); });
+
+      dots.forEach((d, k) => {
+        d.addEventListener("click", () => { show(k); start(); });
+      });
+
+      // Pause on hover/focus (desktop)
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+      root.addEventListener("focusin", stop);
+      root.addEventListener("focusout", start);
+
+      // Keyboard arrows when carousel is focused
+      root.setAttribute("tabindex", "0");
+      root.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") { next(); start(); }
+        if (e.key === "ArrowLeft") { prev(); start(); }
+      });
+
+      // Init
+      show(0);
+      start();
+    })();
+  </script>
 </body>
 </html>
