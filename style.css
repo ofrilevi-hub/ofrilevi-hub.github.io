@@ -31,8 +31,12 @@
   --maxw: 1180px;
 
   /* Logo sizing (synced heights) */
-  --logo-h: 150px;            /* Tel-Hai height */
-  --lab-logo-h: var(--logo-h);/* Levi Lab height matches Tel-Hai */
+  --logo-h: 150px;             /* Tel-Hai height */
+  --lab-logo-h: var(--logo-h); /* Levi Lab height matches Tel-Hai */
+
+  /* Image hover zoom (content images only) */
+  --img-zoom: 1.18;
+  --img-zoom-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
 
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -298,6 +302,29 @@ a:focus-visible {
   box-shadow: var(--shadow-sm);
 }
 
+/* ============================================================
+   Image hover zoom (content images) + prevent clipping
+   - Applies to images in main content and cards/figures.
+   - Excludes header logos and funding/news small logos.
+============================================================ */
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img) {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform-origin: center center;
+}
+
+.card, .figure, .pub-item {
+  overflow: visible;
+}
+
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):hover,
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):focus-visible {
+  transform: scale(var(--img-zoom));
+  position: relative;
+  z-index: 4;
+  box-shadow: var(--img-zoom-shadow);
+  outline: none;
+}
+
 /* ===== Funding ===== */
 .funding-logos {
   display: flex;
@@ -428,8 +455,9 @@ label {
 
 @media (max-width: 720px) {
   :root {
-    --logo-h: 110px; /* Tel-Hai */
+    --logo-h: 110px;             /* Tel-Hai */
     --lab-logo-h: var(--logo-h); /* Levi matches */
+    --img-zoom: 1.12;            /* slightly smaller zoom on phones */
   }
 
   .container { padding: 0 18px; }
