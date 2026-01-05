@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Levi Lab | Tel-Hai University & MIGAL</title>
+  <title>Levi Lab | Tel-Hai University &amp; MIGAL</title>
   <meta name="description" content="Levi Lab studies fungal resistance mechanisms and antifungal discovery using genome-scale CRISPRi screens, plant-derived compound discovery, and quantitative phenotyping." />
 
   <link rel="stylesheet" href="style.css" />
@@ -21,8 +21,16 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .hero-title-line {
-      display: block;
+
+    /* Two-line title control */
+    .hero-title-line { display: block; }
+
+    /* Keep "Fungal resistance mechanisms" on one line */
+    .no-break { white-space: nowrap; }
+
+    /* Optional: on very small screens, allow wrap to avoid overflow */
+    @media (max-width: 520px) {
+      .no-break { white-space: normal; }
     }
   </style>
 </head>
@@ -65,7 +73,7 @@
         <div class="badge">Levi Lab</div>
 
         <h1>
-          <span class="hero-title-line">Fungal resistance mechanisms</span>
+          <span class="hero-title-line no-break">Fungal resistance mechanisms</span>
           <span class="hero-title-line">&amp; antifungal discovery</span>
         </h1>
 
