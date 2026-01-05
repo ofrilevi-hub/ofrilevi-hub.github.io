@@ -28,9 +28,26 @@
     /* Keep "Fungal resistance mechanisms" on one line */
     .no-break { white-space: nowrap; }
 
+    /* HERO image block (red marked area) */
+    .hero-figure {
+      width: min(1080px, 100%);
+      margin-top: 26px;
+      margin-bottom: 10px;
+    }
+    .hero-figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+      background: #fff;
+    }
+
     /* Optional: on very small screens, allow wrap to avoid overflow */
     @media (max-width: 520px) {
       .no-break { white-space: normal; }
+      .hero-figure { margin-top: 18px; }
+      .hero-figure img { border-radius: 14px; }
     }
   </style>
 </head>
@@ -86,6 +103,15 @@
           <a class="btn" href="research.html" aria-label="Explore research">Explore research</a>
           <a class="btn btn-ghost" href="opportunities.html" aria-label="Join the lab">Join the lab</a>
         </div>
+
+        <!-- HERO IMAGE (placed in the red marked area) -->
+        <figure class="hero-figure" aria-label="Featured image">
+          <img
+            src="assets/GluRS_46.png"
+            alt="GluRS_46 figure"
+            loading="lazy"
+          />
+        </figure>
       </section>
 
       <!-- LATEST NEWS -->
