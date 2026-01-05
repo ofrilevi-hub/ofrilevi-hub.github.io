@@ -27,27 +27,54 @@
 
     /* Keep "Fungal resistance mechanisms" on one line */
     .no-break { white-space: nowrap; }
+    @media (max-width: 520px) { .no-break { white-space: normal; } }
 
-    /* HERO image block (red marked area) */
+    /* ===== HERO IMAGE (crop black edges + NO x2 zoom) ===== */
     .hero-figure {
       width: min(1080px, 100%);
       margin-top: 26px;
       margin-bottom: 10px;
     }
-    .hero-figure img {
+
+    /* Frame controls the visible crop */
+    .hero-figure .hero-frame {
       width: 100%;
-      height: auto;
+      aspect-ratio: 16 / 7;          /* adjust if you want taller: e.g., 16/8 or 16/9 */
       border-radius: 18px;
       border: 1px solid var(--line);
       box-shadow: var(--shadow-md);
+      overflow: hidden;              /* key: hides black edges after cropping */
       background: #fff;
     }
 
-    /* Optional: on very small screens, allow wrap to avoid overflow */
+    /* Crop by filling the frame */
+    .hero-figure img.hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;             /* key: crops edges, removes black margins */
+      object-position: center;       /* change if you want: center 55% etc */
+      display: block;
+
+      /* IMPORTANT: behave like People photos (no global x2 hover zoom) */
+      transform: none !important;
+      box-shadow: none !important;
+      position: static !important;
+      z-index: auto !important;
+      cursor: default !important;
+      transition: none !important;
+    }
+
+    /* If your global rule targets :hover/:focus-visible, neutralize it here too */
+    .hero-figure img.hero-img:hover,
+    .hero-figure img.hero-img:focus-visible {
+      transform: none !important;
+      box-shadow: none !important;
+      outline: none;
+    }
+
     @media (max-width: 520px) {
-      .no-break { white-space: normal; }
       .hero-figure { margin-top: 18px; }
-      .hero-figure img { border-radius: 14px; }
+      .hero-figure .hero-frame { border-radius: 14px; aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
@@ -104,13 +131,16 @@
           <a class="btn btn-ghost" href="opportunities.html" aria-label="Join the lab">Join the lab</a>
         </div>
 
-        <!-- HERO IMAGE (placed in the red marked area) -->
+        <!-- HERO IMAGE (cropped, no zoom) -->
         <figure class="hero-figure" aria-label="Featured image">
-          <img
-            src="assets/GluRS_46.png"
-            alt="GluRS_46 figure"
-            loading="lazy"
-          />
+          <div class="hero-frame">
+            <img
+              class="hero-img"
+              src="assets/GluRS_46.png"
+              alt="GluRS_46 figure"
+              loading="lazy"
+            />
+          </div>
         </figure>
       </section>
 
