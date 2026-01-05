@@ -598,3 +598,16 @@ body.home .hero-carousel img:focus-visible{
 @media (max-width: 520px) {
   body.home .hero-slide img { height: 220px; }
 }
+/* Home: reduce top gap above H1 (only index.html with <body class="home">) */
+body.home .main{
+  padding-top: 22px; /* היה גדול יותר */
+}
+
+body.home .section.hero-center{
+  margin-top: 18px; /* מצמצם את המרווח לפני ה-hero */
+}
+
+/* אם עדיין יש תחושת רווח, מצמצמים גם את ה-margin של הכותרת */
+body.home .section.hero-center h1{
+  margin-top: 0;
+}
