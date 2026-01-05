@@ -8,89 +8,105 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .people-wrap { max-width: 980px; }
-    .people-hero { margin: 12px 0 18px; }
-    .people-hero h1 { margin: 10px 0 0; font-size: 34px; line-height: 1.15; }
-    .people-hero p { margin: 10px 0 0; color: rgba(33,32,33,0.85); max-width: 95ch; }
+  /* Page width consistent with other pages */
+  .people-wrap { max-width: var(--maxw); }
 
-    .people-section-title { margin: 18px 0 12px; font-size: 16px; letter-spacing: 0.02em; }
+  /* Keep the hero clean like other pages (no custom h1 sizing) */
+  .people-hero { margin: 0 0 18px; }
+  .people-hero p { max-width: 920px; }
 
-    /* Vertical list, one person under another */
-    .person-row {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 18px;
-      padding: 18px 0;
-      border-top: 1px solid var(--line);
-      align-items: start;
-    }
-    .person-row:first-of-type { border-top: 0; padding-top: 0; }
+  /* People list */
+  .person-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .person-row:first-of-type { border-top: 0; padding-top: 0; }
 
-    /* SAME SIZE for all images, no cropping */
-    .person-photo {
-      width: 240px;
-      height: 180px;
-      object-fit: contain;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #f6f6f6;
-    }
+  /* same size images, no cropping */
+  .person-photo {
+    width: 240px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #f6f6f6;
 
-    .person-name { margin: 0; font-size: 16px; }
-    .person-role { margin: 4px 0 0; color: rgba(33,32,33,0.75); font-size: 13px; }
-    .person-text { margin: 10px 0 0; color: rgba(33,32,33,0.88); line-height: 1.65; max-width: 95ch; font-size: 14px; }
-    .person-links { margin: 10px 0 0; font-size: 13px; }
-    .person-links a {
-      text-decoration: none;
-      border-bottom: 1px solid rgba(33,32,33,0.25);
-    }
-    .person-links a:hover {
-      border-bottom-color: rgba(33,32,33,0.6);
-    }
+    /* People: lower zoom than global (Research stays x2 via style.css) */
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    transform-origin: center center;
+    will-change: transform;
+  }
 
-    @media (max-width: 720px) {
-      .person-row { grid-template-columns: 1fr; }
-      .person-photo { width: 100%; height: 240px; }
-    }
-  </style>
+  /* Override the global hover zoom only for People photos */
+  .person-photo:hover,
+  .person-photo:focus-visible {
+    transform: scale(1.18); /* כמו מקודם */
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
+    outline: none;
+  }
+
+  .person-name { margin: 0; font-size: 22px; font-weight: 900; color: var(--ink); }
+  .person-role { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+  .person-text { margin: 12px 0 0; color: var(--muted); line-height: 1.7; max-width: 95ch; font-size: 16px; }
+  .person-links { margin: 12px 0 0; font-size: 15px; color: var(--muted); }
+  .person-links a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0,200,83,0.35); }
+  .person-links a:hover { text-decoration-color: rgba(0,200,83,0.75); }
+
+  .people-subtitle {
+    margin: 10px 0 10px;
+    font-size: 16px;
+    font-weight: 950;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-transform: none;
+  }
+
+  @media (max-width: 720px) {
+    .person-row { grid-template-columns: 1fr; }
+    .person-photo { width: 100%; height: 240px; }
+  }
+</style>
 </head>
 
 <body>
-  <!-- Header / Nav -->
-<header class="site-header">
-  <div class="container header-inner">
-    <!-- Left: Tel-Hai logo -->
-    <a class="brand" href="index.html" aria-label="Levi Lab home">
-      <img
-        class="brand-logo-telhai"
-        src="assets/telhai-logo.jpg.png"
-        alt="Tel-Hai University logo"
-      />
-    </a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Levi Lab home">
+        <img
+          class="brand-logo-telhai"
+          src="assets/telhai-logo.jpg.png"
+          alt="Tel-Hai University logo"
+        />
+      </a>
 
-    <!-- Middle: Navigation -->
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="people.html">People</a>
-      <a href="opportunities.html">Opportunities</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a class="active" href="people.html">People</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <!-- Right: Levi Lab logo (right of Contact) -->
-    <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
-      <img
-        class="lab-logo"
-        src="assets/Levi%20Lab%20logo.png"
-        alt="Levi Lab logo"
-      />
-    </a>
-  </div>
-</header>
+      <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
+        <img
+          class="lab-logo"
+          src="assets/Levi%20Lab%20logo.png"
+          alt="Levi Lab logo"
+        />
+      </a>
+    </div>
+  </header>
 
   <main class="main">
     <div class="container people-wrap">
+
       <div class="badge">People</div>
 
       <section class="people-hero">
@@ -101,17 +117,15 @@
         </p>
       </section>
 
-      <section class="card">
-        <h2 class="people-section-title">Lab members</h2>
+      <section class="card" aria-label="Lab members">
+        <h2>Lab members</h2>
 
         <!-- 1) Ofri -->
         <div class="person-row">
           <img class="person-photo" src="assets/ofri.jpg.jpg" alt="Dr. Ofri Levi" />
           <div>
             <h3 class="person-name">Dr. Ofri Levi</h3>
-            <div class="person-role">
-              Principal Investigator - Tel-Hai University (Kiryat Shmona) and MIGAL
-            </div>
+            <div class="person-role">Principal Investigator - Tel-Hai University (Kiryat Shmona) and MIGAL</div>
             <p class="person-text">
               We study how pathogenic fungi adapt to antifungal stress at genetic, regulatory, and systems levels.
               Our work integrates genome-scale CRISPRi screening, mechanistic microbiology, and multi-omics to identify
@@ -121,21 +135,13 @@
               ✉ <a href="mailto:ofri.le@migal.org.il">ofri.le@migal.org.il</a><br />
               ☎ <a href="tel:+972526264128">+972-52-626-4128</a><br />
               Profile:
-              <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">
-                Official MIGAL profile
-              </a><br />
+              <a href="https://www.migal.org.il/en/dr-ofri-levi" target="_blank" rel="noreferrer">Official MIGAL profile</a><br />
               Academic profiles:
-              <a href="https://scholar.google.com/citations?user=_NK3sWMAAAAJ&hl=en" target="_blank" rel="noreferrer">
-                Google Scholar
-              </a>
+              <a href="https://scholar.google.com/citations?user=_NK3sWMAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
               ·
-              <a href="https://www.researchgate.net/profile/Ofri-Levi-2" target="_blank" rel="noreferrer">
-                ResearchGate
-              </a>
+              <a href="https://www.researchgate.net/profile/Ofri-Levi-2" target="_blank" rel="noreferrer">ResearchGate</a>
               ·
-              <a href="https://orcid.org/0000-0001-5253-8257" target="_blank" rel="noreferrer">
-                ORCID
-              </a>
+              <a href="https://orcid.org/0000-0001-5253-8257" target="_blank" rel="noreferrer">ORCID</a>
             </div>
           </div>
         </div>
@@ -185,16 +191,14 @@
           </div>
         </div>
 
-        <h2 class="people-section-title" style="margin-top:18px;">Former group members</h2>
+        <div class="people-subtitle" style="margin-top: 22px;">Former group members</div>
 
         <div class="person-row">
           <img class="person-photo" src="assets/rina.jpg" alt="Dr. Rina Zuchman" />
           <div>
             <h3 class="person-name">Dr. Rina Zuchman</h3>
             <div class="person-role">Former Postdoctoral Fellow</div>
-            <p class="person-text">
-              Former group member.
-            </p>
+            <p class="person-text">Former group member.</p>
             <div class="person-links">
               ✉ <a href="mailto:rinaz@campus.technion.ac.il">rinaz@campus.technion.ac.il</a>
             </div>
@@ -202,18 +206,17 @@
         </div>
 
       </section>
+
+      <footer class="footer-inner" aria-label="Footer">
+        <div><strong>Levi Lab</strong> | Tel-Hai University and MIGAL, Kiryat Shmona, Israel</div>
+        <div class="text-muted" style="margin-top: 6px;">
+          For inquiries, please use the <a href="contact.html">Contact</a> page.
+        </div>
+      </footer>
+
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      © <span id="year"></span> Levi Lab. All rights reserved.
-    </div>
-  </footer>
-
   <script src="site.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
