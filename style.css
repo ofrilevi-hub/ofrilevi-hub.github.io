@@ -35,8 +35,8 @@
   --lab-logo-h: var(--logo-h); /* Levi Lab height matches Tel-Hai */
 
   /* Image hover zoom (content images only) */
-  --img-zoom: 1.18;
-  --img-zoom-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
+  --img-zoom: 2;
+  --img-zoom-shadow: 0 28px 90px rgba(17, 24, 39, 0.22);
 
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -202,8 +202,6 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  /* keep chrome minimal so the logo height defines the header */
   padding: 0;
   border-radius: 16px;
   border: 1px solid rgba(17,24,39,0.12);
@@ -256,13 +254,14 @@ a:focus-visible {
   margin: 24px 0;
   box-shadow: var(--shadow-md);
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* allow image zoom to escape */
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background:
     radial-gradient(420px 240px at 0% 0%, rgba(0,200,83,0.14), transparent 62%),
     radial-gradient(420px 240px at 100% 0%, rgba(0,184,212,0.10), transparent 62%);
@@ -296,6 +295,7 @@ a:focus-visible {
 .btn.btn-ghost { background: rgba(255,255,255,0.75); border-color: rgba(17,24,39,0.12); }
 
 /* ===== Figures ===== */
+.figure { overflow: visible; }
 .figure img {
   border-radius: 16px;
   border: 1px solid var(--line);
@@ -308,21 +308,32 @@ a:focus-visible {
    - Excludes header logos and funding/news small logos.
 ============================================================ */
 .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img) {
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease;
   transform-origin: center center;
-}
-
-.card, .figure, .pub-item {
-  overflow: visible;
+  will-change: transform;
+  cursor: zoom-in;
 }
 
 .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):hover,
 .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):focus-visible {
   transform: scale(var(--img-zoom));
   position: relative;
-  z-index: 4;
+  z-index: 20;
   box-shadow: var(--img-zoom-shadow);
   outline: none;
+  cursor: zoom-out;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img) {
+    transition: none;
+  }
+  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):hover,
+  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.funding-logos img):focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 /* ===== Funding ===== */
@@ -345,20 +356,27 @@ a:focus-visible {
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-item {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 44px 1fr auto;
   gap: 12px;
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px dashed rgba(17,24,39,0.14);
 }
 .news-item:last-child { border-bottom: 0; }
+
 .news-icon {
-  width: 22px;
-  height: 22px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
   object-fit: contain;
   opacity: 0.95;
   filter: drop-shadow(0 6px 10px rgba(17, 24, 39, 0.10));
 }
+.news-item svg.news-icon {
+  width: 44px;
+  height: 44px;
+}
+
 .news-title a { font-weight: 800; text-decoration: none; }
 .news-title a:hover {
   text-decoration: underline;
@@ -385,6 +403,7 @@ a:focus-visible {
   padding: 18px 18px;
   margin: 14px 0;
   box-shadow: var(--shadow-sm);
+  overflow: visible;
 }
 .pub-item .pub-title { font-weight: 900; }
 .pub-item .pub-meta { color: var(--muted); margin-top: 6px; }
@@ -457,7 +476,7 @@ label {
   :root {
     --logo-h: 110px;             /* Tel-Hai */
     --lab-logo-h: var(--logo-h); /* Levi matches */
-    --img-zoom: 1.12;            /* slightly smaller zoom on phones */
+    --img-zoom: 1.35;            /* smaller zoom on phones */
   }
 
   .container { padding: 0 18px; }
@@ -465,25 +484,6 @@ label {
 
   .nav a { padding: 10px 10px; }
 
-  .news-item { grid-template-columns: auto 1fr; }
-  .news-year { justify-self: start; margin-left: 34px; }
-}
-/* Latest news icons: bigger + consistent */
-.news-icon {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
-  object-fit: contain;
-}
-
-/* SVG icons should also obey the same box */
-.news-item svg.news-icon {
-  width: 44px;
-  height: 44px;
-}
-
-/* Keep alignment nice when icons are bigger */
-.news-item {
-  grid-template-columns: 44px 1fr auto;
-  align-items: center;
+  .news-item { grid-template-columns: 44px 1fr; }
+  .news-year { justify-self: start; margin-left: 56px; }
 }
