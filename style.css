@@ -483,6 +483,50 @@ label {
   body { font-size: 17px; }
 
   .nav a { padding: 10px 10px; }
+/* ============================================================
+   Hover animation: ONLY Latest news logos + Funding logos
+   - Does NOT affect header logos
+   - Does NOT affect People page photos
+============================================================ */
+
+/* Latest news: apply only to image logos (not svg icons) */
+.news-item img.news-icon {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform-origin: center center;
+  border-radius: 10px; /* soft corners for rectangular logos */
+}
+
+.news-item img.news-icon:hover,
+.news-item img.news-icon:focus-visible {
+  transform: scale(1.18);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
+  position: relative;
+  z-index: 6;
+  outline: none;
+}
+
+/* Funding: apply only to funding logos */
+.funding-logos img {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform-origin: center center;
+  border-radius: 10px;
+}
+
+.funding-logos img:hover,
+.funding-logos img:focus-visible {
+  transform: scale(1.18);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
+  position: relative;
+  z-index: 6;
+  outline: none;
+}
+
+/* Ensure hover zoom is not clipped by surrounding layout */
+.funding-logos,
+.news-item,
+.card {
+  overflow: visible;
+}
 
   .news-item { grid-template-columns: 44px 1fr; }
   .news-year { justify-self: start; margin-left: 56px; }
