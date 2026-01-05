@@ -8,6 +8,23 @@
   <meta name="description" content="Levi Lab studies fungal resistance mechanisms and antifungal discovery using genome-scale CRISPRi screens, plant-derived compound discovery, and quantitative phenotyping." />
 
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Center only the hero block on Home */
+    .hero-center {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-center p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-title-line {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
@@ -44,17 +61,20 @@
     <div class="container">
 
       <!-- HERO -->
-      <section class="section" aria-label="Levi Lab overview">
+      <section class="section hero-center" aria-label="Levi Lab overview">
         <div class="badge">Levi Lab</div>
 
-        <h1>Fungal resistance mechanisms and antifungal discovery</h1>
+        <h1>
+          <span class="hero-title-line">Fungal resistance mechanisms</span>
+          <span class="hero-title-line">&amp; antifungal discovery</span>
+        </h1>
 
         <p>
           We study how pathogenic fungi adapt to antifungal stress in clinically and agriculturally relevant environments.
           Our work integrates genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping.
         </p>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px;">
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px; justify-content:center;">
           <a class="btn" href="research.html" aria-label="Explore research">Explore research</a>
           <a class="btn btn-ghost" href="opportunities.html" aria-label="Join the lab">Join the lab</a>
         </div>
@@ -109,12 +129,12 @@
             </li>
 
             <li class="news-item">
-             <img
-  class="news-icon"
-  src="assets/PLoS_Pathog_logo_1100x600.jpg"
-  alt="PLOS Pathogens logo"
-  loading="lazy"
-/>
+              <img
+                class="news-icon"
+                src="assets/PLoS_Pathog_logo_1100x600.jpg"
+                alt="PLOS Pathogens logo"
+                loading="lazy"
+              />
               <div class="news-title">
                 <a
                   href="https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1013620"
@@ -151,7 +171,6 @@
         <h2>Funding</h2>
 
         <div class="funding-logos" aria-label="Funding logos">
-          <!-- Tel-Hai (added back) -->
           <img
             src="assets/telhai-logo.jpg.png"
             alt="Tel-Hai University logo"
