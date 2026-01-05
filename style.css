@@ -1,11 +1,9 @@
 /* ========================================
-   Levi Lab Website - Version 2 (Enhanced)
-   White Paper + Neon Green Grid (Premium)
-   Replace entire style.css with this file
-======================================== */
+   Levi Lab Website - Clean Compact Version
+   ======================================== */
 
+/* ---------- Root ---------- */
 :root {
-  /* Core */
   --bg: #fbfbfb;
   --paper: #ffffff;
   --ink: #0f172a;
@@ -13,637 +11,247 @@
   --muted-2: #7b8798;
   --line: #e5e7eb;
 
-  /* Accents */
   --acid: #00c853;
   --teal: #00b8d4;
   --violet: #7c3aed;
 
-  /* UI */
   --radius: 16px;
   --radius-sm: 12px;
   --radius-lg: 22px;
 
-  --shadow-sm: 0 10px 26px rgba(17, 24, 39, 0.07);
-  --shadow-md: 0 18px 45px rgba(17, 24, 39, 0.10);
-  --shadow-lg: 0 28px 70px rgba(17, 24, 39, 0.12);
+  --shadow-sm: 0 8px 20px rgba(17,24,39,0.07);
+  --shadow-md: 0 14px 36px rgba(17,24,39,0.10);
+  --shadow-lg: 0 22px 56px rgba(17,24,39,0.12);
 
-  --ring: 0 0 0 3px rgba(0, 200, 83, 0.22);
+  --ring: 0 0 0 3px rgba(0,200,83,0.22);
   --maxw: 1180px;
 
-  /* Logo sizing (synced heights) */
-  --logo-h: 150px;             /* Tel-Hai height */
-  --lab-logo-h: var(--logo-h); /* Levi Lab height matches Tel-Hai */
+  --logo-h: 120px;
+  --lab-logo-h: 120px;
 
-  /* Image hover zoom (content images only) */
   --img-zoom: 2;
-  --img-zoom-shadow: 0 28px 90px rgba(17, 24, 39, 0.22);
 
   --font-title: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
 
-/* ===== Reset ===== */
+/* ---------- Reset ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px) 0 0 / 44px 44px,
-    linear-gradient(180deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px) 0 0 / 44px 44px,
-    radial-gradient(1000px 560px at 10% 0%, rgba(0, 200, 83, 0.14), transparent 60%),
-    radial-gradient(1000px 560px at 95% 15%, rgba(0, 184, 212, 0.12), transparent 64%),
+    linear-gradient(90deg, rgba(15,23,42,0.03) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(180deg, rgba(15,23,42,0.03) 1px, transparent 1px) 0 0 / 44px 44px,
+    radial-gradient(900px 520px at 10% 0%, rgba(0,200,83,0.12), transparent 60%),
+    radial-gradient(900px 520px at 95% 15%, rgba(0,184,212,0.10), transparent 64%),
     var(--bg);
-  line-height: 1.75;
-  font-size: 18px;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
+  font-size: 16px;
 }
-img { max-width: 100%; height: auto; display: block; }
-::selection { background: rgba(0, 200, 83, 0.18); }
+img { max-width: 100%; display: block; }
 
-/* ===== Layout ===== */
-.container { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
-.main { padding: 64px 0 120px; }
-.section { margin: 84px 0; }
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-/* Utilities */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.stack-16 > * + * { margin-top: 16px; }
-.stack-24 > * + * { margin-top: 24px; }
+.main {
+  padding: 40px 0 72px;
+}
 
-/* ===== Typography ===== */
-h1, h2, h3, h4 { font-family: var(--font-title); color: var(--ink); }
+.section {
+  margin: 48px 0;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--ink);
+}
+
 h1 {
-  font-size: clamp(42px, 4.6vw, 74px);
-  line-height: 1.03;
+  font-size: clamp(34px, 4.4vw, 58px);
+  line-height: 1.05;
   font-weight: 950;
-  letter-spacing: -0.9px;
-  margin: 16px 0 18px;
+  margin: 8px 0 12px;
+  letter-spacing: -0.6px;
 }
+
 h2 {
-  font-size: clamp(24px, 2.5vw, 38px);
+  font-size: clamp(22px, 2.4vw, 34px);
   font-weight: 900;
-  margin: 30px 0 18px;
-  padding-left: 14px;
-  border-left: 6px solid var(--acid);
-}
-h3 {
-  font-size: 22px;
-  font-weight: 850;
   margin: 18px 0 12px;
+  padding-left: 12px;
+  border-left: 5px solid var(--acid);
 }
+
+h3 {
+  font-size: 20px;
+  font-weight: 850;
+  margin: 14px 0 8px;
+}
+
 p {
-  margin: 12px 0 18px;
-  max-width: 920px;
+  max-width: 900px;
+  margin: 8px 0 14px;
   color: var(--muted);
 }
-small, .text-muted { color: var(--muted-2); }
 
-/* ===== Links and focus ===== */
-a { color: var(--ink); text-decoration: none; }
-a:hover { color: #000; }
-a.underline,
-.main a:not(.btn) {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(0, 200, 83, 0.35);
-}
-.main a:not(.btn):hover { text-decoration-color: rgba(0, 200, 83, 0.75); }
-a:focus-visible {
-  outline: none;
-  box-shadow: var(--ring);
-  border-radius: 10px;
+/* ---------- Remove green badges ---------- */
+.badge {
+  display: none !important;
 }
 
-/* ===== Header ===== */
+/* ---------- Header ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
+
 .site-header::before {
   content: "";
   display: block;
-  height: 10px;
+  height: 6px;
   background: linear-gradient(90deg, var(--acid), var(--teal), var(--violet));
 }
 
-/* 3 columns: Tel-Hai (left), nav (middle), Levi badge (right) */
 .header-inner {
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 14px;
-  padding: 12px 0;
+  padding: 10px 0;
 }
 
-/* Brand: Tel-Hai only */
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  min-width: 260px;
-}
-.brand-logo-telhai {
+.brand-logo-telhai,
+.lab-logo {
   height: var(--logo-h);
-  width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 10px 16px rgba(17, 24, 39, 0.08));
 }
-.brand-title { display: none; }
 
-/* Nav */
+/* ---------- Nav ---------- */
 .nav {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 8px;
 }
+
 .nav a {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 850;
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 999px;
-  position: relative;
-  color: var(--ink);
-  border: 1px solid transparent;
-  background: transparent;
-  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
-.nav a:hover {
-  background: rgba(0, 200, 83, 0.07);
-  border-color: rgba(0, 200, 83, 0.18);
-  transform: translateY(-1px);
-}
-.nav a::after {
+
+.nav a.active::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 6px;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
   height: 3px;
-  transform: scaleX(0);
-  transform-origin: left;
   background: linear-gradient(90deg, var(--acid), var(--teal));
   border-radius: 99px;
-  transition: transform 0.16s ease;
-}
-.nav a:hover::after { transform: scaleX(1); }
-.nav a.active::after { transform: scaleX(1); }
-
-/* Levi Lab logo as right-side badge (same height as Tel-Hai) */
-.lab-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border-radius: 16px;
-  border: 1px solid rgba(17,24,39,0.12);
-  background: rgba(255,255,255,0.86);
-  box-shadow: var(--shadow-sm);
-  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
-}
-.lab-badge:hover {
-  background: rgba(0, 200, 83, 0.06);
-  border-color: rgba(0, 200, 83, 0.22);
-  transform: translateY(-1px);
-}
-.lab-logo {
-  height: var(--lab-logo-h);
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 12px rgba(17, 24, 39, 0.08));
 }
 
-/* Backward-compat (if any page still uses this class) */
-.brand-logo-lab {
-  height: var(--lab-logo-h);
-  width: auto;
-  object-fit: contain;
-}
-
-/* ===== Badge ===== */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 950;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: #003b19;
-  background: rgba(0,200,83,0.14);
-  border: 1px solid rgba(0,200,83,0.30);
-  margin-bottom: 14px;
-}
-
-/* ===== Cards ===== */
+/* ---------- Cards ---------- */
 .card {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 28px 30px;
-  margin: 24px 0;
+  padding: 22px 24px;
+  margin: 18px 0;
   box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: visible;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    radial-gradient(420px 240px at 0% 0%, rgba(0,200,83,0.14), transparent 62%),
-    radial-gradient(420px 240px at 100% 0%, rgba(0,184,212,0.10), transparent 62%);
-  pointer-events: none;
-}
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(0,200,83,0.22);
-}
-.card h3 { margin-top: 0; }
 
-/* ===== Buttons ===== */
+/* ---------- Buttons ---------- */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 18px;
-  border-radius: 14px;
+  padding: 10px 16px;
+  border-radius: 12px;
   border: 1px solid rgba(0,200,83,0.35);
   background: linear-gradient(90deg, rgba(0,200,83,0.18), rgba(0,184,212,0.12));
-  color: var(--ink);
-  font-weight: 950;
-  text-decoration: none;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.15s ease, filter 0.15s ease;
-}
-.btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
-.btn:active { transform: translateY(0); }
-.btn.btn-ghost { background: rgba(255,255,255,0.75); border-color: rgba(17,24,39,0.12); }
-
-/* ===== Figures ===== */
-.figure { overflow: visible; }
-.figure img {
-  border-radius: 16px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
+  font-weight: 900;
 }
 
-/* ===== News block ===== */
-.news-list { list-style: none; margin: 0; padding: 0; }
-.news-item {
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  gap: 12px;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px dashed rgba(17,24,39,0.14);
+/* ---------- Hero Carousel ---------- */
+.hero-carousel {
+  width: min(760px, 100%);
+  margin: 16px auto 20px;
 }
-.news-item:last-child { border-bottom: 0; }
 
-.news-icon {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
+.hero-slide img {
+  height: 260px;
   object-fit: contain;
-  opacity: 0.95;
-  filter: drop-shadow(0 6px 10px rgba(17, 24, 39, 0.10));
-}
-.news-item svg.news-icon {
-  width: 44px;
-  height: 44px;
 }
 
-.news-title a { font-weight: 800; text-decoration: none; }
-.news-title a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(0, 200, 83, 0.65);
-}
-.news-year {
-  font-variant-numeric: tabular-nums;
-  font-weight: 950;
-  color: rgba(17,24,39,0.72);
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(17,24,39,0.12);
-  background: rgba(255,255,255,0.8);
+/* Disable zoom on carousel */
+.hero-carousel img {
+  transform: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+  cursor: default !important;
 }
 
-/* ===== Funding ===== */
-.funding-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 14px;
-  overflow: visible;
-}
-.funding-logos img {
-  height: 70px;
-  max-width: 210px;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 14px rgba(17, 24, 39, 0.07));
+.hero-carousel img:hover {
+  transform: none !important;
 }
 
-/* ============================================================
-   Global content image hover zoom (x2)
-   - EXCLUDES: header logos, news icons (images and svg), funding logos
-============================================================ */
-.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo) {
+/* ---------- Image zoom (content only) ---------- */
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):not(.hero-carousel img) {
   transition: transform 220ms ease, box-shadow 220ms ease;
-  transform-origin: center center;
-  will-change: transform;
   cursor: zoom-in;
 }
 
-/* Also exclude funding logos explicitly by container */
-.main .funding-logos img {
-  cursor: default;
-}
-
-.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):hover,
-.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):focus-visible {
+.main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):not(.hero-carousel img):hover {
   transform: scale(var(--img-zoom));
-  position: relative;
-  z-index: 20;
-  box-shadow: var(--img-zoom-shadow);
-  outline: none;
-  cursor: zoom-out;
+  box-shadow: 0 24px 70px rgba(17,24,39,0.22);
+  z-index: 10;
 }
 
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo) {
-    transition: none;
-  }
-  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):hover,
-  .main img:not(.brand-logo-telhai):not(.lab-logo):not(.news-icon):not(.person-photo):not(.funding-logo):focus-visible {
-    transform: none;
-    box-shadow: none;
-  }
+/* ---------- News ---------- */
+.news-item {
+  padding: 8px 0;
 }
 
-/* ============================================================
-   Hover animation: ONLY Latest news logos + Funding logos
-   - Desktop + mobile
-   - Overrides global x2 zoom
-============================================================ */
-
-/* Latest news: apply only to image logos (not svg icons) */
-.news-item img.news-icon {
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  transform-origin: center center;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.news-item img.news-icon:hover,
-.news-item img.news-icon:focus-visible {
-  transform: scale(1.18);
-  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18);
-  position: relative;
-  z-index: 6;
-  outline: none;
-}
-
-/* Funding: force smaller zoom even if global rule exists */
-.funding-logos img {
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  transform-origin: center center;
-  border-radius: 10px;
-
-  transform: none !important;
-  box-shadow: none !important;
-  position: static !important;
-  z-index: auto !important;
-}
-
-.funding-logos img:hover,
-.funding-logos img:focus-visible {
-  transform: scale(1.18) !important;
-  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.18) !important;
-  position: relative !important;
-  z-index: 6 !important;
-  outline: none;
-}
-
-.news-item,
-.card {
-  overflow: visible;
-}
-
-/* ===== Publications ===== */
-.pub-list { list-style: none; margin: 0; padding: 0; }
+/* ---------- Publications ---------- */
 .pub-item {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px 18px;
-  margin: 14px 0;
-  box-shadow: var(--shadow-sm);
-  overflow: visible;
-}
-.pub-item .pub-title { font-weight: 900; }
-.pub-item .pub-meta { color: var(--muted); margin-top: 6px; }
-.pub-item .pub-links a { font-weight: 850; margin-right: 12px; }
-
-/* ===== Tables ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-th, td {
-  text-align: left;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--line);
-}
-th {
-  font-weight: 950;
-  background: linear-gradient(90deg, rgba(0,200,83,0.10), rgba(0,184,212,0.06));
-}
-tr:last-child td { border-bottom: 0; }
-
-/* ===== Forms ===== */
-input, textarea, select {
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: 16px;
-  padding: 12px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(17,24,39,0.14);
-  background: rgba(255,255,255,0.92);
-  color: var(--ink);
-}
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  box-shadow: var(--ring);
-  border-color: rgba(0,200,83,0.35);
-}
-label {
-  display: block;
-  font-weight: 850;
-  margin: 10px 0 6px;
-  color: rgba(17,24,39,0.86);
+  padding: 14px 16px;
+  margin: 10px 0;
 }
 
-/* ===== Footer ===== */
+/* ---------- Footer ---------- */
 .footer-inner {
-  margin-top: 120px;
-  padding: 34px 0;
-  text-align: center;
-  border-top: 1px solid var(--line);
+  margin-top: 72px;
+  padding: 24px 0;
+  font-size: 14px;
   color: var(--muted);
-  font-size: 15px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 980px) {
-  .header-inner { grid-template-columns: 1fr; }
-  .nav { justify-content: flex-start; }
-  .lab-badge { justify-self: flex-start; }
-  .grid-2 { grid-template-columns: 1fr; }
-  .grid-3 { grid-template-columns: 1fr; }
-}
-
+/* ---------- Responsive ---------- */
 @media (max-width: 720px) {
   :root {
-    --logo-h: 110px;             /* Tel-Hai */
-    --lab-logo-h: var(--logo-h); /* Levi matches */
-    --img-zoom: 1.35;            /* smaller zoom on phones */
+    --logo-h: 96px;
+    --img-zoom: 1.35;
   }
 
-  .container { padding: 0 18px; }
-  body { font-size: 17px; }
+  .hero-slide img {
+    height: 220px;
+  }
 
-  .nav a { padding: 10px 10px; }
-
-  .news-item { grid-template-columns: 44px 1fr; }
-  .news-year { justify-self: start; margin-left: 56px; }
-}
-/* ============================================================
-   Home only: compact scale for 100% view
-   Applies ONLY when <body class="home">
-============================================================ */
-body.home{
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-/* layout spacing only on Home */
-body.home .main{ padding: 48px 0 96px; }
-body.home .section{ margin: 64px 0; }
-body.home .container{ max-width: 1120px; padding: 0 24px; }
-
-/* hero typography only on Home */
-body.home h1{
-  font-size: clamp(34px, 4.0vw, 58px);
-  line-height: 1.04;
-  margin: 10px 0 14px;
-  letter-spacing: -0.6px;
-}
-body.home p{
-  font-size: 16px;
-  margin: 10px 0 16px;
-}
-
-/* header/nav slightly smaller only on Home */
-body.home .header-inner{ padding: 10px 0; }
-body.home .nav a{ font-size: 15px; padding: 8px 10px; }
-
-/* cards/buttons only on Home */
-body.home .card{ padding: 22px 24px; }
-body.home .btn{ padding: 10px 16px; border-radius: 12px; }
-
-/* logos only on Home */
-body.home .brand-logo-telhai{ height: 120px; }
-body.home .lab-logo{ height: 120px; }
-/* ============================================================
-   Home: tighter spacing + smaller carousel (override)
-   Paste at END of style.css
-============================================================ */
-
-/* Reduce overall vertical whitespace on Home only */
-body.home .main {
-  padding: 40px 0 80px;  /* פחות padding כללי */
-}
-
-body.home .section {
-  margin: 48px 0;        /* פחות רווח בין סקשנים */
-}
-
-/* Hero: tighter stack */
-body.home .section.hero-center {
-  margin: 28px 0 34px;
-}
-
-body.home .section.hero-center .badge {
-  margin-bottom: 10px;
-}
-
-body.home .section.hero-center h1 {
-  margin: 10px 0 10px;
-}
-
-body.home .section.hero-center p {
-  margin: 8px auto 10px;
-}
-
-/* Buttons row: less gap */
-body.home .section.hero-center > div[style*="display:flex"] {
-  margin-top: 10px !important;
-  gap: 10px !important;
-}
-
-/* Carousel: smaller and tighter */
-body.home .hero-carousel {
-  width: min(760px, 100%); /* הקטנה לרוחב נעים */
-  margin-top: 12px;        /* פחות רווח מעל הגלריה */
-}
-
-body.home .hero-slide img {
-  height: 280px;           /* הקטנת הגלריה */
-  object-fit: contain;     /* בלי crop */
-}
-
-/* Controls spacing (dots/arrows) */
-body.home .hero-controls {
-  margin-top: 8px;
-}
-
-body.home .hero-dot {
-  width: 8px;
-  height: 8px;
-}
-
-/* Responsive tweaks */
-@media (max-width: 980px) {
-  body.home .hero-slide img { height: 240px; }
+  .section {
+    margin: 36px 0;
+  }
 }
 
 @media (max-width: 520px) {
-  body.home .main { padding: 28px 0 64px; }
-  body.home .section { margin: 36px 0; }
-  body.home .hero-slide img { height: 200px; }
+  .hero-slide img {
+    height: 190px;
+  }
 }
-
