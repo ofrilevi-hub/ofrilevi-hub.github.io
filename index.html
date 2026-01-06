@@ -13,28 +13,22 @@
   <meta property="og:url" content="https://ofrilevi-hub.github.io/" />
   <meta property="og:type" content="website" />
 
-  <!-- Schema.org: Organization -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ResearchOrganization",
     "name": "Levi Lab",
     "url": "https://ofrilevi-hub.github.io/",
-    "description": "The Levi Lab investigates antifungal resistance mechanisms and antifungal discovery in pathogenic fungi using genome-scale CRISPRi screening, plant-derived compounds, and quantitative phenotyping.",
+    "description": "Research on antifungal resistance mechanisms and antifungal discovery in pathogenic fungi using genome-scale CRISPRi screening and quantitative phenotyping.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kiryat Shmona",
       "addressCountry": "IL"
     },
     "affiliation": [
-      {
-        "@type": "Organization",
-        "name": "Tel-Hai University"
-      },
-      {
-        "@type": "Organization",
-        "name": "MIGAL – Galilee Research Institute"
-      }
+      { "@type": "Organization", "name": "Tel-Hai University" },
+      { "@type": "Organization", "name": "MIGAL - Galilee Research Institute" }
     ]
   }
   </script>
@@ -48,10 +42,8 @@
       flex-direction: column;
       align-items: center;
     }
-    .hero-center p { margin-left: auto; margin-right: auto; }
 
     .hero-title-line { display: block; }
-
     .no-break { white-space: nowrap; }
     @media (max-width: 520px) { .no-break { white-space: normal; } }
 
@@ -61,148 +53,184 @@
     }
 
     .hero-carousel-frame {
+      position: relative;
       width: 100%;
       aspect-ratio: 16 / 7;
       border-radius: 18px;
       border: 1px solid var(--line);
-      box-shadow: var(--shadow-md);
       overflow: hidden;
       background: #ffffff;
-      position: relative;
     }
 
     .hero-slide {
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity 400ms ease;
-      pointer-events: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+      transition: opacity 300ms ease;
     }
-    .hero-slide.is-active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+
+    .hero-slide.is-active { opacity: 1; }
 
     .hero-slide img {
       max-width: 100%;
       max-height: 100%;
-      width: auto;
-      height: auto;
       object-fit: contain;
-      object-position: center;
-      display: block;
-      transform: none !important;
-      box-shadow: none !important;
-      cursor: default !important;
     }
 
     .hero-controls {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       margin-top: 12px;
-      align-items: center;
     }
 
     .hero-arrow {
-      border: 1px solid rgba(17,24,39,0.14);
-      background: rgba(255,255,255,0.85);
-      border-radius: 12px;
-      padding: 10px 12px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
       cursor: pointer;
-      font-weight: 900;
-      line-height: 1;
-      box-shadow: var(--shadow-sm);
+      font-weight: 700;
     }
 
     .hero-dots {
-      display: inline-flex;
+      display: flex;
       gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(17,24,39,0.12);
-      background: rgba(255,255,255,0.7);
+      align-items: center;
     }
 
     .hero-dot {
       width: 10px;
       height: 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(17,24,39,0.22);
-      background: rgba(17,24,39,0.10);
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #ccc;
       cursor: pointer;
     }
+
     .hero-dot.is-active {
-      background: rgba(0,200,83,0.65);
-      border-color: rgba(0,200,83,0.85);
-    }
-
-    @media (max-width: 520px) {
-      .hero-carousel { margin-top: 18px; }
-      .hero-carousel-frame { border-radius: 14px; aspect-ratio: 4 / 3; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-slide { transition: none; }
+      background: var(--accent);
     }
   </style>
 </head>
 
 <body class="home">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Levi Lab home">
-        <img class="brand-logo-telhai" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
-      </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-        <a href="opportunities.html">Opportunities</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img class="brand-logo-telhai" src="assets/telhai-logo.jpg.png" alt="Tel-Hai University logo" />
+    </a>
 
-      <a class="lab-badge" href="index.html" aria-label="Levi Lab home">
-        <img class="lab-logo" src="assets/Levi%20Lab%20logo.png" alt="Levi Lab logo" />
-      </a>
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a class="lab-badge" href="index.html">
+      <img class="lab-logo" src="assets/Levi%20Lab%20logo.png" alt="Levi Lab logo" />
+    </a>
+  </div>
+</header>
+
+<main class="main">
+<div class="container">
+
+<!-- HERO -->
+<section class="section hero-center">
+  <div class="badge">Levi Lab</div>
+
+  <h1>
+    <span class="hero-title-line no-break">Fungal resistance mechanisms</span>
+    <span class="hero-title-line">&amp; antifungal discovery</span>
+  </h1>
+
+  <p>
+    We study how pathogenic fungi adapt to antifungal stress in clinically and agriculturally relevant environments.
+    Our research integrates genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping.
+  </p>
+
+  <div style="margin-top:14px; display:flex; gap:12px;">
+    <a class="btn" href="research.html">Explore research</a>
+    <a class="btn btn-ghost" href="opportunities.html">Join the lab</a>
+  </div>
+
+  <!-- CAROUSEL -->
+  <div class="hero-carousel">
+    <div class="hero-carousel-frame" id="heroCarousel">
+      <div class="hero-slide is-active"><img src="assets/CRISPRi.png" alt="CRISPRi screening" /></div>
+      <div class="hero-slide"><img src="assets/GluRS_46.png" alt="Protein complex" /></div>
+      <div class="hero-slide"><img src="assets/REesistant 10mM001_Res 10mM 53003_ch00.jpg" alt="Antifungal resistance phenotype" /></div>
+      <div class="hero-slide"><img src="assets/Plant Ex Plate Reader.jpg" alt="Plant extract screening" /></div>
     </div>
-  </header>
 
-  <main class="main">
-    <div class="container">
-
-      <section class="section hero-center" aria-label="Levi Lab antifungal research overview">
-        <div class="badge">Levi Lab</div>
-
-        <h1>
-          <span class="hero-title-line no-break">Fungal resistance mechanisms</span>
-          <span class="hero-title-line">&amp; antifungal discovery</span>
-        </h1>
-
-        <p>
-          We study how pathogenic fungi adapt to antifungal stress in clinically and agriculturally relevant environments.
-          Our research integrates genome-scale CRISPRi screening, plant-derived antifungal discovery, and quantitative phenotyping
-          to uncover mechanisms of antifungal resistance and vulnerability.
-        </p>
-
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; justify-content:center;">
-          <a class="btn" href="research.html">Explore research</a>
-          <a class="btn btn-ghost" href="opportunities.html">Join the lab</a>
-        </div>
-
-        <!-- Carousel unchanged -->
-        <!-- Keep your existing carousel HTML and JS here as-is -->
-      </section>
-
-      <!-- The rest of your page (News, Funding, Footer) remains unchanged -->
-
+    <div class="hero-controls">
+      <button class="hero-arrow" id="heroPrev">‹</button>
+      <div class="hero-dots">
+        <button class="hero-dot is-active"></button>
+        <button class="hero-dot"></button>
+        <button class="hero-dot"></button>
+        <button class="hero-dot"></button>
+      </div>
+      <button class="hero-arrow" id="heroNext">›</button>
     </div>
-  </main>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section">
+  <div class="card">
+    <h2>Latest news</h2>
+    <ul class="news-list">
+      <li>Plant-derived compound with antifungal activity (Ynet, 2025)</li>
+      <li>Genome-wide CRISPRi screen reveals antifungal pathways (mBio, 2025)</li>
+      <li>Stress-activated MAPK regulation under antifungal pressure (PLOS Pathogens, 2025)</li>
+      <li>Establishment of the Levi Lab at Tel-Hai University (2024)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FUNDING -->
+<section class="section">
+  <h2>Funding</h2>
+  <div class="funding-logos">
+    <img src="assets/telhai-logo.jpg.png" alt="Tel-Hai University" />
+    <img src="assets/Helmsley_Trust_logo_2021.svg.png" alt="Helmsley Trust" />
+    <img src="assets/logo-isf.jpg" alt="Israel Science Foundation" />
+  </div>
+</section>
+
+<footer class="footer-inner">
+  <strong>Levi Lab</strong> | Tel-Hai University and MIGAL, Kiryat Shmona, Israel
+</footer>
+
+</div>
+</main>
+
+<script>
+(function () {
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".hero-dot");
+  let index = 0;
+
+  function show(i) {
+    slides.forEach((s, k) => s.classList.toggle("is-active", k === i));
+    dots.forEach((d, k) => d.classList.toggle("is-active", k === i));
+    index = i;
+  }
+
+  document.getElementById("heroNext").onclick = () => show((index + 1) % slides.length);
+  document.getElementById("heroPrev").onclick = () => show((index - 1 + slides.length) % slides.length);
+  dots.forEach((d, i) => d.onclick = () => show(i));
+})();
+</script>
+
 </body>
 </html>
