@@ -167,9 +167,7 @@ a:focus-visible {
    Header
 ===================== */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  position: static; /* שונה מ-sticky ל-static כדי למנוע גרירה */
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
